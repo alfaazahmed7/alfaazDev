@@ -31,21 +31,8 @@ export default function AboutPage() {
 
   return (
     <section
-    id="about"
-    className="w-full px-6 sm:px-10 lg:px-20 pb-52 max-w-[1500px] mx-auto">
-
-      {/* ── Section label ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center gap-3 mb-16"
-      >
-        <span className="h-px w-8 bg-cyan-500" />
-        <span className="text-xs font-semibold tracking-[0.25em] uppercase text-cyan-400">
-          About Me
-        </span>
-      </motion.div>
+      id="about"
+      className="w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto">
 
       {/* ════════════════════════════════════════
           TWO-COLUMN LAYOUT
@@ -58,6 +45,19 @@ export default function AboutPage() {
             LEFT — Text Content
         ══════════════════════════ */}
         <div ref={leftRef} className="flex-1 max-w-2xl">
+
+          {/* ── Section label ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 mb-8 lg:mb-16"
+          >
+            <span className="h-px w-8 bg-cyan-50 mt-10 lg:mt-0" />
+            <span className="text-xs font-semibold tracking-[0.25em] uppercase text-cyan-400 mt-10 lg:mt-0">
+              About Me
+            </span>
+          </motion.div>
 
           {/* Greeting */}
           <motion.p
@@ -76,7 +76,7 @@ export default function AboutPage() {
             initial="hidden"
             animate={leftInView ? "visible" : "hidden"}
             custom={0.1}
-            className="text-5xl sm:text-6xl font-black leading-tight mb-2 text-white"
+            className="text-4xl sm:text-5xl font-black leading-tight mb-2 text-white"
           >
             I&apos;m{" "}
             <span
@@ -131,12 +131,12 @@ export default function AboutPage() {
             initial="hidden"
             animate={leftInView ? "visible" : "hidden"}
             custom={0.85}
-            className="flex flex-wrap gap-8 mb-10"
+            className="flex flex-wrap gap-4 sm:gap-8 mb-6 sm:mb-10"
           >
             {stats.map((s, i) => (
               <div key={i} className="flex flex-col">
                 <span
-                  className="text-3xl font-black"
+                  className="text-2xl sm:text-3xl font-black"
                   style={{
                     background: "linear-gradient(135deg, #38bdf8, #818cf8)",
                     WebkitBackgroundClip: "text",
@@ -145,7 +145,10 @@ export default function AboutPage() {
                 >
                   {s.value}
                 </span>
-                <span className="text-slate-500 text-xs tracking-wide mt-0.5">{s.label}</span>
+
+                <span className="text-[10px] sm:text-xs tracking-wide mt-0 sm:mt-0.5 text-slate-500">
+                  {s.label}
+                </span>
               </div>
             ))}
           </motion.div>
@@ -156,23 +159,33 @@ export default function AboutPage() {
             initial="hidden"
             animate={leftInView ? "visible" : "hidden"}
             custom={0.95}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-3 sm:gap-4"
           >
             {/* Primary */}
             <motion.a
               href="/contact"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold tracking-wide text-white uppercase"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide text-white uppercase"
               style={{
                 background: "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
                 boxShadow: "0 0 20px rgba(14,165,233,0.3)",
               }}
             >
               Schedule a Meeting
-              {/* Calendar icon */}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                />
               </svg>
             </motion.a>
 
@@ -183,11 +196,22 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold tracking-wide text-slate-300 uppercase border border-slate-700 bg-slate-800/40 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide text-slate-300 uppercase border border-slate-700 bg-slate-800/40 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors duration-200"
             >
               Resume
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
               </svg>
             </motion.a>
           </motion.div>

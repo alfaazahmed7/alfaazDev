@@ -14,7 +14,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const ProjectCard = () => {
   return (
-    <div id="projects" className="min-h-screen pb-52">
+    <div id="projects" className="min-h-screen pb-32 lg:pb-52">
       <div className="w-full px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto">
 
         {/* Heading */}

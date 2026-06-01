@@ -83,7 +83,7 @@ const socials = [
 export default function HeroBanner() {
     return (
         <section
-            className="relative min-h-screen flex items-center overflow-hidden"
+            className="relative min-h-screen pt-16 flex items-center overflow-hidden"
         >
             {/* ── Subtle grid texture overlay ── */}
             <div
@@ -128,7 +128,7 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0}
-                            className="inline-block mb-6"
+                            className="inline-block mb-3 lg:mb-6"
                         >
                             <span className="text-xs font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full border border-cyan-500/30 text-cyan-400 bg-cyan-500/5">
                                 Welcome to my Universe
@@ -141,7 +141,7 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.15}
-                            className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] mb-6"
+                            className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[1.05] mb-3 lg:mb-6"
                         >
                             {/* "Crafting" — white */}
                             <span className="text-white">Crafting </span>
@@ -166,7 +166,7 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.3}
-                            className="text-slate-400 text-base sm:text-lg leading-relaxed mb-8 font-light"
+                            className="text-slate-400 text-base lg:text-lg leading-relaxed mb-4 lg:mb-8 font-light"
                         >
                             I am{" "}
                             <strong className="text-white font-semibold">Alfaaz Ahmed</strong>
@@ -183,7 +183,7 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.45}
-                            className="flex items-center gap-3 mb-10"
+                            className="flex items-center gap-3 mb-5 lg:mb-10"
                         >
                             {socials.map((s) => (
                                 <a
@@ -207,35 +207,55 @@ export default function HeroBanner() {
                             custom={0.6}
                             className="flex flex-wrap items-center gap-4"
                         >
-                            {/* Primary button */}
-                            <Link
-                                href="/contact"
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-sm tracking-wide text-white uppercase transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-95"
-                                style={{
-                                    background: "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
-                                    boxShadow: "0 0 20px rgba(14,165,233,0.3)",
-                                }}
-                            >
-                                Let&apos;s Collaborate
-                                {/* Person-add icon */}
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                                </svg>
-                            </Link>
+                            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                                {/* Primary button */}
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-bold text-xs sm:text-sm tracking-wide text-white uppercase transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-95"
+                                    style={{
+                                        background: "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
+                                        boxShadow: "0 0 20px rgba(14,165,233,0.3)",
+                                    }}
+                                >
+                                    Let&apos;s Collaborate
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth={2}
+                                        className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                                        />
+                                    </svg>
+                                </Link>
 
-                            {/* Secondary button */}
-                            <a
-                                href="/resume.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-sm tracking-wide uppercase border border-slate-600 text-slate-300 bg-slate-800/40 hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
-                            >
-                                Get Resume
-                                {/* Download icon */}
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                </svg>
-                            </a>
+                                {/* Secondary button */}
+                                <a
+                                    href="/resume.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-bold text-xs sm:text-sm tracking-wide uppercase border border-slate-600 text-slate-300 bg-slate-800/40 hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                                >
+                                    Get Resume
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth={2}
+                                        className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
                         </motion.div>
                     </div>
 
