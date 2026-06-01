@@ -1,10 +1,9 @@
-import AboutPage from "@/components/Homepage/AboutPage/AboutPage";
-import Banner from "@/components/Homepage/Banner/Banner";
-import Connect from "@/components/Homepage/Connect/Connect";
+import AboutPage from "@/components/homepage/AboutPage/AboutPage";
+import Banner from "@/components/homepage/Banner/Banner";
+import Connect from "@/components/homepage/Connect/Connect";
+import TechStack from "@/components/homepage/TechStack/TechStack";
+import Projects from "@/components/Project/Projects";
 import Footer from "@/components/Shared/Footer/Footer";
-import ProjectCard from "@/components/Project/ProjectCard";
-import TechStack from "@/components/Homepage/TechStack/TechStack";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,7 +11,7 @@ export default function Home() {
       <Banner />
       <AboutPage />
       <TechStack />
-      <ProjectCard />
+      <Projects />
       <Connect />
       <Footer />
     </div>

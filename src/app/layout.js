@@ -2,6 +2,7 @@ import { Cascadia_Code } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Shared/Navbar/Navbar";
 import SmoothScroll from "@/components/animations/Lenis/SmoothScroll";
+// import { outfit } from "@/lib/fonts";
 
 const Cascadia_Code_Font = Cascadia_Code({
   subsets: ["latin"],
