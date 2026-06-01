@@ -26,8 +26,8 @@ export default function Navbar() {
     return (
         <nav
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-                    ? "bg-[#0a0e1a]/95 backdrop-blur-md shadow-lg shadow-black/30"
-                    : "bg-[#0a0e1a]"
+                ? "bg-[#0a0e1a]/95 backdrop-blur-md shadow-lg shadow-black/30"
+                : "bg-[#0a0e1a]"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
@@ -99,14 +99,12 @@ export default function Navbar() {
                         </button>
 
                         {/* Resume Button */}
-                        <a
-                            href="/resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            href="/resume"
                             className="hidden sm:inline-flex items-center px-4 py-1.5 text-sm font-semibold text-white bg-[#3b82f6] rounded-lg hover:bg-blue-500 active:scale-95 transition-all duration-200 shadow-md shadow-blue-500/20 hover:shadow-blue-500/40"
                         >
                             Resume
-                        </a>
+                        </Link>
 
                         {/* Hamburger - Mobile */}
                         <button
