@@ -32,7 +32,7 @@ export default function AboutPage() {
   return (
     <section
       id="about"
-      className="w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto">
+      className="w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40">
 
       {/* ════════════════════════════════════════
           TWO-COLUMN LAYOUT

@@ -82,6 +82,7 @@ const socials = [
 export default function HeroBanner() {
     return (
         <section
+            id="banner"
             className="relative min-h-screen pt-16 flex items-center overflow-hidden"
         >
             {/* ── Subtle grid texture overlay ── */}

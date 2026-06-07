@@ -6,7 +6,7 @@ export default function Connect() {
     return (
         <section
             id="contact"
-            className="w-full px-6 sm:px-10 lg:px-20 pb-52 max-w-[1500px] mx-auto"
+            className="w-full px-6 sm:px-10 lg:px-20 pb-52 max-w-[1500px] mx-auto scroll-mt-40"
         >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
                 {/* Left Content */}

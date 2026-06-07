@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const navLinks = [
-    { label: "Home", href: "/" },
+    { label: "Home", href: "#banner" },
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
@@ -22,6 +22,37 @@ export default function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    // ─── SMOOTH SCROLL HANDLER ──────────────────────────────────────
+    const handleScrollClick = (e, href) => {
+        // 1. If they click Home ('#')
+        if (href === "#") {
+            e.preventDefault();
+            window.lenis?.scrollTo(0, {
+                duration: 1.2,
+                immediate: false
+            });
+            return;
+        }
+
+        // 2. For all other section hash links
+        if (href.startsWith("#")) {
+            e.preventDefault();
+
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+                window.lenis?.scrollTo(targetElement, {
+                    offset: -64, // Accounts for your h-16 navbar
+                    duration: 1.2,
+                    immediate: false
+                });
+
+                if (!window.lenis) {
+                    targetElement.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        }
+    };
 
     return (
         <nav
@@ -47,6 +78,8 @@ export default function Navbar() {
                             <Link
                                 key={link.label}
                                 href={link.href}
+                                // Added the smooth scroll trigger here
+                                onClick={(e) => handleScrollClick(e, link.href)}
                                 className="relative px-3 py-1.5 text-sm font-medium text-gray-300 rounded-md transition-all duration-200 hover:text-[#3b82f6] hover:bg-blue-500/10 group"
                             >
                                 {link.label}
@@ -55,50 +88,24 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    {/* Right Side: Theme Toggle + Resume + Hamburger */}
+                    {/* Right Side Tools */}
                     <div className="flex items-center gap-3">
-                        {/* Theme Toggle */}
                         <button
                             onClick={() => setIsDark(!isDark)}
                             aria-label="Toggle theme"
                             className="p-2 text-gray-400 hover:text-[#3b82f6] transition-colors duration-200 rounded-full hover:bg-blue-500/10"
                         >
                             {isDark ? (
-                                /* Moon icon */
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"
-                                    />
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
                                 </svg>
                             ) : (
-                                /* Sun icon */
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"
-                                    />
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
                                 </svg>
                             )}
                         </button>
 
-                        {/* Resume Button */}
                         <Link
                             href="/resume"
                             className="hidden sm:inline-flex items-center px-4 py-1.5 text-sm font-semibold text-white bg-[#3b82f6] rounded-lg hover:bg-blue-500 active:scale-95 transition-all duration-200 shadow-md shadow-blue-500/20 hover:shadow-blue-500/40"
@@ -106,7 +113,6 @@ export default function Navbar() {
                             Resume
                         </Link>
 
-                        {/* Hamburger - Mobile */}
                         <button
                             onClick={() => setMenuOpen(!menuOpen)}
                             aria-label="Toggle menu"
@@ -127,16 +133,17 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Dropdown Menu */}
-            <div
-                className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                    }`}
-            >
+            <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
                 <div className="bg-[#0d1121] border-t border-white/5 px-4 py-3 flex flex-col gap-1">
                     {navLinks.map((link) => (
                         <Link
                             key={link.label}
                             href={link.href}
-                            onClick={() => setMenuOpen(false)}
+                            // Added smooth scroll trigger here for mobile view as well
+                            onClick={(e) => {
+                                setMenuOpen(false);
+                                handleScrollClick(e, link.href);
+                            }}
                             className="px-4 py-2.5 text-sm font-medium text-gray-300 rounded-md hover:text-[#3b82f6] hover:bg-blue-500/10 transition-all duration-200"
                         >
                             {link.label}

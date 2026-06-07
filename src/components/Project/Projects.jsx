@@ -5,8 +5,8 @@ import { outfit } from "@/lib/fonts";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import ProjectCard from "./ProjectCard";
 import { useState } from "react";
+import ProjectCard from "./ProjectCard";
 import ProjectTabs from "./ProjectTabs";
 
 export const Projects = () => {
@@ -18,7 +18,7 @@ export const Projects = () => {
   });
 
   return (
-    <div id="projects" className="min-h-screen pb-32 lg:pb-52">
+    <div id="projects" className="min-h-screen pb-32 lg:pb-52 scroll-mt-40">
       <div className="w-full px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto">
 
         {/* Heading */}
