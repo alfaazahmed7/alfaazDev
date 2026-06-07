@@ -30,7 +30,7 @@ const codeLines = [
     { num: "01", parts: [{ text: "const ", color: "text-blue-400" }, { text: "developer", color: "text-cyan-300" }, { text: " = {", color: "text-slate-300" }] },
     { num: "02", parts: [{ text: "  name", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "'Alfaaz Ahmed'", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
     { num: "03", parts: [{ text: "  focus", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "'Fullstack Mastery'", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
-    { num: "04", parts: [{ text: "  skills", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "['NextJS', 'ExpressJS,', 'MongoDB']", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
+    { num: "04", parts: [{ text: "  skills", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "['NextJS', ReactJS, 'ExpressJS,', 'MongoDB']", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
     { num: "05", parts: [{ text: "  passionate", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "true", color: "text-blue-400" }, { text: ",", color: "text-slate-300" }] },
     { num: "06", parts: [{ text: "  motto", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: '"Build with Purpose"', color: "text-emerald-400" }] },
     { num: "07", parts: [{ text: "};", color: "text-slate-300" }] },

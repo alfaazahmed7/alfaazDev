@@ -18,7 +18,7 @@ export default function Connect() {
                     className="text-white"
                 >
                     <h2 className="text-4xl font-bold mb-4">
-                        Let’s <span className="text-pink-500">Connect</span>
+                        Let’s <span className="text-[#4895ef]">Connect</span>
                     </h2>
                     <p className="text-gray-400 mb-6">
                         I’d love to hear from you! Whether it’s a project idea, collaboration, or just a friendly hello.
@@ -26,19 +26,19 @@ export default function Connect() {
 
                     <div className="space-y-4">
                         <div className="flex items-center gap-3 text-gray-300">
-                            <FaEnvelope className="text-pink-500 text-xl" />
+                            <FaEnvelope className="text-[#4895ef] text-xl" />
                             <span>alfaazahmed010@gmail.com</span>
                         </div>
                         <div className="flex items-center gap-3 text-gray-300">
-                            <FaPhoneAlt className="text-pink-500 text-xl" />
+                            <FaPhoneAlt className="text-[#4895ef] text-xl" />
                             <span>+880 1610 197258</span>
                         </div>
                         <div className="flex items-center gap-3 text-gray-300">
-                            <FaLinkedin className="text-pink-500 text-xl" />
+                            <FaLinkedin className="text-[#4895ef] text-xl" />
                             <span>linkedin.com/in/alfaazahmed7</span>
                         </div>
                         <div className="flex items-center gap-3 text-gray-300">
-                            <FaGithub className="text-pink-500 text-xl" />
+                            <FaGithub className="text-[#4895ef] text-xl" />
                             <span>github.com/alfaazahmed7</span>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ export default function Connect() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         type="submit"
-                        className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 rounded-lg transition-colors"
+                        className="w-full bg-[#4895ef] hover:bg-[#4361ee] text-white font-semibold py-3 rounded-lg transition-colors cursor-pointer"
                     >
                         Send Message
                     </motion.button>

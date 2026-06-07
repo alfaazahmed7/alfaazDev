@@ -90,7 +90,7 @@ export default function ProjectDetailsPage() {
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white rounded-xl font-semibold text-sm shadow-lg shadow-violet-600/20 hover:shadow-violet-600/30 hover:-translate-y-0.5 transition-all duration-300"
+                            className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#4895ef] to-fuchsia-600 hover:from-[#4361ee] hover:to-fuchsia-500 text-white rounded-xl font-semibold text-sm shadow-lg shadow-violet-600/20 hover:shadow-violet-600/30 hover:-translate-y-0.5 transition-all duration-300"
                         >
                             <Globe size={16} />
                             Launch Live Deployment

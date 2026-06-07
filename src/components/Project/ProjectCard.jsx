@@ -125,7 +125,7 @@ const ProjectCard = ({ project }) => {
                         </div>
 
                         {/* VIEW BUTTON */}
-                        <Link href={`/projects/${project.id}`} className="flex items-center gap-1.5 text-sm font-semibold text-violet-400 group-hover:text-violet-300 group-hover:gap-2.5 transition-all duration-300">
+                        <Link href={`/projects/${project.id}`} className="flex items-center gap-1.5 text-sm font-semibold text-[#4895ef] group-hover:text-violet-300 group-hover:gap-2.5 transition-all duration-300">
                             <span>View Project</span>
                             <ArrowRight size={15} />
                         </Link>

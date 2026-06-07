@@ -55,7 +55,7 @@ const ProjectFilterTabs = ({ activeTab, setActiveTab, projects = [] }) => {
                             {isActive && (
                                 <motion.div
                                     layoutId="activeTabGlow"
-                                    className="absolute inset-0 bg-gradient-to-r from-violet-600/90 to-fuchsia-600/90 rounded-xl -z-10 shadow-[0_4px_20px_rgba(139,92,246,0.25)] border-t border-white/10"
+                                    className="absolute inset-0 bg-gradient-to-r from-[#4895ef] to-fuchsia-600/90 rounded-xl -z-10 shadow-[0_4px_20px_rgba(139,92,246,0.25)] border-t border-white/10"
                                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                                 />
                             )}

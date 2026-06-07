@@ -7,9 +7,9 @@ import aboutPageImage from "@/assests/alfaaz.jpg";
 
 // ─── Stats row ────────────────────────────────────────────────────────────────
 const stats = [
-  { value: "8+", label: "Months Experience" },
+  { value: "1+", label: "Year Experience" },
   { value: "20+", label: "Projects Built" },
-  { value: "1+", label: "Happy Clients" },
+  { value: "10+", label: "Happy Clients" },
 ];
 
 // ─── Reusable fade-up variant ─────────────────────────────────────────────────
@@ -313,7 +313,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <p className="text-xs text-white font-semibold leading-none mb-0.5">Tech Stack</p>
-                <p className="text-[10px] text-slate-500">Next · JS · Node</p>
+                <p className="text-[10px] text-[#4895ef]">(MERN)</p>
               </div>
             </motion.div>
 
@@ -332,10 +332,10 @@ export default function AboutPage() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                8+
+                1+
               </span>
               <span className="text-[10px] text-slate-500 tracking-wide mt-0.5 text-center leading-tight">
-                Months<br />Exp.
+                Year<br />Exp.
               </span>
             </motion.div>
 

@@ -26,7 +26,7 @@ export default function TechStack() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
             >
-                Tech <span className="text-pink-500">Stack</span>
+                Tech <span className="text-[#4895ef]">Stack</span>
             </motion.h2>
 
             <motion.p
@@ -50,7 +50,7 @@ export default function TechStack() {
                         viewport={{ once: true, amount: 0.2 }}
                         whileHover={{ scale: 1.05 }}
                     >
-                        <div className="text-4xl text-pink-500 mb-2">{tech.icon}</div>
+                        <div className="text-4xl text-[#4895ef] mb-2">{tech.icon}</div>
                         <p className="text-gray-300 font-medium">{tech.name}</p>
                     </motion.div>
                 ))}
