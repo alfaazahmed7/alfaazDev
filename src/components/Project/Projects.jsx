@@ -72,7 +72,7 @@ export const Projects = () => {
                   backdrop-blur-md
                   transition-all duration-300
                   hover:border-white/20
-                  hover:bg-white/10
+                  hover:bg-white/10 cursor-pointer
                 "
               >
                 View All Projects

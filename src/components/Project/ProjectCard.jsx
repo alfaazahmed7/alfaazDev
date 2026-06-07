@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaCode, FaGithub } from "react-icons/fa";
 
 const ProjectCard = ({ project }) => {
@@ -122,10 +123,10 @@ const ProjectCard = ({ project }) => {
                         </div>
 
                         {/* VIEW BUTTON */}
-                        <button className="flex items-center gap-1.5 text-sm font-semibold text-violet-400 group-hover:text-violet-300 group-hover:gap-2.5 transition-all duration-300">
+                        <Link href={`/projects/${project.id}`} className="flex items-center gap-1.5 text-sm font-semibold text-violet-400 group-hover:text-violet-300 group-hover:gap-2.5 transition-all duration-300">
                             <span>View Project</span>
                             <ArrowRight size={15} />
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </motion.div>
