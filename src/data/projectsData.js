@@ -86,7 +86,7 @@ const projects = [
         title: "KeenKeeper",
         description: "KeenKeeper helps you stay connected by tracking communication gaps and reminding you to maintain your friendships through a simple, clean interface.",
         image: keenkeeperImage,
-        featured: true,
+        featured: false,
         liveUrl: "https://keenkeeper-zeta.vercel.app/",
         githubClientUrl: "https://github.com/alfaazahmed7/assignment-07",
         tags: [
@@ -105,7 +105,7 @@ const projects = [
         title: "Dragon News",
         description: "Dragon News is a full-stack web app focused on building a clean, intuitive news discovery experience, where I designed and developed core features end-to-end.",
         image: dragonnewsImage,
-        featured: true,
+        featured: false,
         liveUrl: "https://tilix-eight.vercel.app/",
         githubClientUrl: "https://github.com/alfaazahmed7/dragon-news",
         tags: [
@@ -143,7 +143,7 @@ const projects = [
         title: "English Janala",
         description: "A simple and engaging English learning web app built with HTML, CSS, and JavaScript. It helps beginners practice English vocabulary with dynamically loaded word cards, Bangla meanings, and interactive pronunciation features.",
         image: englishjanalaImage,
-        featured: true,
+        featured: false,
         liveUrl: "https://english-janala-dapp.netlify.app/",
         githubClientUrl: "https://github.com/alfaazahmed7/English-Janala",
         tags: [
@@ -162,7 +162,7 @@ const projects = [
         title: "Digital Tools",
         description: "Digital Tools is a modern React-based web app where users can explore, select, and purchase digital services through an interactive and user-friendly interface with real-time cart management.",
         image: digitaltoolImage,
-        featured: true,
+        featured: false,
         liveUrl: "https://digital-tools-web-app.netlify.app/",
         githubClientUrl: "https://github.com/alfaazahmed7/Assignment-06",
         tags: [

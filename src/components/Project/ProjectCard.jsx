@@ -111,15 +111,17 @@ const ProjectCard = ({ project }) => {
                             </a>
 
                             {/* GITHUB SERVER */}
-                            <a
-                                href={project.githubServerUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-2 bg-slate-950/40 rounded-xl text-slate-400 hover:text-white hover:bg-violet-600 border border-slate-800 hover:border-violet-500 transition-all duration-300"
-                                title="Server Repository"
-                            >
-                                <FaCode size={18} />
-                            </a>
+                            {project.githubServerUrl && (
+                                <a
+                                    href={project.githubServerUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-2 bg-slate-950/40 rounded-xl text-slate-400 hover:text-white hover:bg-violet-600 border border-slate-800 hover:border-violet-500 transition-all duration-300"
+                                    title="Server Repository"
+                                >
+                                    <FaCode size={18} />
+                                </a>
+                            )}
                         </div>
 
                         {/* VIEW BUTTON */}
