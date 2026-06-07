@@ -18,7 +18,6 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      data-theme="dark"
       className={`${Cascadia_Code_Font.className} h-full antialiased`}
     >
       <body>
