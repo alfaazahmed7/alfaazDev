@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { FaCode, FaGithub } from "react-icons/fa";
 
 import React from 'react';
 
@@ -67,34 +67,41 @@ const ProjectCard = ({ project }) => {
 
                     {/* LINKS */}
                     <div className="flex justify-between items-center gap-10">
-                        <div className="flex gap-3 text-slate-400">
+                        <div className="flex gap-5 text-slate-400">
                             {/* LIVE */}
-                            <div className="border px-3 py-1 rounded-sm border-gray-500 bg-[#0a121c] cursor-pointer">
+                            <div className="">
                                 <a
                                     href={project.liveUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-white hover:text-violet-400 transition flex items-center gap-2"
                                 >
-                                    <ExternalLink size={16} />
-                                    <span className="font-medium text-white hover:text-violet-400 text-sm">
-                                        Live
-                                    </span>
+                                    <ExternalLink size={20} />
+
                                 </a>
                             </div>
 
-                            {/* GITHUB */}
-                            <div className="border px-3 py-1 rounded-sm border-gray-500 bg-[#0a121c] cursor-pointer">
+                            {/* GITHUB CLIENT */}
+                            <div className="">
                                 <a
-                                    href={project.githubUrl}
+                                    href={project.githubClientUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-white hover:text-violet-400 transition flex items-center gap-2"
                                 >
-                                    <FaGithub />
-                                    <span className="font-medium text-white hover:text-violet-400 text-sm">
-                                        Github
-                                    </span>
+                                    <FaGithub size={20} />
+                                </a>
+                            </div>
+
+                            {/* GITHUB SERVER */}
+                            <div className="">
+                                <a
+                                    href={project.githubServerUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-violet-400 transition flex items-center gap-2"
+                                >
+                                    <FaCode size={20} />
                                 </a>
                             </div>
                         </div>

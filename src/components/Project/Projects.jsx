@@ -45,7 +45,7 @@ export const Projects = () => {
         {/* Card */}
         <div className={`grid lg:grid-cols-2 xl:grid-cols-3 justify-items-center gap-10 ${outfit.className}`}>
 
-          {projects.map((project) => (
+          {projects.slice(0, 6).map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
