@@ -25,7 +25,7 @@ export default function Footer() {
                         href="https://github.com/alfaazahmed7"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-pink-500 transition-colors"
+                        className="hover:text-[#4895ef] transition-colors"
                     >
                         <FaGithub />
                     </a>
@@ -33,7 +33,7 @@ export default function Footer() {
                         href="https://linkedin.com/in/alfaazahmed7"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-pink-500 transition-colors"
+                        className="hover:text-[#4895ef] transition-colors"
                     >
                         <FaLinkedin />
                     </a>
@@ -41,13 +41,13 @@ export default function Footer() {
                         href="https://twitter.com/alfaazahmed7"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-pink-500 transition-colors"
+                        className="hover:text-[#4895ef] transition-colors"
                     >
                         <FaTwitter />
                     </a>
                     <a
                         href="mailto:alfaazahmed010@gmail.com"
-                        className="hover:text-pink-500 transition-colors"
+                        className="hover:text-[#4895ef] transition-colors"
                     >
                         <FaEnvelope />
                     </a>
