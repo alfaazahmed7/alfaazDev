@@ -1,12 +1,22 @@
 'use client'
 import ProjectCard from "@/components/Project/ProjectCard";
+import ProjectTabs from "@/components/Project/ProjectTabs";
 import projects from "@/data/projectsData";
 import { outfit } from "@/lib/fonts";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const ProjectsPage = () => {
+    const [activeTab, setActiveTab] = useState("All");
+
+    const filteredProjects = projects.filter((project) => {
+        if (activeTab === "All") return true;
+        return project.stack === activeTab;
+    });
+
     return (
-        <div className="pt-28 w-full px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto pb-20">
+        <div className="pt-36 w-full px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto pb-20">
+
             {/* Heading */}
             <section className="mb-10">
                 <div className="max-w-4xl">
@@ -37,10 +47,17 @@ const ProjectsPage = () => {
                 </div>
             </section>
 
+            {/* Project Tabs */}
+            <ProjectTabs
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+                projects={projects}
+            />
+
             {/* Card */}
             <div className={`grid lg:grid-cols-2 xl:grid-cols-3 justify-items-center gap-10 ${outfit.className}`}>
 
-                {projects.map((project) => (
+                {filteredProjects.map((project) => (
                     <ProjectCard
                         key={project.id}
                         project={project}

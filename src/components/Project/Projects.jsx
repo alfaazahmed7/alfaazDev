@@ -6,8 +6,17 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ProjectCard from "./ProjectCard";
+import { useState } from "react";
+import ProjectTabs from "./ProjectTabs";
 
 export const Projects = () => {
+  const [activeTab, setActiveTab] = useState("All");
+
+  const filteredProjects = projects.filter((project) => {
+    if (activeTab === "All") return true;
+    return project.stack === activeTab;
+  });
+
   return (
     <div id="projects" className="min-h-screen pb-32 lg:pb-52">
       <div className="w-full px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto">
@@ -42,10 +51,17 @@ export const Projects = () => {
           </div>
         </section>
 
+        {/* Project Tabs */}
+        <ProjectTabs
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          projects={projects}
+        />
+
         {/* Card */}
         <div className={`grid lg:grid-cols-2 xl:grid-cols-3 justify-items-center gap-10 ${outfit.className}`}>
 
-          {projects.slice(0, 6).map((project) => (
+          {filteredProjects.slice(0, 6).map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
