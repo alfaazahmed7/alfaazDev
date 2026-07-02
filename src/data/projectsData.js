@@ -7,6 +7,7 @@ import keenkeeperImage from "@/assests/keenkeeper.png";
 import neomotorsImage from "@/assests/neomotors1.png";
 import tilixImage from "@/assests/tilix.png";
 import wanderlustImage from "@/assests/wanderlust.png";
+import promptAIImage from "@/assests/promptai.png"
 
 // react icons import
 import neomotorsIcon from "@/assests/project-icons/car.png";
@@ -17,9 +18,33 @@ import dragonnewsIcon from "@/assests/project-icons/newspaper.png";
 import deliciousrecipeIcon from "@/assests/project-icons/recipe.png";
 import englishjanalaIcon from "@/assests/project-icons/english.png";
 import digitaltoolIcon from "@/assests/project-icons/repairing.png";
+import promptAIIcon from "@/assests/project-icons/prompt-delivery.png"
 
 
 const projects = [
+    {
+        id: 9,
+        icon: promptAIIcon,
+        title: "PromptAI",
+        description: "PromptAI is a full-stack AI prompt marketplace built with Next.js, Express.js, and MongoDB, featuring secure authentication, role-based dashboards (User, Creator, Admin), Stripe payments, analytics, reviews, bookmarks, and prompt management.",
+        image: promptAIImage,
+        featured: false,
+        liveUrl: "https://prompt-ai-client.vercel.app/",
+        githubClientUrl: "https://github.com/alfaazahmed7/promptAI-client",
+        githubServerUrl: "https://github.com/alfaazahmed7/promptAI-server",
+        tags: [
+            "Next.js",
+            "React19",
+            "DaisyUI",
+            "Better Auth",
+            "MongoDB",
+            "Tailwind CSS",
+            "Stripe",
+            "Recharts",
+            "framer-motion",
+        ],
+        stack: 'Full-Stack'
+    },
     {
         id: 1,
         icon: neomotorsIcon,
@@ -72,10 +97,10 @@ const projects = [
         githubClientUrl: "https://github.com/alfaazahmed7/tilix",
         tags: [
             "Next.js",
+            "React19",
             "DaisyUI",
             "Hero UI",
             "Better Auth",
-            "MongoDB",
             "Tailwind CSS",
         ],
         stack: 'Frontend'
@@ -91,10 +116,9 @@ const projects = [
         githubClientUrl: "https://github.com/alfaazahmed7/assignment-07",
         tags: [
             "Next.js",
+            "React19",
             "DaisyUI",
             "Hero UI",
-            "Better Auth",
-            "MongoDB",
             "Tailwind CSS",
         ],
         stack: 'Frontend'
@@ -110,6 +134,7 @@ const projects = [
         githubClientUrl: "https://github.com/alfaazahmed7/dragon-news",
         tags: [
             "Next.js",
+            "React19",
             "DaisyUI",
             "Hero UI",
             "Better Auth",
@@ -128,11 +153,9 @@ const projects = [
         liveUrl: "https://delicious-recipe-three.vercel.app/",
         githubClientUrl: "https://github.com/alfaazahmed7/Delicious-Recipe",
         tags: [
-            "Next.js",
+            "React19",
             "DaisyUI",
             "Hero UI",
-            "Better Auth",
-            "MongoDB",
             "Tailwind CSS",
         ],
         stack: 'Frontend'
@@ -148,10 +171,9 @@ const projects = [
         githubClientUrl: "https://github.com/alfaazahmed7/English-Janala",
         tags: [
             "Next.js",
+            "React19",
             "DaisyUI",
             "Hero UI",
-            "Better Auth",
-            "MongoDB",
             "Tailwind CSS",
         ],
         stack: 'Frontend'
@@ -167,10 +189,9 @@ const projects = [
         githubClientUrl: "https://github.com/alfaazahmed7/Assignment-06",
         tags: [
             "Next.js",
+            "React19",
             "DaisyUI",
             "Hero UI",
-            "Better Auth",
-            "MongoDB",
             "Tailwind CSS",
         ],
         stack: 'Frontend'
