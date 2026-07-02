@@ -28,7 +28,7 @@ const projects = [
         title: "PromptAI",
         description: "PromptAI is a full-stack AI prompt marketplace built with Next.js, Express.js, and MongoDB, featuring secure authentication, role-based dashboards (User, Creator, Admin), Stripe payments, analytics, reviews, bookmarks, and prompt management.",
         image: promptAIImage,
-        featured: false,
+        featured: true,
         liveUrl: "https://prompt-ai-client.vercel.app/",
         githubClientUrl: "https://github.com/alfaazahmed7/promptAI-client",
         githubServerUrl: "https://github.com/alfaazahmed7/promptAI-server",

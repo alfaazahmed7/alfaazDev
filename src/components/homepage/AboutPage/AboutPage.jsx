@@ -191,9 +191,8 @@ export default function AboutPage() {
 
             {/* Secondary */}
             <motion.a
-              href="/resume.pdf"
+              href="/resume"
               target="_blank"
-              rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide text-slate-300 uppercase border border-slate-700 bg-slate-800/40 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors duration-200"
