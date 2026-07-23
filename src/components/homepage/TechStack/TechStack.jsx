@@ -1,13 +1,13 @@
 'use client';
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiMongodb, SiExpress, SiJavascript } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiMongodb, SiExpress, SiJavascript, SiTypescript } from "react-icons/si";
 
 export default function TechStack() {
     const techs = [
         { icon: <FaReact />, name: "React" },
         { icon: <SiNextdotjs />, name: "Next.js" },
-        { icon: <SiJavascript />, name: "JavaScript" },
+        { icon: <SiTypescript />, name: "TypeScript" },
         { icon: <SiTailwindcss />, name: "Tailwind CSS" },
         { icon: <FaNodeJs />, name: "Node.js" },
         { icon: <SiMongodb />, name: "MongoDB" },
