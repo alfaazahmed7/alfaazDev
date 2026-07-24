@@ -59,39 +59,40 @@ export default function ResumePage() {
                     <div className="space-y-4">
                         {/* Project 1 */}
                         <div>
-                            <h3 className="font-bold text-gray-100 text-[16px]">NEOMOTORS</h3>
+                            <h3 className="font-bold text-gray-100 text-[16px]">PromptAI</h3>
                             <p className="text-sm text-gray-300">
                                 <strong className="text-gray-200">Tech-Stack:</strong> Next.js, React, Node.js, Express.js, MongoDB
                             </p>
                             <p className="text-sm text-gray-400 space-x-1">
-                                <Link href="https://neomotors-client.vercel.app/" target="_blank" className="text-blue-400 underline">Live Demo</Link>
+                                <Link href="https://prompt-ai-client.vercel.app" target="_blank" className="text-blue-400 underline">Live Demo</Link>
                                 <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/neomotors-client" target="_blank" className="text-blue-400 underline">Client Repo</Link>
+                                <Link href="https://github.com/alfaazahmed7/promptAI-client" target="_blank" className="text-blue-400 underline">Client Repo</Link>
                                 <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/neomotors-server" target="_blank" className="text-blue-400 underline">Server Repo</Link>
+                                <Link href="https://github.com/alfaazahmed7/promptAI-server" target="_blank" className="text-blue-400 underline">Server Repo</Link>
                             </p>
                             <ul className="list-disc pl-5 text-gray-300 mt-1 space-y-0.5">
-                                <li>Built a full-stack luxury car booking platform using React, Next.js, Node.js, and MongoDB with a fully responsive modern UI.</li>
-                                <li>Implemented secure authentication and protected routes using JWT-based authorization and role-based access control.</li>
-                                <li>Developed dynamic car management features, including CRUD operations, booking functionality, filtering, and real-time data handling.</li>
+                                <li> Developed a full-stack AI prompt marketplace using Next.js, Express.js, and MongoDB with a responsive UI and dedicated dashboards for User, Creator, and Admin roles.</li>
+                                <li> Implemented secure authentication and role-based authorization using better-auth Authentication, JWT, and protected routes to ensure controlled access across the platform.</li>
+                                <li>Built RESTful APIs for prompt management, payments, reviews, bookmarks, reports, and analytics, integrating Stripe for secure transactions and MongoDB for efficient data management. </li>
                             </ul>
                         </div>
 
                         {/* Project 2 */}
                         <div>
-                            <h3 className="font-bold text-gray-100 text-[16px]">TILIX</h3>
+                            <h3 className="font-bold text-gray-100 text-[16px]">LAUNCHDECK</h3>
                             <p className="text-sm text-gray-300">
-                                <strong className="text-gray-200">Tech Stack:</strong> Next.js, React, MongoDB, Better-Auth
+                                <strong className="text-gray-200">Tech Stack:</strong> TypeScript, Next.js, React, MongoDB, Better-Auth
                             </p>
                             <p className="text-sm text-gray-400 space-x-1">
-                                <Link href="https://tilix-eight.vercel.app/" target="_blank" className="text-blue-400 underline">Live Demo</Link>
+                                <Link href="https://launch-deck-fawn.vercel.app" target="_blank" className="text-blue-400 underline">Live Demo</Link>
                                 <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/tilix" target="_blank" className="text-blue-400 underline">Repo</Link>
+                                <Link href="https://github.com/alfaazahmed7/launchDeck-client" target="_blank" className="text-blue-400 underline">Client Repo</Link>
+                                <Link href="https://github.com/alfaazahmed7/launchDeck-server" target="_blank" className="text-blue-400 underline">Server Repo</Link>
                             </p>
                             <ul className="list-disc pl-5 text-gray-300 mt-1 space-y-0.5">
-                                <li>Developed a modern tile showcase platform using Next.js with a responsive and user-friendly interface.</li>
-                                <li>Built dynamic product listing and detailed product pages to enhance browsing and user engagement.</li>
-                                <li>Implemented efficient data handling, filtering, and optimized UI components for smooth performance across devices.</li>
+                                <li>Built a full-stack project showcase platform using Next.js, TypeScript, Express.js, and MongoDB with a modern, responsive user interface.</li>
+                                <li>Implemented secure authentication with Better Auth, protected routes, and advanced project discovery features including search, filtering, sorting, and pagination.</li>
+                                <li>Designed and integrated RESTful APIs with MongoDB/Mongoose for efficient CRUD operations, scalable data management, and seamless frontend-backend communication.</li>
                             </ul>
                         </div>
                     </div>
