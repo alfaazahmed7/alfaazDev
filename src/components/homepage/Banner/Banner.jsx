@@ -4,14 +4,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 // ─── Animation Variants ───────────────────────────────────────────────────────
-// Each variant defines "hidden" (start) and "visible" (end) states.
-
 const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: (delay = 0) => ({
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, delay, ease: "easeOut" },
+        transition: { duration: 0.5, delay, ease: "easeOut" },
     }),
 };
 
@@ -19,18 +17,16 @@ const fadeIn = {
     hidden: { opacity: 0 },
     visible: (delay = 0) => ({
         opacity: 1,
-        transition: { duration: 0.7, delay, ease: "easeOut" },
+        transition: { duration: 0.6, delay, ease: "easeOut" },
     }),
 };
 
 // ─── Code Block Lines ─────────────────────────────────────────────────────────
-// The fake code shown on the right side of the banner.
-
 const codeLines = [
     { num: "01", parts: [{ text: "const ", color: "text-blue-400" }, { text: "developer", color: "text-cyan-300" }, { text: " = {", color: "text-slate-300" }] },
     { num: "02", parts: [{ text: "  name", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "'Alfaaz Ahmed'", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
     { num: "03", parts: [{ text: "  focus", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "'Fullstack Mastery'", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
-    { num: "04", parts: [{ text: "  skills", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "['NextJS', ReactJS, 'ExpressJS,', 'MongoDB']", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
+    { num: "04", parts: [{ text: "  skills", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "['NextJS', ReactJS, 'ExpressJS', 'MongoDB']", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
     { num: "05", parts: [{ text: "  passionate", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "true", color: "text-blue-400" }, { text: ",", color: "text-slate-300" }] },
     { num: "06", parts: [{ text: "  motto", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: '"Build with Purpose"', color: "text-emerald-400" }] },
     { num: "07", parts: [{ text: "};", color: "text-slate-300" }] },
@@ -83,9 +79,9 @@ export default function HeroBanner() {
     return (
         <section
             id="banner"
-            className="relative min-h-screen pt-16 flex items-center overflow-hidden"
+            className="relative my-16 min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden py-8 md:py-12 lg:py-0"
         >
-            {/* ── Subtle grid texture overlay ── */}
+            {/* Background Texture Overlay */}
             <div
                 className="absolute inset-0 opacity-[0.04] pointer-events-none"
                 style={{
@@ -95,32 +91,33 @@ export default function HeroBanner() {
                 }}
             />
 
-            {/* ── Glowing orb top-left ── */}
+            {/* Glowing Orb Top-Left */}
             <div
-                className="absolute -top-32 -left-32 w-96 h-96 rounded-full pointer-events-none"
+                className="absolute -top-32 -left-32 w-80 h-80 lg:w-96 lg:h-96 rounded-full pointer-events-none"
                 style={{
                     background:
                         "radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%)",
                 }}
             />
 
-            {/* ── Glowing orb bottom-right ── */}
+            {/* Glowing Orb Bottom-Right */}
             <div
-                className="absolute bottom-0 right-0 w-80 h-80 rounded-full pointer-events-none"
+                className="absolute bottom-0 right-0 w-64 h-64 lg:w-80 lg:h-80 rounded-full pointer-events-none"
                 style={{
                     background:
                         "radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)",
                 }}
             />
 
-            {/* ── Main content wrapper ── */}
-            <div className="relative z-10 max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-16 w-full">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+            {/* Main Content Wrapper */}
+            <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 w-full">
+                {/* Row layout triggers at md breakpoint with balanced alignment */}
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12 w-full">
 
                     {/* ════════════════════════════
-              LEFT SIDE — Text Content
+             LEFT SIDE — Text Content
           ════════════════════════════ */}
-                    <div className="flex-1 max-w-xl">
+                    <div className="flex-1 min-w-0 w-full md:max-w-[50%] lg:max-w-xl flex flex-col justify-center self-center">
 
                         {/* Badge */}
                         <motion.div
@@ -128,9 +125,9 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0}
-                            className="inline-block mb-3 lg:mb-6"
+                            className="inline-block mb-2 lg:mb-3"
                         >
-                            <span className="text-xs font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full border border-cyan-500/30 text-cyan-400 bg-cyan-500/5">
+                            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-3 py-1 rounded-full border border-cyan-500/30 text-cyan-400 bg-cyan-500/5">
                                 Welcome to my Universe
                             </span>
                         </motion.div>
@@ -141,11 +138,9 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.15}
-                            className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[1.05] mb-3 lg:mb-6"
+                            className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.1] mb-2 lg:mb-3"
                         >
-                            {/* "Crafting" — white */}
                             <span className="text-white">Crafting </span>
-                            {/* "Digital" — bright cyan-blue gradient */}
                             <span
                                 style={{
                                     background: "linear-gradient(135deg, #38bdf8 0%, #818cf8 100%)",
@@ -156,7 +151,6 @@ export default function HeroBanner() {
                                 Digital
                             </span>
                             <br />
-                            {/* "Masterpieces" — muted cyan-slate, slightly dimmed */}
                             <span className="text-slate-400">Masterpieces</span>
                         </motion.h1>
 
@@ -166,15 +160,13 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.3}
-                            className="text-slate-400 text-base lg:text-lg leading-relaxed mb-4 lg:mb-8 font-light"
+                            className="text-slate-400 text-xs sm:text-sm lg:text-base leading-relaxed mb-4 lg:mb-6 font-light max-w-md"
                         >
                             I am{" "}
                             <strong className="text-white font-semibold">Alfaaz Ahmed</strong>
                             , a professional{" "}
-                            <span className="text-cyan-400 font-medium">Developer.</span>
-                            <br />
-                            dedicated to building high-performance, user-centric web
-                            applications.
+                            <span className="text-cyan-400 font-medium">Developer</span>{" "}
+                            dedicated to building high-performance, user-centric web applications.
                         </motion.p>
 
                         {/* Social Icons */}
@@ -183,7 +175,7 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.45}
-                            className="flex items-center gap-3 mb-5 lg:mb-10"
+                            className="flex items-center gap-3 mb-4 lg:mb-6"
                         >
                             {socials.map((s) => (
                                 <a
@@ -192,7 +184,7 @@ export default function HeroBanner() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={s.label}
-                                    className="w-11 h-11 flex items-center justify-center rounded-lg border border-slate-700 bg-slate-800/50 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all duration-200"
+                                    className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg border border-slate-700 bg-slate-800/50 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all duration-200"
                                 >
                                     {s.icon}
                                 </a>
@@ -205,69 +197,65 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.6}
-                            className="flex flex-wrap items-center gap-4"
+                            className="flex flex-wrap items-center gap-3"
                         >
-                            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-                                {/* Primary button */}
-                                <Link
-                                    href="/contact"
-                                    className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-bold text-xs sm:text-sm tracking-wide text-white uppercase transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-95"
-                                    style={{
-                                        background: "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
-                                        boxShadow: "0 0 20px rgba(14,165,233,0.3)",
-                                    }}
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide text-white uppercase transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-95"
+                                style={{
+                                    background: "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
+                                    boxShadow: "0 0 20px rgba(14,165,233,0.3)",
+                                }}
+                            >
+                                Let&apos;s Collaborate
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                    className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                                 >
-                                    Let&apos;s Collaborate
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                        className="w-3.5 h-3.5 sm:w-4 sm:h-4"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
-                                        />
-                                    </svg>
-                                </Link>
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                                    />
+                                </svg>
+                            </Link>
 
-                                {/* Secondary button */}
-                                <a
-                                    href="/resume"
-                                    className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-bold text-xs sm:text-sm tracking-wide uppercase border border-slate-600 text-slate-300 bg-slate-800/40 hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                            <a
+                                href="/resume"
+                                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide uppercase border border-slate-600 text-slate-300 bg-slate-800/40 hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                            >
+                                Get Resume
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                    className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                                 >
-                                    Get Resume
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                        className="w-3.5 h-3.5 sm:w-4 sm:h-4"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                                        />
-                                    </svg>
-                                </a>
-                            </div>
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                                    />
+                                </svg>
+                            </a>
                         </motion.div>
                     </div>
 
                     {/* ════════════════════════════
-              RIGHT SIDE — Code Editor
+             RIGHT SIDE — Code Editor
           ════════════════════════════ */}
                     <motion.div
                         variants={fadeIn}
                         initial="hidden"
                         animate="visible"
                         custom={0.4}
-                        className="flex-1 w-full max-w-lg lg:max-w-xl"
+                        className="flex-1 min-w-0 w-full max-w-md md:max-w-[48%] lg:max-w-lg xl:max-w-xl self-center"
                     >
-                        {/* Editor window */}
+                        {/* Editor Window */}
                         <div
                             className="rounded-xl overflow-hidden border border-slate-700/60"
                             style={{
@@ -277,36 +265,32 @@ export default function HeroBanner() {
                                 backdropFilter: "blur(10px)",
                             }}
                         >
-                            {/* Editor title bar */}
-                            <div className="flex items-center justify-between px-4 py-3 border-b border-slate-700/50 bg-slate-900/60">
-                                {/* Traffic lights */}
-                                <div className="flex items-center gap-2">
-                                    <span className="w-3 h-3 rounded-full bg-red-500/80" />
-                                    <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                                    <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
+                            {/* Title bar */}
+                            <div className="flex items-center justify-between px-3.5 py-2 border-b border-slate-700/50 bg-slate-900/60">
+                                <div className="flex items-center gap-1.5">
+                                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
                                 </div>
-                                {/* File name tab */}
-                                <div className="flex items-center gap-1.5 text-xs text-slate-400">
+                                <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
                                     <span className="w-2 h-2 rounded-full bg-cyan-400" />
                                     Portfolio.js
                                 </div>
                             </div>
 
                             {/* Code lines */}
-                            <div className="px-6 py-6 font-mono text-sm sm:text-base leading-7 overflow-x-auto">
+                            <div className="p-2.5 sm:p-4 font-mono text-[11px] sm:text-xs md:text-xs lg:text-sm leading-5 sm:leading-6 overflow-x-auto">
                                 {codeLines.map((line, i) => (
                                     <motion.div
                                         key={i}
                                         initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.6 + i * 0.07, duration: 0.4 }}
-                                        className="flex items-start gap-4"
+                                        className="flex items-start gap-2.5 whitespace-nowrap"
                                     >
-                                        {/* Line number */}
-                                        <span className="select-none text-slate-600 w-5 shrink-0 text-right">
+                                        <span className="select-none text-slate-600 w-4 shrink-0 text-right">
                                             {line.num}
                                         </span>
-                                        {/* Code text */}
                                         <span>
                                             {line.parts.map((part, j) => (
                                                 <span key={j} className={part.color}>
