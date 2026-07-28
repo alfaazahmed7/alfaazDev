@@ -98,7 +98,7 @@ export default function AboutPage() {
             custom={0.2}
             className="text-slate-400 font-semibold text-base sm:text-lg mb-8 tracking-wide"
           >
-            Frontend Engineer &nbsp;|&nbsp; Building High-Performance, User-Friendly Web Apps
+            Full-Stack Engineer &nbsp;|&nbsp; Building High-Performance, User-Friendly Web Apps
           </motion.p>
 
           {/* Divider */}
