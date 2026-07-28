@@ -138,7 +138,7 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.15}
-                            className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.1] mb-2 lg:mb-3"
+                            className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-black leading-[1.1] mb-2 lg:mb-3"
                         >
                             <span className="text-white">Crafting </span>
                             <span
