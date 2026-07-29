@@ -87,6 +87,7 @@ export default function ResumePage() {
                                 <Link href="https://launch-deck-fawn.vercel.app" target="_blank" className="text-blue-400 underline">Live Demo</Link>
                                 <span>|</span>
                                 <Link href="https://github.com/alfaazahmed7/launchDeck-client" target="_blank" className="text-blue-400 underline">Client Repo</Link>
+                                <span>|</span>
                                 <Link href="https://github.com/alfaazahmed7/launchDeck-server" target="_blank" className="text-blue-400 underline">Server Repo</Link>
                             </p>
                             <ul className="list-disc pl-5 text-gray-300 mt-1 space-y-0.5">
