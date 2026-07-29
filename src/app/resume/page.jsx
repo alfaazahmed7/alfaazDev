@@ -59,7 +59,7 @@ export default function ResumePage() {
                     <div className="space-y-4">
                         {/* Project 1 */}
                         <div>
-                            <h3 className="font-bold text-gray-100 text-[16px]">PromptAI</h3>
+                            <h3 className="font-bold text-gray-100 text-[16px]">PROMPTAI</h3>
                             <p className="text-sm text-gray-300">
                                 <strong className="text-gray-200">Tech-Stack:</strong> Next.js, React, Node.js, Express.js, MongoDB
                             </p>
