@@ -1,15 +1,14 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Achievements", href: "#achievements" },
-    { label: "Contact", href: "#contact" },
+    { name: "Home", href: "#banner" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Achievements", href: "#achievements" },
+    { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -17,129 +16,124 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 10);
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // ─── SMOOTH SCROLL HANDLER ──────────────────────────────────────
-    const handleScrollClick = (e, href) => {
-        if (href === "#") {
-            e.preventDefault();
-            window.lenis?.scrollTo(0, {
-                duration: 1.2,
-                immediate: false
-            });
-            return;
-        }
-
-        if (href.startsWith("#")) {
-            e.preventDefault();
-
-            const targetElement = document.querySelector(href);
-            if (targetElement) {
-                window.lenis?.scrollTo(targetElement, {
-                    offset: -64,
-                    duration: 1.2,
-                    immediate: false
-                });
-
-                if (!window.lenis) {
-                    targetElement.scrollIntoView({ behavior: "smooth" });
-                }
-            }
-        }
-    };
-
     return (
-        <header className="fixed top-4 left-0 w-full z-50 px-4 sm:px-6 lg:px-8">
+        <header className="fixed top-0 left-0 w-full z-50 pt-4 px-4 sm:px-6 lg:px-8">
+            {/* Desktop / Main Navbar Pill */}
             <nav
                 className={`max-w-6xl mx-auto rounded-full transition-all duration-300 border ${scrolled
-                        ? "bg-[#0a0e1a]/90 backdrop-blur-md border-blue-500/20 shadow-lg shadow-black/50"
-                        : "bg-[#0d1326]/80 backdrop-blur-sm border-white/10"
+                        ? "bg-[#020817]/95 backdrop-blur-md border-blue-500/20 shadow-lg shadow-black/50"
+                        : "bg-[#080e22]/80 backdrop-blur-sm border-white/10"
                     }`}
             >
-                <div className="px-6 sm:px-8">
-                    <div className="flex items-center justify-between h-14">
+                <div className="flex items-center justify-between px-6 py-3">
+                    {/* Logo */}
+                    <a href="#" className="text-xl font-bold text-blue-400 tracking-wider">
+                        AZ<span className="text-white">.</span>
+                    </a>
 
-                        {/* Logo */}
-                        <Link
-                            href="/"
-                            className="text-[#3b82f6] text-xl font-extrabold tracking-tight hover:text-blue-400 transition-colors duration-200 font-mono"
-                        >
-                            AZ<span className="text-blue-400">.</span>
-                        </Link>
-
-                        {/* Desktop Nav Links */}
-                        <div className="hidden md:flex items-center gap-2 lg:gap-6">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.label}
-                                    href={link.href}
-                                    onClick={(e) => handleScrollClick(e, link.href)}
-                                    className="relative px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200 hover:text-white group"
-                                >
-                                    {link.label}
-                                    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#3b82f6] rounded-full transition-all duration-300 group-hover:w-full" />
-                                </Link>
-                            ))}
-                        </div>
-
-                        {/* Right Side Tools */}
-                        <div className="flex items-center gap-3">
-                            <Link
-                                href="/resume"
-                                className="hidden sm:inline-flex items-center px-4 py-1.5 text-xs font-semibold text-white bg-[#3b82f6] rounded-full hover:bg-blue-500 active:scale-95 transition-all duration-200 shadow-md shadow-blue-500/20 hover:shadow-blue-500/40"
-                            >
-                                Resume
-                            </Link>
-
-                            <button
-                                onClick={() => setMenuOpen(!menuOpen)}
-                                aria-label="Toggle menu"
-                                className="md:hidden p-1.5 text-gray-400 hover:text-white transition-colors duration-200 rounded-full hover:bg-white/10"
-                            >
-                                {menuOpen ? (
-                                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                ) : (
-                                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                                    </svg>
-                                )}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Mobile Dropdown Menu */}
-                <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden rounded-b-3xl ${menuOpen ? "max-h-96 opacity-100 py-3" : "max-h-0 opacity-0"}`}>
-                    <div className="border-t border-white/10 px-6 flex flex-col gap-1 pt-2">
+                    {/* Desktop Links with Original Hover Effect */}
+                    <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.label}
+                            <a
+                                key={link.name}
                                 href={link.href}
-                                onClick={(e) => {
-                                    setMenuOpen(false);
-                                    handleScrollClick(e, link.href);
-                                }}
-                                className="px-4 py-2 text-sm font-medium text-gray-300 rounded-lg hover:text-white hover:bg-white/5 transition-all duration-200"
+                                className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 group py-1"
                             >
-                                {link.label}
-                            </Link>
+                                {link.name}
+                                {/* Previous Hover Underline / Glow Indicator */}
+                                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full rounded-full shadow-[0_0_8px_#3b82f6]" />
+                            </a>
                         ))}
+                    </div>
+
+                    {/* Desktop Action Button */}
+                    <div className="hidden md:block">
                         <a
-                            href="/resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-2 px-4 py-2 text-xs font-semibold text-white bg-[#3b82f6] rounded-full hover:bg-blue-500 transition-all duration-200 text-center"
+                            href="#resume"
+                            className="px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-all shadow-md shadow-blue-600/20"
                         >
                             Resume
                         </a>
                     </div>
+
+                    {/* Mobile Hamburger Toggle Button */}
+                    <button
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        className="md:hidden text-gray-300 hover:text-white focus:outline-none p-1"
+                        aria-label="Toggle navigation menu"
+                    >
+                        {menuOpen ? (
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        )}
+                    </button>
                 </div>
             </nav>
+
+            {/* Mobile Menu Dropdown Card */}
+            {menuOpen && (
+                <div className="md:hidden fixed inset-x-4 top-20 z-50 max-w-md mx-auto">
+                    <div className="bg-[#020817]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
+                        {/* Header inside mobile menu */}
+                        <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                            <span className="text-lg font-bold text-blue-400 tracking-wider">
+                                AZ<span className="text-white">.</span>
+                            </span>
+                            <button
+                                onClick={() => setMenuOpen(false)}
+                                className="text-gray-400 hover:text-white transition-colors p-1"
+                                aria-label="Close menu"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        {/* Navigation Links with Hover Effects */}
+                        <div className="flex flex-col gap-1 py-1">
+                            {navLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="relative text-gray-300 hover:text-blue-400 text-base font-medium py-2.5 px-3 rounded-lg hover:bg-white/5 transition-all group"
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
+                        </div>
+
+                        {/* Action Button */}
+                        <div className="pt-3 border-t border-white/10">
+                            <a
+                                href="#resume"
+                                onClick={() => setMenuOpen(false)}
+                                className="w-full inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-md shadow-blue-500/20 transition-all text-sm"
+                            >
+                                Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            )}
         </header>
     );
 }
