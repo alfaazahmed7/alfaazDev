@@ -92,13 +92,13 @@ export default function HeroBanner() {
             />
 
             {/* Glowing Orb Top-Left */}
-            <div
+            {/* <div
                 className="absolute -top-32 -left-32 w-80 h-80 lg:w-96 lg:h-96 rounded-full pointer-events-none"
                 style={{
                     background:
                         "radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%)",
                 }}
-            />
+            /> */}
 
             {/* Glowing Orb Bottom-Right */}
             <div

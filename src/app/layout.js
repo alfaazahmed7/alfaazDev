@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "@/components/Shared/Navbar/Navbar";
 import SmoothScroll from "@/components/animations/Lenis/SmoothScroll";
 import Footer from "@/components/Shared/Footer/Footer";
-// import { outfit } from "@/lib/fonts";
 
 const Cascadia_Code_Font = Cascadia_Code({
   subsets: ["latin"],
@@ -20,17 +19,17 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${Cascadia_Code_Font.className} h-full antialiased`}
     >
-      <body>
+      <body
+        className="bg-[#020817] text-white min-h-screen"
+        style={{
+          backgroundColor: "#020817",
+          backgroundImage:
+            "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(14,30,70,0.5) 0%, transparent 70%)",
+        }}
+      >
         <Navbar />
         <SmoothScroll>
-          <main
-            className="antialiased"
-            style={{
-              backgroundColor: "#020817",
-              backgroundImage:
-                "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(14,30,70,0.5) 0%, transparent 70%)",
-            }}
-          >
+          <main className="antialiased">
             {children}
           </main>
           <Footer />
