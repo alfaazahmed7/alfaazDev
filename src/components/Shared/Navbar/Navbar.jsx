@@ -1,14 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Activity", href: "#github" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about" },
+    { name: "Skills", href: "/#skills" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Activity", href: "/#github" },
+    { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -39,14 +40,14 @@ export default function Navbar() {
             >
                 <div className="flex items-center justify-between px-6 py-3">
                     {/* Logo */}
-                    <a href="#" className="text-xl font-bold text-blue-400 tracking-wider">
+                    <a href="/" className="text-xl font-bold text-blue-400 tracking-wider">
                         AZ<span className="text-white">.</span>
                     </a>
 
                     {/* Desktop Links with Original Hover Effect */}
                     <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
-                            <a
+                            <Link
                                 key={link.name}
                                 href={link.href}
                                 className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 group py-1"
@@ -54,7 +55,7 @@ export default function Navbar() {
                                 {link.name}
                                 {/* Previous Hover Underline / Glow Indicator */}
                                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full rounded-full shadow-[0_0_8px_#3b82f6]" />
-                            </a>
+                            </Link>
                         ))}
                     </div>
 
