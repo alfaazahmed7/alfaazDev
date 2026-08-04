@@ -158,7 +158,7 @@ export default function GithubContributions() {
     ];
 
     return (
-        <section id="github" className="relative py-16 px-4 sm:px-8 lg:px-12 max-w-[1400px] mx-auto w-full">
+        <section id="github" className="relative pb-32 lg:pb-52 px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto w-full scroll-mt-40">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -167,19 +167,19 @@ export default function GithubContributions() {
                 className="flex flex-col gap-8"
             >
                 {/* Section Header */}
-                <div className="flex flex-col items-center text-center">
-                    <motion.span
-                        variants={itemVariants}
-                        className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-3.5 py-1.5 rounded-full border border-cyan-500/30 text-cyan-400 bg-cyan-500/5 mb-3"
-                    >
-                        Activity Pulse
-                    </motion.span>
+                <div className="flex flex-col">
                     <motion.h2
                         variants={itemVariants}
-                        className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight"
+                        className="text-4xl font-black text-white tracking-tight"
                     >
-                        GitHub <span className="text-cyan-400">Contributions</span>
+                        GitHub <span className="text-[#4895ef]">Contributions</span>
                     </motion.h2>
+                    <motion.p
+                        variants={itemVariants}
+                        className="text-base text-slate-400 max-w-[700px] mt-2"
+                    >
+                        Real-time overview of my open-source activity, commit history, and coding consistency across projects.
+                    </motion.p>
                 </div>
 
                 {/* Top Cards: Stats Grid */}

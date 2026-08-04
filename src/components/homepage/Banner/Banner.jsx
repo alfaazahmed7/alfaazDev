@@ -101,7 +101,7 @@ export default function HeroBanner() {
             />
 
             {/* Main Content Wrapper */}
-            <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 w-full">
+            <div className="relative z-10 max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-20 w-full">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16 w-full">
 
                     {/* LEFT SIDE — Text Content */}

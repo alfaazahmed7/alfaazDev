@@ -28,8 +28,8 @@ export default function RootLayout({ children }) {
             "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(14,30,70,0.5) 0%, transparent 70%)",
         }}
       >
-        <Navbar />
         <SmoothScroll>
+          <Navbar />
           <main className="antialiased">
             {children}
           </main>

@@ -23,7 +23,7 @@ const ProjectsPage = () => {
 
                     <div className="relative mb-3">
                         <motion.h2
-                            className="text-white text-4xl lg:text-5xl font-bold tracking-tight"
+                            className="text-white text-4xl font-bold tracking-tight"
                             initial={{ opacity: 0, y: -20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
@@ -31,11 +31,10 @@ const ProjectsPage = () => {
                         >
                             Projects
                         </motion.h2>
-                        <div className="h-1.5 w-16 bg-blue-500 mt-2 rounded-full"></div>
                     </div>
 
                     <motion.p
-                        className="text-slate-400 text-lg leading-relaxed max-w-2xl"
+                        className="text-slate-400 text-lg leading-relaxed max-w-[700px]"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: 0.3 }}

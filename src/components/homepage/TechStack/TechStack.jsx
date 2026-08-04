@@ -18,7 +18,7 @@ export default function TechStack() {
     return (
         <section
             id="skills"
-            className="text-center w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40">
+            className="w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40">
             <motion.h2
                 className="text-4xl font-bold text-white mb-2"
                 initial={{ opacity: 0, y: -20 }}
@@ -30,7 +30,7 @@ export default function TechStack() {
             </motion.h2>
 
             <motion.p
-                className="text-gray-400 mb-10 max-w-[700px] mx-auto"
+                className="text-gray-400 mb-10 max-w-[700px]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
@@ -39,7 +39,7 @@ export default function TechStack() {
                 I use modern full-stack web technologies like React.js, Next.js, Node.js, Express, and MongoDB to build fast and scalable applications.
             </motion.p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[1500px] mx-auto">
                 {techs.map((tech, index) => (
                     <motion.div
                         key={index}

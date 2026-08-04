@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
-    { name: "Home", href: "#banner" },
+    { name: "Home", href: "#" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Achievements", href: "#achievements" },
+    { name: "Activity", href: "#github" },
     { name: "Contact", href: "#contact" },
 ];
 

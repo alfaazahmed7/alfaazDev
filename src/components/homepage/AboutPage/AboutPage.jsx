@@ -76,7 +76,7 @@ export default function AboutPage() {
             initial="hidden"
             animate={leftInView ? "visible" : "hidden"}
             custom={0.1}
-            className="text-4xl sm:text-5xl font-black leading-tight mb-2 text-white"
+            className="text-4xl font-black leading-tight mb-2 text-white"
           >
             I&apos;m{" "}
             <span
@@ -96,7 +96,7 @@ export default function AboutPage() {
             initial="hidden"
             animate={leftInView ? "visible" : "hidden"}
             custom={0.2}
-            className="text-slate-400 font-semibold text-base sm:text-lg mb-8 tracking-wide"
+            className="text-slate-400 font-semibold text-base mb-8 tracking-wide"
           >
             Full-Stack Engineer &nbsp;|&nbsp; Building High-Performance, User-Friendly Web Apps
           </motion.p>
