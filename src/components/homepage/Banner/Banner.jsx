@@ -212,7 +212,8 @@ export default function HeroBanner() {
                             </Link>
 
                             <a
-                                href="/resume"
+                                href="/resume.pdf"
+                                target="_blank"
                                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide uppercase border border-slate-600 text-slate-300 bg-slate-800/40 hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
                             >
                                 Get Resume
