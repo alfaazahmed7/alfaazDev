@@ -26,7 +26,7 @@ const codeLines = [
     { num: "01", parts: [{ text: "const ", color: "text-blue-400" }, { text: "developer", color: "text-cyan-300" }, { text: " = {", color: "text-slate-300" }] },
     { num: "02", parts: [{ text: "  name", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "'Alfaaz Ahmed'", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
     { num: "03", parts: [{ text: "  focus", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "'Fullstack Mastery'", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
-    { num: "04", parts: [{ text: "  skills", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "['NextJS', ReactJS, 'ExpressJS', 'MongoDB']", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
+    { num: "04", parts: [{ text: "  skills", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "['NextJS', 'ReactJS', 'ExpressJS', 'MongoDB']", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
     { num: "05", parts: [{ text: "  passionate", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "true", color: "text-blue-400" }, { text: ",", color: "text-slate-300" }] },
     { num: "06", parts: [{ text: "  motto", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: '"Build with Purpose"', color: "text-emerald-400" }] },
     { num: "07", parts: [{ text: "};", color: "text-slate-300" }] },
@@ -79,7 +79,7 @@ export default function HeroBanner() {
     return (
         <section
             id="banner"
-            className="relative my-16 min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden py-8 md:py-12 lg:py-0"
+            className="relative lg:my-16 min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden lg:py-0"
         >
             {/* Background Texture Overlay */}
             <div
@@ -90,15 +90,6 @@ export default function HeroBanner() {
                     backgroundSize: "40px 40px",
                 }}
             />
-
-            {/* Glowing Orb Top-Left */}
-            {/* <div
-                className="absolute -top-32 -left-32 w-80 h-80 lg:w-96 lg:h-96 rounded-full pointer-events-none"
-                style={{
-                    background:
-                        "radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%)",
-                }}
-            /> */}
 
             {/* Glowing Orb Bottom-Right */}
             <div
@@ -111,13 +102,10 @@ export default function HeroBanner() {
 
             {/* Main Content Wrapper */}
             <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 w-full">
-                {/* Row layout triggers at md breakpoint with balanced alignment */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12 w-full">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16 w-full">
 
-                    {/* ════════════════════════════
-             LEFT SIDE — Text Content
-          ════════════════════════════ */}
-                    <div className="flex-1 min-w-0 w-full md:max-w-[50%] lg:max-w-xl flex flex-col justify-center self-center">
+                    {/* LEFT SIDE — Text Content */}
+                    <div className="flex-1 min-w-0 w-full md:max-w-[50%] lg:max-w-xl flex flex-col items-center text-center md:items-start md:text-left justify-center">
 
                         {/* Badge */}
                         <motion.div
@@ -125,9 +113,9 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0}
-                            className="inline-block mb-2 lg:mb-3"
+                            className="inline-block mb-3 lg:mb-4"
                         >
-                            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-3 py-1 rounded-full border border-cyan-500/30 text-cyan-400 bg-cyan-500/5">
+                            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-3.5 py-1.5 rounded-full border border-cyan-500/30 text-cyan-400 bg-cyan-500/5">
                                 Welcome to my Universe
                             </span>
                         </motion.div>
@@ -138,7 +126,7 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.15}
-                            className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-black leading-[1.1] mb-2 lg:mb-3"
+                            className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-black leading-[1.1] mb-3 lg:mb-4"
                         >
                             <span className="text-white">Crafting </span>
                             <span
@@ -160,7 +148,7 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.3}
-                            className="text-slate-400 text-xs sm:text-sm lg:text-base leading-relaxed mb-4 lg:mb-6 font-light max-w-md"
+                            className="text-slate-400 text-xs sm:text-sm lg:text-base leading-relaxed mb-5 lg:mb-7 font-light max-w-md"
                         >
                             I am{" "}
                             <strong className="text-white font-semibold">Alfaaz Ahmed</strong>
@@ -175,7 +163,7 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.45}
-                            className="flex items-center gap-3 mb-4 lg:mb-6"
+                            className="flex items-center justify-center md:justify-start gap-3 mb-5 lg:mb-7"
                         >
                             {socials.map((s) => (
                                 <a
@@ -197,11 +185,11 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.6}
-                            className="flex flex-wrap items-center gap-3"
+                            className="flex flex-wrap items-center justify-center md:justify-start gap-3"
                         >
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide text-white uppercase transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-95"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide text-white uppercase transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-95"
                                 style={{
                                     background: "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
                                     boxShadow: "0 0 20px rgba(14,165,233,0.3)",
@@ -225,7 +213,7 @@ export default function HeroBanner() {
 
                             <a
                                 href="/resume"
-                                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide uppercase border border-slate-600 text-slate-300 bg-slate-800/40 hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide uppercase border border-slate-600 text-slate-300 bg-slate-800/40 hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
                             >
                                 Get Resume
                                 <svg
@@ -245,19 +233,17 @@ export default function HeroBanner() {
                         </motion.div>
                     </div>
 
-                    {/* ════════════════════════════
-             RIGHT SIDE — Code Editor
-          ════════════════════════════ */}
+                    {/* RIGHT SIDE — Code Editor */}
                     <motion.div
                         variants={fadeIn}
                         initial="hidden"
                         animate="visible"
                         custom={0.4}
-                        className="flex-1 min-w-0 w-full max-w-md md:max-w-[48%] lg:max-w-lg xl:max-w-xl self-center"
+                        className="flex-1 min-w-0 w-full max-w-md md:max-w-[48%] lg:max-w-xl xl:max-w-2xl self-center"
                     >
                         {/* Editor Window */}
                         <div
-                            className="rounded-xl overflow-hidden border border-slate-700/60"
+                            className="rounded-2xl overflow-hidden border border-slate-700/60"
                             style={{
                                 background: "rgba(15, 23, 42, 0.85)",
                                 boxShadow:
@@ -266,29 +252,29 @@ export default function HeroBanner() {
                             }}
                         >
                             {/* Title bar */}
-                            <div className="flex items-center justify-between px-3.5 py-2 border-b border-slate-700/50 bg-slate-900/60">
-                                <div className="flex items-center gap-1.5">
-                                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                            <div className="flex items-center justify-between px-4 py-3 border-b border-slate-700/50 bg-slate-900/60">
+                                <div className="flex items-center gap-2">
+                                    <span className="w-3 h-3 rounded-full bg-red-500/80" />
+                                    <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                                    <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
                                 </div>
-                                <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
+                                <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-mono">
                                     <span className="w-2 h-2 rounded-full bg-cyan-400" />
                                     Portfolio.js
                                 </div>
                             </div>
 
                             {/* Code lines */}
-                            <div className="p-2.5 sm:p-4 font-mono text-[11px] sm:text-xs md:text-xs lg:text-sm leading-5 sm:leading-6 overflow-x-auto">
+                            <div className="p-4 sm:p-6 lg:p-8 font-mono text-xs sm:text-sm lg:text-base leading-6 sm:leading-7 lg:leading-8 overflow-x-auto">
                                 {codeLines.map((line, i) => (
                                     <motion.div
                                         key={i}
                                         initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.6 + i * 0.07, duration: 0.4 }}
-                                        className="flex items-start gap-2.5 whitespace-nowrap"
+                                        className="flex items-start gap-3 whitespace-nowrap"
                                     >
-                                        <span className="select-none text-slate-600 w-4 shrink-0 text-right">
+                                        <span className="select-none text-slate-600 w-5 shrink-0 text-right">
                                             {line.num}
                                         </span>
                                         <span>
