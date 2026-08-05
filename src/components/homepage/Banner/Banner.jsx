@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 // ─── Animation Variants ───────────────────────────────────────────────────────
@@ -14,24 +15,27 @@ const fadeUp = {
 };
 
 const fadeIn = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, scale: 0.95 },
     visible: (delay = 0) => ({
         opacity: 1,
+        scale: 1,
         transition: { duration: 0.6, delay, ease: "easeOut" },
     }),
 };
 
-// ─── Code Block Lines ─────────────────────────────────────────────────────────
-const codeLines = [
-    { num: "01", parts: [{ text: "const ", color: "text-blue-400" }, { text: "developer", color: "text-cyan-300" }, { text: " = {", color: "text-slate-300" }] },
-    { num: "02", parts: [{ text: "  name", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "'Alfaaz Ahmed'", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
-    { num: "03", parts: [{ text: "  focus", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "'Fullstack Mastery'", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
-    { num: "04", parts: [{ text: "  skills", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "['NextJS', 'ReactJS', 'ExpressJS', 'MongoDB']", color: "text-emerald-400" }, { text: ",", color: "text-slate-300" }] },
-    { num: "05", parts: [{ text: "  passionate", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: "true", color: "text-blue-400" }, { text: ",", color: "text-slate-300" }] },
-    { num: "06", parts: [{ text: "  motto", color: "text-cyan-300" }, { text: ": ", color: "text-slate-300" }, { text: '"Build with Purpose"', color: "text-emerald-400" }] },
-    { num: "07", parts: [{ text: "};", color: "text-slate-300" }] },
-    { num: "08", parts: [{ text: "developer", color: "text-cyan-300" }, { text: ".", color: "text-slate-300" }, { text: "showcase", color: "text-blue-400" }, { text: "();", color: "text-slate-300" }] },
-];
+// Continuous Floating / Breathing Animation for the Image
+const floatAnimation = {
+    animate: {
+        y: [0, -12, 0],
+        rotate: [0, 1, 0, -1, 0],
+        transition: {
+            duration: 5,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "easeInOut",
+        },
+    },
+};
 
 // ─── Social Links ─────────────────────────────────────────────────────────────
 const socials = [
@@ -79,7 +83,7 @@ export default function HeroBanner() {
     return (
         <section
             id="banner"
-            className="relative lg:my-16 min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden lg:py-0"
+            className="relative lg:my-16 min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden pt-20 sm:pt-28 md:pt-0"
         >
             {/* Background Texture Overlay */}
             <div
@@ -188,7 +192,7 @@ export default function HeroBanner() {
                             className="flex flex-wrap items-center justify-center md:justify-start gap-3"
                         >
                             <Link
-                                href="/contact"
+                                href="/#contact"
                                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide text-white uppercase transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-95"
                                 style={{
                                     background: "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
@@ -234,61 +238,42 @@ export default function HeroBanner() {
                         </motion.div>
                     </div>
 
-                    {/* RIGHT SIDE — Code Editor */}
+                    {/* RIGHT SIDE — Animated Image Showcase */}
                     <motion.div
                         variants={fadeIn}
                         initial="hidden"
                         animate="visible"
                         custom={0.4}
-                        className="flex-1 min-w-0 w-full max-w-md md:max-w-[48%] lg:max-w-xl xl:max-w-2xl self-center"
+                        className="flex-1 min-w-0 w-full max-w-md md:max-w-[48%] lg:max-w-xl xl:max-w-2xl flex items-center justify-center relative"
                     >
-                        {/* Editor Window */}
+                        {/* Ambient Glow Ring behind the Image */}
                         <div
-                            className="rounded-2xl overflow-hidden border border-slate-700/60"
+                            className="absolute inset-0 rounded-full blur-3xl opacity-30 pointer-events-none"
                             style={{
-                                background: "rgba(15, 23, 42, 0.85)",
-                                boxShadow:
-                                    "0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(99,179,237,0.05)",
-                                backdropFilter: "blur(10px)",
+                                background: "radial-gradient(circle, rgba(56,189,248,0.4) 0%, rgba(99,102,241,0.2) 60%, transparent 100%)",
                             }}
-                        >
-                            {/* Title bar */}
-                            <div className="flex items-center justify-between px-4 py-3 border-b border-slate-700/50 bg-slate-900/60">
-                                <div className="flex items-center gap-2">
-                                    <span className="w-3 h-3 rounded-full bg-red-500/80" />
-                                    <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                                    <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                                </div>
-                                <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-mono">
-                                    <span className="w-2 h-2 rounded-full bg-cyan-400" />
-                                    Portfolio.js
-                                </div>
-                            </div>
+                        />
 
-                            {/* Code lines */}
-                            <div className="p-4 sm:p-6 lg:p-8 font-mono text-xs sm:text-sm lg:text-base leading-6 sm:leading-7 lg:leading-8 overflow-x-auto">
-                                {codeLines.map((line, i) => (
-                                    <motion.div
-                                        key={i}
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.6 + i * 0.07, duration: 0.4 }}
-                                        className="flex items-start gap-3 whitespace-nowrap"
-                                    >
-                                        <span className="select-none text-slate-600 w-5 shrink-0 text-right">
-                                            {line.num}
-                                        </span>
-                                        <span>
-                                            {line.parts.map((part, j) => (
-                                                <span key={j} className={part.color}>
-                                                    {part.text}
-                                                </span>
-                                            ))}
-                                        </span>
-                                    </motion.div>
-                                ))}
+                        {/* Animated Floating Image Container */}
+                        <motion.div
+                            variants={floatAnimation}
+                            animate="animate"
+                            className="relative z-10 w-full max-w-md lg:max-w-lg"
+                        >
+                            <div className="relative rounded-2xl overflow-hidden border border-cyan-500/20 shadow-2xl backdrop-blur-sm group">
+                                <Image
+                                    src="/banner-image.png"
+                                    alt="Alfaaz Ahmed Portfolio Showcase"
+                                    width={600}
+                                    height={500}
+                                    priority
+                                    className="w-full h-auto object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
+                                />
+
+                                {/* Glassmorphism overlay gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-60 pointer-events-none" />
                             </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
 
                 </div>
