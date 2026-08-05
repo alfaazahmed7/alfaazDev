@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Shared/Navbar/Navbar";
 import SmoothScroll from "@/components/animations/Lenis/SmoothScroll";
 import Footer from "@/components/Shared/Footer/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const Cascadia_Code_Font = Cascadia_Code({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
           </main>
           <Footer />
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
