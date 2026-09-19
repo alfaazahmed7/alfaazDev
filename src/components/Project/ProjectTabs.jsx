@@ -24,7 +24,7 @@ const ProjectFilterTabs = ({ activeTab, setActiveTab, projects = [] }) => {
               3. Added 'w-full' combined with 'max-w-xl' so it scales fluidly.
             */}
             <div
-                className="relative flex items-center gap-1 p-1.5 bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-2xl w-full max-w-xl shadow-[0_15px_35px_rgba(0,0,0,0.4)] overflow-x-auto scrollbar-none"
+                className="relative flex items-center gap-1 p-1.5 bg-white dark:bg-slate-900/60 backdrop-blur-xl border border-[#E5E7EB] dark:border-slate-800/80 rounded-2xl w-full max-w-xl shadow-sm dark:shadow-[0_15px_35px_rgba(0,0,0,0.4)] overflow-x-auto scrollbar-none"
                 style={{
                     msOverflowStyle: 'none',  /* IE and Edge */
                     scrollbarWidth: 'none',   /* Firefox */
@@ -50,19 +50,19 @@ const ProjectFilterTabs = ({ activeTab, setActiveTab, projects = [] }) => {
                               to make sure everything fits naturally without clipping text.
                             */
                             className={`relative flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold tracking-wide transition-colors duration-300 select-none z-10 whitespace-nowrap flex-1
-                                ${isActive ? "text-white" : "text-slate-400 hover:text-slate-200"}`}
+                                ${isActive ? "text-white" : "text-[#6B7280] hover:text-[#047857] dark:text-slate-400 dark:hover:text-slate-200"}`}
                         >
                             {isActive && (
                                 <motion.div
                                     layoutId="activeTabGlow"
-                                    className="absolute inset-0 bg-gradient-to-r from-[#4895ef] to-fuchsia-600/90 rounded-xl -z-10 shadow-[0_4px_20px_rgba(139,92,246,0.25)] border-t border-white/10"
+                                    className="absolute inset-0 bg-emerald-500 dark:bg-gradient-to-r dark:from-[#4895ef] dark:to-fuchsia-600/90 rounded-xl -z-10 shadow-[0_4px_20px_rgba(16,185,129,0.25)] dark:shadow-[0_4px_20px_rgba(139,92,246,0.25)] border-t border-white/10"
                                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                                 />
                             )}
 
                             <IconComponent
                                 size={14}
-                                className={`transition-transform duration-300 flex-shrink-0 ${isActive ? "scale-110 text-white" : "text-slate-400"}`}
+                                className={`transition-transform duration-300 flex-shrink-0 ${isActive ? "scale-110 text-white" : "text-[#94A3B8] dark:text-slate-400"}`}
                             />
 
                             {/* TAB LABEL */}
@@ -72,7 +72,7 @@ const ProjectFilterTabs = ({ activeTab, setActiveTab, projects = [] }) => {
                             <span className={`text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded-md font-bold transition-colors duration-300 flex-shrink-0
                                 ${isActive
                                     ? "bg-white/20 text-white"
-                                    : "bg-slate-800 text-slate-500"}`}
+                                    : "bg-[#F3F4F6] text-[#6B7280] dark:bg-slate-800 dark:text-slate-500"}`}
                             >
                                 {count}
                             </span>

@@ -87,21 +87,12 @@ export default function HeroBanner() {
         >
             {/* Background Texture Overlay */}
             <div
-                className="absolute inset-0 opacity-[0.04] pointer-events-none"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(rgba(99,179,237,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(99,179,237,0.3) 1px, transparent 1px)",
-                    backgroundSize: "40px 40px",
-                }}
+                className="absolute inset-0 opacity-[0.6] dark:opacity-[0.04] pointer-events-none bg-grid-themed"
             />
 
             {/* Glowing Orb Bottom-Right */}
             <div
-                className="absolute bottom-0 right-0 w-64 h-64 lg:w-80 lg:h-80 rounded-full pointer-events-none"
-                style={{
-                    background:
-                        "radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)",
-                }}
+                className="absolute bottom-0 right-0 w-64 h-64 lg:w-80 lg:h-80 rounded-full pointer-events-none glow-orb-corner-themed"
             />
 
             {/* Main Content Wrapper */}
@@ -119,7 +110,7 @@ export default function HeroBanner() {
                             custom={0}
                             className="inline-block mb-3 lg:mb-4"
                         >
-                            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-3.5 py-1.5 rounded-full border border-cyan-500/30 text-cyan-400 bg-cyan-500/5">
+                            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-3.5 py-1.5 rounded-full border border-emerald-500/30 text-emerald-600 bg-emerald-500/10 dark:border-cyan-500/30 dark:text-cyan-400 dark:bg-cyan-500/5">
                                 Welcome to my Universe
                             </span>
                         </motion.div>
@@ -132,18 +123,13 @@ export default function HeroBanner() {
                             custom={0.15}
                             className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-black leading-[1.1] mb-3 lg:mb-4"
                         >
-                            <span className="text-white">Crafting </span>
-                            <span
-                                style={{
-                                    background: "linear-gradient(135deg, #38bdf8 0%, #818cf8 100%)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                }}
+                            <span className="text-[#111827] dark:text-white">Crafting </span>
+                            <span className="accent-gradient-text"
                             >
                                 Digital
                             </span>
                             <br />
-                            <span className="text-slate-400">Masterpieces</span>
+                            <span className="text-[#6B7280] dark:text-slate-400">Masterpieces</span>
                         </motion.h1>
 
                         {/* Description */}
@@ -152,12 +138,12 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0.3}
-                            className="text-slate-400 text-xs sm:text-sm lg:text-base leading-relaxed mb-5 lg:mb-7 font-light max-w-md"
+                            className="text-[#6B7280] dark:text-slate-400 text-xs sm:text-sm lg:text-base leading-relaxed mb-5 lg:mb-7 font-light max-w-md"
                         >
                             I am{" "}
-                            <strong className="text-white font-semibold">Alfaaz Ahmed</strong>
+                            <strong className="text-[#111827] dark:text-white font-semibold">Alfaaz Ahmed</strong>
                             , a professional{" "}
-                            <span className="text-cyan-400 font-medium">Developer</span>{" "}
+                            <span className="text-emerald-600 dark:text-cyan-400 font-medium">Developer</span>{" "}
                             dedicated to building high-performance, user-centric web applications.
                         </motion.p>
 
@@ -176,7 +162,7 @@ export default function HeroBanner() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={s.label}
-                                    className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg border border-slate-700 bg-slate-800/50 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all duration-200"
+                                    className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg border border-[#E5E7EB] bg-white text-[#6B7280] hover:text-emerald-600 hover:border-emerald-500/50 hover:bg-emerald-500/10 dark:border-slate-700 dark:bg-slate-800/50 dark:text-slate-400 dark:hover:text-cyan-400 dark:hover:border-cyan-500/50 dark:hover:bg-cyan-500/10 transition-all duration-200"
                                 >
                                     {s.icon}
                                 </a>
@@ -193,11 +179,7 @@ export default function HeroBanner() {
                         >
                             <Link
                                 href="/#contact"
-                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide text-white uppercase transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-95"
-                                style={{
-                                    background: "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
-                                    boxShadow: "0 0 20px rgba(14,165,233,0.3)",
-                                }}
+                                className="btn-primary-themed inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide uppercase transition-all duration-200 hover:scale-[1.02] active:scale-95"
                             >
                                 Let&apos;s Collaborate
                                 <svg
@@ -218,7 +200,7 @@ export default function HeroBanner() {
                             <a
                                 href="/resume.pdf"
                                 target="_blank"
-                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide uppercase border border-slate-600 text-slate-300 bg-slate-800/40 hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide uppercase border border-[#E5E7EB] text-[#374151] bg-white hover:border-emerald-500/50 hover:text-emerald-600 hover:bg-[#ECFDF5] dark:border-slate-600 dark:text-slate-300 dark:bg-slate-800/40 dark:hover:border-cyan-500/50 dark:hover:text-cyan-400 dark:hover:bg-cyan-500/10 transition-all duration-200"
                             >
                                 Get Resume
                                 <svg
@@ -248,10 +230,7 @@ export default function HeroBanner() {
                     >
                         {/* Ambient Glow Ring behind the Image */}
                         <div
-                            className="absolute inset-0 rounded-full blur-3xl opacity-30 pointer-events-none"
-                            style={{
-                                background: "radial-gradient(circle, rgba(56,189,248,0.4) 0%, rgba(99,102,241,0.2) 60%, transparent 100%)",
-                            }}
+                            className="absolute inset-0 rounded-full blur-3xl opacity-20 dark:opacity-30 pointer-events-none glow-orb-themed"
                         />
 
                         {/* Animated Floating Image Container */}
@@ -260,7 +239,7 @@ export default function HeroBanner() {
                             animate="animate"
                             className="relative z-10 w-full max-w-md lg:max-w-lg"
                         >
-                            <div className="relative rounded-2xl overflow-hidden border border-cyan-500/20 shadow-2xl backdrop-blur-sm group">
+                            <div className="relative rounded-2xl overflow-hidden border border-[#E5E7EB] dark:border-cyan-500/20 shadow-sm dark:shadow-2xl backdrop-blur-sm group bg-white dark:bg-transparent">
                                 <Image
                                     src="/banner-image.png"
                                     alt="Alfaaz Ahmed Portfolio Showcase"
@@ -271,7 +250,7 @@ export default function HeroBanner() {
                                 />
 
                                 {/* Glassmorphism overlay gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-60 pointer-events-none" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent dark:from-slate-950/40 dark:via-transparent dark:to-transparent opacity-60 pointer-events-none" />
                             </div>
                         </motion.div>
                     </motion.div>

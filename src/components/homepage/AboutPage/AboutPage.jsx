@@ -53,8 +53,8 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-3 mb-8 lg:mb-16"
           >
-            <span className="h-px w-8 bg-cyan-50 mt-10 lg:mt-0" />
-            <span className="text-xs font-semibold tracking-[0.25em] uppercase text-cyan-400 mt-10 lg:mt-0">
+            <span className="h-px w-8 bg-emerald-500 dark:bg-cyan-50 mt-10 lg:mt-0" />
+            <span className="text-xs font-semibold tracking-[0.25em] uppercase text-emerald-600 dark:text-cyan-400 mt-10 lg:mt-0">
               About Me
             </span>
           </motion.div>
@@ -65,7 +65,7 @@ export default function AboutPage() {
             initial="hidden"
             animate={leftInView ? "visible" : "hidden"}
             custom={0}
-            className="text-slate-400 text-sm font-medium tracking-widest uppercase mb-3"
+            className="text-[#6B7280] dark:text-slate-400 text-sm font-medium tracking-widest uppercase mb-3"
           >
             Hello there 👋
           </motion.p>
@@ -76,15 +76,10 @@ export default function AboutPage() {
             initial="hidden"
             animate={leftInView ? "visible" : "hidden"}
             custom={0.1}
-            className="text-4xl font-black leading-tight mb-2 text-white"
+            className="text-4xl font-black leading-tight mb-2 text-[#111827] dark:text-white"
           >
             I&apos;m{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #38bdf8 0%, #818cf8 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
+            <span className="accent-gradient-text"
             >
               Alfaaz Ahmed
             </span>
@@ -96,7 +91,7 @@ export default function AboutPage() {
             initial="hidden"
             animate={leftInView ? "visible" : "hidden"}
             custom={0.2}
-            className="text-slate-400 font-semibold text-base mb-8 tracking-wide"
+            className="text-[#6B7280] dark:text-slate-400 font-semibold text-base mb-8 tracking-wide"
           >
             Full-Stack Engineer &nbsp;|&nbsp; Building High-Performance, User-Friendly Web Apps
           </motion.p>
@@ -107,7 +102,7 @@ export default function AboutPage() {
             initial="hidden"
             animate={leftInView ? "visible" : "hidden"}
             custom={0.25}
-            className="h-px bg-gradient-to-r from-cyan-500/30 via-indigo-500/20 to-transparent mb-8"
+            className="h-px bg-gradient-to-r from-emerald-500/40 via-emerald-500/15 to-transparent dark:from-cyan-500/30 dark:via-indigo-500/20 dark:to-transparent mb-8"
           />
 
           {/* Bio paragraph */}
@@ -116,10 +111,10 @@ export default function AboutPage() {
             initial="hidden"
             animate={leftInView ? "visible" : "hidden"}
             custom={0.3}
-            className="text-slate-400 text-base leading-relaxed mb-6"
+            className="text-[#374151] dark:text-slate-400 text-base leading-relaxed mb-6"
           >
             I&apos;m a passionate{" "}
-            <span className="text-white font-medium">Full-Stack Developer</span> dedicated to
+            <span className="text-[#111827] dark:text-white font-medium">Full-Stack Developer</span> dedicated to
             crafting web applications that excel in both speed and design. I utilize the latest
             technologies and prioritize a user-centric approach to build scalable, responsive, and
             secure frontend architectures for businesses.
@@ -136,17 +131,12 @@ export default function AboutPage() {
             {stats.map((s, i) => (
               <div key={i} className="flex flex-col">
                 <span
-                  className="text-2xl sm:text-3xl font-black"
-                  style={{
-                    background: "linear-gradient(135deg, #38bdf8, #818cf8)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
+                  className="accent-gradient-text text-2xl sm:text-3xl font-black"
                 >
                   {s.value}
                 </span>
 
-                <span className="text-[10px] sm:text-xs tracking-wide mt-0 sm:mt-0.5 text-slate-500">
+                <span className="text-[10px] sm:text-xs tracking-wide mt-0 sm:mt-0.5 text-[#6B7280] dark:text-slate-500">
                   {s.label}
                 </span>
               </div>
@@ -166,11 +156,7 @@ export default function AboutPage() {
               href="/contact"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide text-white uppercase"
-              style={{
-                background: "linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)",
-                boxShadow: "0 0 20px rgba(14,165,233,0.3)",
-              }}
+              className="btn-primary-themed inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide uppercase"
             >
               Schedule a Meeting
 
@@ -195,7 +181,7 @@ export default function AboutPage() {
               target="_blank"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide text-slate-300 uppercase border border-slate-700 bg-slate-800/40 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide text-[#374151] uppercase border border-[#E5E7EB] bg-white hover:border-emerald-500/40 hover:text-emerald-600 hover:bg-[#ECFDF5] dark:text-slate-300 dark:border-slate-700 dark:bg-slate-800/40 dark:hover:border-cyan-500/40 dark:hover:text-cyan-400 transition-colors duration-200"
             >
               Resume
 
@@ -250,8 +236,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.88 }}
               animate={rightInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative rounded-2xl overflow-hidden border border-slate-700/60"
-              style={{ background: "rgba(15,23,42,0.6)" }}
+              className="relative rounded-2xl overflow-hidden border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-[rgba(15,23,42,0.6)] shadow-sm dark:shadow-none"
             >
               {/* Replace src with your real image path */}
               <Image
@@ -278,13 +263,13 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 20, y: -10 }}
               animate={rightInView ? { opacity: 1, x: 0, y: 0 } : {}}
               transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
-              className="absolute -top-4 -right-4 sm:-right-6 flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-emerald-500/30 bg-slate-900/90 backdrop-blur-sm shadow-lg"
+              className="absolute -top-4 -right-4 sm:-right-6 flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-emerald-500/30 bg-white dark:bg-slate-900/90 backdrop-blur-sm shadow-sm dark:shadow-lg"
             >
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
               </span>
-              <span className="text-xs font-semibold text-emerald-400 tracking-wide whitespace-nowrap">
+              <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 tracking-wide whitespace-nowrap">
                 Available for Work
               </span>
             </motion.div>
@@ -294,7 +279,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: -20, y: 10 }}
               animate={rightInView ? { opacity: 1, x: 0, y: 0 } : {}}
               transition={{ delay: 0.65, duration: 0.5, ease: "easeOut" }}
-              className="absolute -bottom-5 -left-4 sm:-left-6 flex items-center gap-3 px-3 sm:px-4 py-3 rounded-xl border border-slate-700/60 bg-slate-900/90 backdrop-blur-sm shadow-lg"
+              className="absolute -bottom-5 -left-4 sm:-left-6 flex items-center gap-3 px-3 sm:px-4 py-3 rounded-xl border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-slate-900/90 backdrop-blur-sm shadow-sm dark:shadow-lg"
             >
               <div className="flex -space-x-1.5">
                 {[
@@ -311,8 +296,8 @@ export default function AboutPage() {
                 ))}
               </div>
               <div>
-                <p className="text-xs text-white font-semibold leading-none mb-0.5">Tech Stack</p>
-                <p className="text-[10px] text-[#4895ef]">(MERN)</p>
+                <p className="text-xs text-[#111827] dark:text-white font-semibold leading-none mb-0.5">Tech Stack</p>
+                <p className="text-[10px] text-emerald-600 dark:text-[#4895ef]">(MERN)</p>
               </div>
             </motion.div>
 
@@ -321,19 +306,14 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={rightInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.8, duration: 0.5, ease: "easeOut" }}
-              className="absolute top-1/2 -right-4 sm:-right-8 -translate-y-1/2 flex flex-col items-center px-3 sm:px-4 py-3 rounded-xl border border-slate-700/60 bg-slate-900/90 backdrop-blur-sm shadow-lg"
+              className="absolute top-1/2 -right-4 sm:-right-8 -translate-y-1/2 flex flex-col items-center px-3 sm:px-4 py-3 rounded-xl border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-slate-900/90 backdrop-blur-sm shadow-sm dark:shadow-lg"
             >
               <span
-                className="text-2xl font-black leading-none"
-                style={{
-                  background: "linear-gradient(135deg, #38bdf8, #818cf8)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
+                className="accent-gradient-text text-2xl font-black leading-none"
               >
                 1+
               </span>
-              <span className="text-[10px] text-slate-500 tracking-wide mt-0.5 text-center leading-tight">
+              <span className="text-[10px] text-[#6B7280] dark:text-slate-500 tracking-wide mt-0.5 text-center leading-tight">
                 Year<br />Exp.
               </span>
             </motion.div>

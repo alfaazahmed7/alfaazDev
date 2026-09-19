@@ -6,71 +6,71 @@ import { FaDownload } from "react-icons/fa";
 
 export default function ResumePage() {
     return (
-        <div className={`w-11/12 lg:w-8/12 mx-auto min-h-screen pt-28 pb-16 text-white ${outfit.className}`}>
+        <div className={`w-11/12 lg:w-8/12 mx-auto min-h-screen pt-28 pb-16 text-[#374151] dark:text-white ${outfit.className}`}>
 
             {/* Container to give it that structured paper feel */}
-            <div className="max-w-[800px] mx-auto text-left font-sans antialiased text-[15px] leading-normal space-y-6">
+            <div className="max-w-[800px] mx-auto text-left font-sans antialiased text-[15px] leading-normal space-y-6 bg-white dark:bg-transparent border border-[#E5E7EB] dark:border-transparent rounded-2xl p-6 sm:p-10 shadow-sm dark:shadow-none">
 
                 {/* Header */}
                 <div className="text-center space-y-1">
-                    <h1 className="text-3xl font-bold tracking-wide text-[#3b82f6] uppercase">
+                    <h1 className="text-3xl font-bold tracking-wide text-emerald-600 dark:text-[#3b82f6] uppercase">
                         ALFAAZ AHMED
                     </h1>
-                    <p className="text-white dark:text-white font-bold text-base">
+                    <p className="text-[#111827] dark:text-white font-bold text-base">
                         Full-Stack Developer(MERN) | React.js | Next.js | Node.js | MongoDB
                     </p>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#6B7280] dark:text-gray-400 text-sm">
                         Noakhali, Bangladesh | +880 16101 97258 |{" "}
-                        <a href="mailto:alfaazahmed010@gmail.com" className="text-blue-400 underline">alfaazahmed010@gmail.com</a>{" "}
-                        | <Link href="https://github.com/alfaazahmed7" target="_blank" className="text-blue-400 underline">Github</Link>{" "}
-                        | <Link href="https://linkedin.com/in/alfaazahmed7" target="_blank" className="text-blue-400 underline">LinkedIn</Link>{" "}
+                        <a href="mailto:alfaazahmed010@gmail.com" className="text-emerald-600 dark:text-blue-400 underline">alfaazahmed010@gmail.com</a>{" "}
+                        | <Link href="https://github.com/alfaazahmed7" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Github</Link>{" "}
+                        | <Link href="https://linkedin.com/in/alfaazahmed7" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">LinkedIn</Link>{" "}
                     </p>
                 </div>
 
                 {/* Career Objective */}
                 <section>
-                    <h2 className="text-lg font-bold text-[#3b82f6] border-b-[1.5px] border-[#3b82f6] uppercase tracking-wide mb-2 pb-0.5">
+                    <h2 className="text-lg font-bold text-emerald-600 dark:text-[#3b82f6] border-b-[1.5px] border-emerald-500 dark:border-[#3b82f6] uppercase tracking-wide mb-2 pb-0.5">
                         CAREER OBJECTIVE
                     </h2>
-                    <p className="text-gray-300 text-justify">
+                    <p className="text-[#374151] dark:text-gray-300 text-justify">
                         Motivated Full-Stack MERN Developer with hands-on experience in building responsive, scalable, and user-centric web applications using React.js, Next.js, Node.js, Express.js, and MongoDB. Skilled in developing modern frontend interfaces and secure backend systems with a strong focus on clean code, performance, and user experience. Eager to contribute to innovative development teams while continuously improving technical and problem-solving skills.
                     </p>
                 </section>
 
                 {/* Skills */}
                 <section>
-                    <h2 className="text-lg font-bold text-[#3b82f6] border-b-[1.5px] border-[#3b82f6] uppercase tracking-wide mb-2 pb-0.5">
+                    <h2 className="text-lg font-bold text-emerald-600 dark:text-[#3b82f6] border-b-[1.5px] border-emerald-500 dark:border-[#3b82f6] uppercase tracking-wide mb-2 pb-0.5">
                         SKILLS
                     </h2>
-                    <div className="text-gray-300 space-y-0.5">
-                        <p><strong className="text-gray-200">Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), React.js, Next.js, Tailwind CSS, Responsive Design</p>
-                        <p><strong className="text-gray-200">Backend:</strong> Node.js, MongoDB, Better Auth, JWT, CRUD Operations</p>
-                        <p><strong className="text-gray-200">UI & UX:</strong> HeroUI, DaisyUI, Figma, Figma-to-Code Workflow</p>
-                        <p><strong className="text-gray-200">Tools & Deployment:</strong> Git, GitHub, VS Code, npm, ESLint, Prettier, Vercel, Netlify</p>
+                    <div className="text-[#374151] dark:text-gray-300 space-y-0.5">
+                        <p><strong className="text-[#111827] dark:text-gray-200">Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), React.js, Next.js, Tailwind CSS, Responsive Design</p>
+                        <p><strong className="text-[#111827] dark:text-gray-200">Backend:</strong> Node.js, MongoDB, Better Auth, JWT, CRUD Operations</p>
+                        <p><strong className="text-[#111827] dark:text-gray-200">UI & UX:</strong> HeroUI, DaisyUI, Figma, Figma-to-Code Workflow</p>
+                        <p><strong className="text-[#111827] dark:text-gray-200">Tools & Deployment:</strong> Git, GitHub, VS Code, npm, ESLint, Prettier, Vercel, Netlify</p>
                     </div>
                 </section>
 
                 {/* Projects */}
                 <section>
-                    <h2 className="text-lg font-bold text-[#3b82f6] border-b-[1.5px] border-[#3b82f6] uppercase tracking-wide mb-3 pb-0.5">
+                    <h2 className="text-lg font-bold text-emerald-600 dark:text-[#3b82f6] border-b-[1.5px] border-emerald-500 dark:border-[#3b82f6] uppercase tracking-wide mb-3 pb-0.5">
                         PROJECTS
                     </h2>
 
                     <div className="space-y-4">
                         {/* Project 1 */}
                         <div>
-                            <h3 className="font-bold text-gray-100 text-[16px]">PROMPTAI</h3>
-                            <p className="text-sm text-gray-300">
-                                <strong className="text-gray-200">Tech-Stack:</strong> Next.js, React, Node.js, Express.js, MongoDB
+                            <h3 className="font-bold text-[#111827] dark:text-gray-100 text-[16px]">PROMPTAI</h3>
+                            <p className="text-sm text-[#374151] dark:text-gray-300">
+                                <strong className="text-[#111827] dark:text-gray-200">Tech-Stack:</strong> Next.js, React, Node.js, Express.js, MongoDB
                             </p>
-                            <p className="text-sm text-gray-400 space-x-1">
-                                <Link href="https://prompt-ai-client.vercel.app" target="_blank" className="text-blue-400 underline">Live Demo</Link>
+                            <p className="text-sm text-[#6B7280] dark:text-gray-400 space-x-1">
+                                <Link href="https://prompt-ai-client.vercel.app" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Live Demo</Link>
                                 <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/promptAI-client" target="_blank" className="text-blue-400 underline">Client Repo</Link>
+                                <Link href="https://github.com/alfaazahmed7/promptAI-client" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Client Repo</Link>
                                 <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/promptAI-server" target="_blank" className="text-blue-400 underline">Server Repo</Link>
+                                <Link href="https://github.com/alfaazahmed7/promptAI-server" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Server Repo</Link>
                             </p>
-                            <ul className="list-disc pl-5 text-gray-300 mt-1 space-y-0.5">
+                            <ul className="list-disc pl-5 text-[#374151] dark:text-gray-300 mt-1 space-y-0.5">
                                 <li> Developed a full-stack AI prompt marketplace using Next.js, Express.js, and MongoDB with a responsive UI and dedicated dashboards for User, Creator, and Admin roles.</li>
                                 <li> Implemented secure authentication and role-based authorization using better-auth Authentication, JWT, and protected routes to ensure controlled access across the platform.</li>
                                 <li>Built RESTful APIs for prompt management, payments, reviews, bookmarks, reports, and analytics, integrating Stripe for secure transactions and MongoDB for efficient data management. </li>
@@ -79,18 +79,18 @@ export default function ResumePage() {
 
                         {/* Project 2 */}
                         <div>
-                            <h3 className="font-bold text-gray-100 text-[16px]">LAUNCHDECK</h3>
-                            <p className="text-sm text-gray-300">
-                                <strong className="text-gray-200">Tech Stack:</strong> TypeScript, Next.js, React, MongoDB, Better-Auth
+                            <h3 className="font-bold text-[#111827] dark:text-gray-100 text-[16px]">LAUNCHDECK</h3>
+                            <p className="text-sm text-[#374151] dark:text-gray-300">
+                                <strong className="text-[#111827] dark:text-gray-200">Tech Stack:</strong> TypeScript, Next.js, React, MongoDB, Better-Auth
                             </p>
-                            <p className="text-sm text-gray-400 space-x-1">
-                                <Link href="https://launch-deck-fawn.vercel.app" target="_blank" className="text-blue-400 underline">Live Demo</Link>
+                            <p className="text-sm text-[#6B7280] dark:text-gray-400 space-x-1">
+                                <Link href="https://launch-deck-fawn.vercel.app" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Live Demo</Link>
                                 <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/launchDeck-client" target="_blank" className="text-blue-400 underline">Client Repo</Link>
+                                <Link href="https://github.com/alfaazahmed7/launchDeck-client" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Client Repo</Link>
                                 <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/launchDeck-server" target="_blank" className="text-blue-400 underline">Server Repo</Link>
+                                <Link href="https://github.com/alfaazahmed7/launchDeck-server" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Server Repo</Link>
                             </p>
-                            <ul className="list-disc pl-5 text-gray-300 mt-1 space-y-0.5">
+                            <ul className="list-disc pl-5 text-[#374151] dark:text-gray-300 mt-1 space-y-0.5">
                                 <li>Built a full-stack project showcase platform using Next.js, TypeScript, Express.js, and MongoDB with a modern, responsive user interface.</li>
                                 <li>Implemented secure authentication with Better Auth, protected routes, and advanced project discovery features including search, filtering, sorting, and pagination.</li>
                                 <li>Designed and integrated RESTful APIs with MongoDB/Mongoose for efficient CRUD operations, scalable data management, and seamless frontend-backend communication.</li>
@@ -101,21 +101,21 @@ export default function ResumePage() {
 
                 {/* Education */}
                 <section>
-                    <h2 className="text-lg font-bold text-[#3b82f6] border-b-[1.5px] border-[#3b82f6] uppercase tracking-wide mb-2 pb-0.5">
+                    <h2 className="text-lg font-bold text-emerald-600 dark:text-[#3b82f6] border-b-[1.5px] border-emerald-500 dark:border-[#3b82f6] uppercase tracking-wide mb-2 pb-0.5">
                         EDUCATION
                     </h2>
-                    <div className="text-gray-300">
-                        <p className="font-bold text-gray-100">HSC | GOVERNMENT MUJIB COLLEGE</p>
-                        <p className="text-sm text-gray-400">Noakhali, Bangladesh | 2022-2024</p>
+                    <div className="text-[#374151] dark:text-gray-300">
+                        <p className="font-bold text-[#111827] dark:text-gray-100">HSC | GOVERNMENT MUJIB COLLEGE</p>
+                        <p className="text-sm text-[#6B7280] dark:text-gray-400">Noakhali, Bangladesh | 2022-2024</p>
                     </div>
                 </section>
 
                 {/* Languages */}
                 <section>
-                    <h2 className="text-lg font-bold text-[#3b82f6] border-b-[1.5px] border-[#3b82f6] uppercase tracking-wide mb-2 pb-0.5">
+                    <h2 className="text-lg font-bold text-emerald-600 dark:text-[#3b82f6] border-b-[1.5px] border-emerald-500 dark:border-[#3b82f6] uppercase tracking-wide mb-2 pb-0.5">
                         LANGUAGES
                     </h2>
-                    <ul className="list-disc pl-5 text-gray-300 space-y-0.5">
+                    <ul className="list-disc pl-5 text-[#374151] dark:text-gray-300 space-y-0.5">
                         <li>Bengali(Native)</li>
                         <li>English(Conversational)</li>
                     </ul>
@@ -127,7 +127,7 @@ export default function ResumePage() {
                 <a
                     href="/resume.pdf"
                     download="Alfaaz_Ahmed_Resume.pdf"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg font-medium text-white"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-[#059669] dark:bg-blue-600 dark:hover:bg-blue-700 transition rounded-lg font-medium text-white"
                 >
                     <FaDownload />
                     Download Resume

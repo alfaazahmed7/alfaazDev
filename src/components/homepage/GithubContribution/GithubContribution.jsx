@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import { GitHubCalendar } from "react-github-calendar";
+import { useTheme } from "next-themes";
 
 const USERNAME = "alfaazahmed7";
 
 // Custom theme color palette for the calendar grid
 const explicitTheme = {
-    light: ["#0f172a", "#082f49", "#0369a1", "#06b6d4", "#38bdf8"],
+    light: ["#EDF1F5", "#A7F3D0", "#6EE7B7", "#10B981", "#047857"],
     dark: ["#0f172a", "#082f49", "#0369a1", "#06b6d4", "#38bdf8"],
 };
 
@@ -35,6 +36,12 @@ export default function GithubContributions() {
     const [longestStreak, setLongestStreak] = useState(0);
     const [languages, setLanguages] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { resolvedTheme } = useTheme();
+    const [colorScheme, setColorScheme] = useState("dark");
+
+    useEffect(() => {
+        if (resolvedTheme) setColorScheme(resolvedTheme === "light" ? "light" : "dark");
+    }, [resolvedTheme]);
 
     useEffect(() => {
         async function fetchGithubStats() {
@@ -170,13 +177,13 @@ export default function GithubContributions() {
                 <div className="flex flex-col">
                     <motion.h2
                         variants={itemVariants}
-                        className="text-4xl font-black text-white tracking-tight"
+                        className="text-4xl font-black text-[#111827] dark:text-white tracking-tight"
                     >
-                        GitHub <span className="text-[#4895ef]">Contributions</span>
+                        GitHub <span className="text-emerald-600 dark:text-[#4895ef]">Contributions</span>
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
-                        className="text-base text-slate-400 max-w-[700px] mt-2"
+                        className="text-base text-[#6B7280] dark:text-slate-400 max-w-[700px] mt-2"
                     >
                         Real-time overview of my open-source activity, commit history, and coding consistency across projects.
                     </motion.p>
@@ -187,19 +194,19 @@ export default function GithubContributions() {
                     {stats.map((stat, idx) => (
                         <div
                             key={idx}
-                            className="p-4 sm:p-5 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-md flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300 group"
+                            className="p-4 sm:p-5 rounded-2xl border border-[#E5E7EB] dark:border-slate-800 bg-white dark:bg-slate-900/40 backdrop-blur-md flex flex-col justify-between hover:border-emerald-500 dark:hover:border-cyan-500/40 hover:bg-[#FCFCFD] transition-all duration-300 group shadow-sm dark:shadow-none"
                         >
                             <div className="flex items-center justify-between mb-3">
-                                <span className="text-xs sm:text-sm font-medium text-slate-400">{stat.label}</span>
-                                <div className="p-2 rounded-xl bg-slate-800/60 border border-slate-700/50 group-hover:scale-110 transition-transform">
+                                <span className="text-xs sm:text-sm font-medium text-[#6B7280] dark:text-slate-400">{stat.label}</span>
+                                <div className="p-2 rounded-xl bg-[#F8FAFC] dark:bg-slate-800/60 border border-[#E5E7EB] dark:border-slate-700/50 group-hover:scale-110 transition-transform">
                                     {stat.icon}
                                 </div>
                             </div>
                             <div>
-                                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+                                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#111827] dark:text-white tracking-tight">
                                     {stat.value}
                                 </div>
-                                <p className="text-[11px] sm:text-xs text-slate-500 mt-1">{stat.subtext}</p>
+                                <p className="text-[11px] sm:text-xs text-[#6B7280] dark:text-slate-500 mt-1">{stat.subtext}</p>
                             </div>
                         </div>
                     ))}
@@ -208,14 +215,14 @@ export default function GithubContributions() {
                 {/* Contribution Graph Card */}
                 <motion.div
                     variants={itemVariants}
-                    className="p-5 sm:p-7 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-md flex flex-col gap-4 overflow-hidden"
+                    className="p-5 sm:p-7 rounded-2xl border border-[#E5E7EB] dark:border-slate-800 bg-white dark:bg-slate-900/40 backdrop-blur-md flex flex-col gap-4 overflow-hidden shadow-sm dark:shadow-none"
                 >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-800/80">
-                        <span className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-[#EDF1F5] dark:border-slate-800/80">
+                        <span className="text-sm font-semibold text-[#374151] dark:text-slate-300 flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-cyan-400 animate-pulse" />
                             Live Contribution Heatmap
                         </span>
-                        <span className="text-xs text-slate-500">Last 365 Days</span>
+                        <span className="text-xs text-[#6B7280] dark:text-slate-500">Last 365 Days</span>
                     </div>
 
                     {/* Calendar Heatmap Container */}
@@ -226,7 +233,7 @@ export default function GithubContributions() {
                             fontSize={12}
                             blockSize={13}
                             blockMargin={4}
-                            colorScheme="dark"
+                            colorScheme={colorScheme}
                             renderBlock={(block, activity) =>
                                 cloneElement(block, {
                                     "data-tooltip-id": "react-github-tooltip",
@@ -253,15 +260,15 @@ export default function GithubContributions() {
                     </div>
 
                     {/* Legend Footer */}
-                    <div className="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-slate-800/60">
+                    <div className="flex items-center justify-between text-xs text-[#6B7280] dark:text-slate-500 pt-2 border-t border-[#EDF1F5] dark:border-slate-800/60">
                         <span>{totalContributions.toLocaleString()} contributions in the past year</span>
                         <div className="flex items-center gap-1.5">
                             <span>Less</span>
-                            <div className="w-3 h-3 rounded-[3px] bg-slate-900/60 border border-slate-800/80" />
-                            <div className="w-3 h-3 rounded-[3px] bg-cyan-950/80 border border-cyan-800/40" />
-                            <div className="w-3 h-3 rounded-[3px] bg-cyan-700/80" />
-                            <div className="w-3 h-3 rounded-[3px] bg-cyan-500" />
-                            <div className="w-3 h-3 rounded-[3px] bg-blue-400" />
+                            <div className="w-3 h-3 rounded-[3px] bg-[#EDF1F5] dark:bg-slate-900/60 border border-[#E5E7EB] dark:border-slate-800/80" />
+                            <div className="w-3 h-3 rounded-[3px] bg-[#A7F3D0] dark:bg-cyan-950/80 border border-emerald-200 dark:border-cyan-800/40" />
+                            <div className="w-3 h-3 rounded-[3px] bg-[#6EE7B7] dark:bg-cyan-700/80" />
+                            <div className="w-3 h-3 rounded-[3px] bg-[#10B981] dark:bg-cyan-500" />
+                            <div className="w-3 h-3 rounded-[3px] bg-[#047857] dark:bg-blue-400" />
                             <span>More</span>
                         </div>
                     </div>
@@ -271,15 +278,15 @@ export default function GithubContributions() {
                 {languages.length > 0 && (
                     <motion.div
                         variants={itemVariants}
-                        className="p-5 sm:p-6 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-md flex flex-col gap-4"
+                        className="p-5 sm:p-6 rounded-2xl border border-[#E5E7EB] dark:border-slate-800 bg-white dark:bg-slate-900/40 backdrop-blur-md flex flex-col gap-4 shadow-sm dark:shadow-none"
                     >
                         <div className="flex items-center justify-between">
-                            <span className="text-sm font-semibold text-slate-300">Most Used Languages</span>
-                            <span className="text-xs text-slate-500">Calculated from public repositories</span>
+                            <span className="text-sm font-semibold text-[#374151] dark:text-slate-300">Most Used Languages</span>
+                            <span className="text-xs text-[#6B7280] dark:text-slate-500">Calculated from public repositories</span>
                         </div>
 
                         {/* Progress Bar */}
-                        <div className="h-3 w-full rounded-full bg-slate-800/80 overflow-hidden flex gap-0.5 p-0.5">
+                        <div className="h-3 w-full rounded-full bg-[#F3F4F6] dark:bg-slate-800/80 overflow-hidden flex gap-0.5 p-0.5">
                             {languages.map((lang) => (
                                 <div
                                     key={lang.name}
@@ -294,8 +301,8 @@ export default function GithubContributions() {
                             {languages.map((lang) => (
                                 <div key={lang.name} className="flex items-center gap-2">
                                     <span className={`w-2.5 h-2.5 rounded-full ${lang.color}`} />
-                                    <span className="text-xs font-medium text-slate-300">{lang.name}</span>
-                                    <span className="text-xs text-slate-500 ml-auto">{lang.percentage}%</span>
+                                    <span className="text-xs font-medium text-[#374151] dark:text-slate-300">{lang.name}</span>
+                                    <span className="text-xs text-[#6B7280] dark:text-slate-500 ml-auto">{lang.percentage}%</span>
                                 </div>
                             ))}
                         </div>

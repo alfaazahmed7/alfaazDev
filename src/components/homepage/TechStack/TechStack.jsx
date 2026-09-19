@@ -20,17 +20,17 @@ export default function TechStack() {
             id="skills"
             className="w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40">
             <motion.h2
-                className="text-4xl font-bold text-white mb-2"
+                className="text-4xl font-bold text-[#111827] dark:text-white mb-2"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
             >
-                Tech <span className="text-[#4895ef]">Stack</span>
+                Tech <span className="text-emerald-600 dark:text-[#4895ef]">Stack</span>
             </motion.h2>
 
             <motion.p
-                className="text-gray-400 mb-10 max-w-[700px]"
+                className="text-[#6B7280] dark:text-gray-400 mb-10 max-w-[700px]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
@@ -43,15 +43,15 @@ export default function TechStack() {
                 {techs.map((tech, index) => (
                     <motion.div
                         key={index}
-                        className="flex flex-col items-center justify-center bg-[#0b1221] hover:bg-[#111a2e] transition-colors rounded-xl py-6 shadow-md"
+                        className="flex flex-col items-center justify-center bg-white hover:bg-[#FCFCFD] hover:border-emerald-500 dark:bg-[#0b1221] dark:hover:bg-[#111a2e] border border-[#E5E7EB] hover:border-[#A7F3D0] dark:border-transparent dark:hover:border-transparent transition-colors rounded-xl py-6 shadow-sm dark:shadow-md"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         // transition={{ delay: index * 0.1, duration: 0.5 }}
                         viewport={{ once: true, amount: 0.2 }}
                         whileHover={{ scale: 1.05 }}
                     >
-                        <div className="text-4xl text-[#4895ef] mb-2">{tech.icon}</div>
-                        <p className="text-gray-300 font-medium">{tech.name}</p>
+                        <div className="text-4xl text-emerald-600 dark:text-[#4895ef] mb-2">{tech.icon}</div>
+                        <p className="text-[#374151] dark:text-gray-300 font-medium">{tech.name}</p>
                     </motion.div>
                 ))}
             </div>

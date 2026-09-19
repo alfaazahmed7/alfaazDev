@@ -27,7 +27,7 @@ export const Projects = () => {
 
             <div className="relative mb-3">
               <motion.h2
-                className="text-white text-4xl font-bold tracking-tight"
+                className="text-[#111827] dark:text-white text-4xl font-bold tracking-tight"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -38,7 +38,7 @@ export const Projects = () => {
             </div>
 
             <motion.p
-              className="text-slate-400 text-lg leading-relaxed max-w-[700px]"
+              className="text-[#6B7280] dark:text-slate-400 text-lg leading-relaxed max-w-[700px]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
@@ -81,19 +81,19 @@ export const Projects = () => {
                 viewport={{ once: true }}
                 className="
                   group flex items-center gap-2
-                  rounded-xl border border-white/10
-                  bg-white/5 px-6 py-3
-                  text-sm font-medium text-white
+                  rounded-xl border border-[#E5E7EB] dark:border-white/10
+                  bg-white dark:bg-white/5 px-6 py-3
+                  text-sm font-medium text-[#374151] dark:text-white
                   backdrop-blur-md
                   transition-all duration-300
-                  hover:border-white/20
-                  hover:bg-white/10 cursor-pointer
+                  hover:border-emerald-500 dark:hover:border-white/20
+                  hover:bg-[#F3F4F6] dark:hover:bg-white/10 cursor-pointer
                 "
               >
                 View All Projects
 
                 <motion.span
-                  className="text-gray-400 group-hover:text-white"
+                  className="text-[#6B7280] group-hover:text-emerald-600 dark:text-gray-400 dark:group-hover:text-white"
                   initial={{ x: 0 }}
                   whileHover={{ x: 3 }}
                   transition={{ duration: 0.2 }}

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -34,14 +35,14 @@ export default function Navbar() {
             {/* Desktop / Main Navbar Pill */}
             <nav
                 className={`max-w-6xl mx-auto rounded-full transition-all duration-300 border ${scrolled
-                        ? "bg-[#020817]/95 backdrop-blur-md border-blue-500/20 shadow-lg shadow-black/50"
-                        : "bg-[#080e22]/80 backdrop-blur-sm border-white/10"
+                        ? "bg-[rgba(246,247,251,0.75)] backdrop-blur-md border-[#E5E7EB] shadow-sm dark:bg-[#020817]/95 dark:border-blue-500/20 dark:shadow-lg dark:shadow-black/50"
+                        : "bg-white/70 backdrop-blur-sm border-[#E5E7EB] dark:bg-[#080e22]/80 dark:border-white/10"
                     }`}
             >
                 <div className="flex items-center justify-between px-6 py-3">
                     {/* Logo */}
-                    <a href="/" className="text-xl font-bold text-blue-400 tracking-wider">
-                        AZ<span className="text-white">.</span>
+                    <a href="/" className="text-xl font-bold text-emerald-500 dark:text-blue-400 tracking-wider">
+                        AZ<span className="text-[#111827] dark:text-white">.</span>
                     </a>
 
                     {/* Desktop Links with Original Hover Effect */}
@@ -50,29 +51,32 @@ export default function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 group py-1"
+                                className="relative text-sm font-medium text-[#475467] hover:text-[#047857] dark:text-gray-300 dark:hover:text-white transition-colors duration-200 group py-1"
                             >
                                 {link.name}
                                 {/* Previous Hover Underline / Glow Indicator */}
-                                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full rounded-full shadow-[0_0_8px_#3b82f6]" />
+                                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-emerald-500 dark:bg-blue-500 transition-all duration-300 group-hover:w-full rounded-full dark:shadow-[0_0_8px_#3b82f6]" />
                             </Link>
                         ))}
                     </div>
 
-                    {/* Desktop Action Button */}
-                    <div className="hidden md:block">
+                    {/* Desktop Action Buttons */}
+                    <div className="hidden md:flex items-center gap-3">
+                        <ThemeToggle />
                         <Link
                             href="/resume"
-                            className="px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-all shadow-md shadow-blue-600/20"
+                            className="px-5 py-2 rounded-full bg-emerald-500 hover:bg-[#059669] dark:bg-blue-600 dark:hover:bg-blue-500 text-white text-sm font-medium transition-all shadow-md shadow-emerald-500/20 dark:shadow-blue-600/20"
                         >
                             Resume
                         </Link>
                     </div>
 
                     {/* Mobile Hamburger Toggle Button */}
-                    <button
-                        onClick={() => setMenuOpen(!menuOpen)}
-                        className="md:hidden text-gray-300 hover:text-white focus:outline-none p-1"
+                    <div className="md:hidden flex items-center gap-2">
+                        <ThemeToggle />
+                        <button
+                            onClick={() => setMenuOpen(!menuOpen)}
+                            className="text-[#475467] hover:text-[#047857] dark:text-gray-300 dark:hover:text-white focus:outline-none p-1"
                         aria-label="Toggle navigation menu"
                     >
                         {menuOpen ? (
@@ -85,21 +89,22 @@ export default function Navbar() {
                             </svg>
                         )}
                     </button>
+                    </div>
                 </div>
             </nav>
 
             {/* Mobile Menu Dropdown Card */}
             {menuOpen && (
                 <div className="md:hidden fixed inset-x-4 top-20 z-50 max-w-md mx-auto">
-                    <div className="bg-[#020817]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
+                    <div className="bg-white/95 dark:bg-[#020817]/95 backdrop-blur-xl border border-[#E5E7EB] dark:border-white/10 rounded-2xl p-6 shadow-xl dark:shadow-2xl flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
                         {/* Header inside mobile menu */}
-                        <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                            <span className="text-lg font-bold text-blue-400 tracking-wider">
-                                AZ<span className="text-white">.</span>
+                        <div className="flex items-center justify-between pb-3 border-b border-[#EDF1F5] dark:border-white/10">
+                            <span className="text-lg font-bold text-emerald-500 dark:text-blue-400 tracking-wider">
+                                AZ<span className="text-[#111827] dark:text-white">.</span>
                             </span>
                             <button
                                 onClick={() => setMenuOpen(false)}
-                                className="text-gray-400 hover:text-white transition-colors p-1"
+                                className="text-[#6B7280] hover:text-[#047857] dark:text-gray-400 dark:hover:text-white transition-colors p-1"
                                 aria-label="Close menu"
                             >
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +120,7 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setMenuOpen(false)}
-                                    className="relative text-gray-300 hover:text-blue-400 text-base font-medium py-2.5 px-3 rounded-lg hover:bg-white/5 transition-all group"
+                                    className="relative text-[#374151] hover:text-[#047857] dark:text-gray-300 dark:hover:text-blue-400 text-base font-medium py-2.5 px-3 rounded-lg hover:bg-[#ECFDF5] dark:hover:bg-white/5 transition-all group"
                                 >
                                     {link.name}
                                 </a>
@@ -123,11 +128,11 @@ export default function Navbar() {
                         </div>
 
                         {/* Action Button */}
-                        <div className="pt-3 border-t border-white/10">
+                        <div className="pt-3 border-t border-[#EDF1F5] dark:border-white/10">
                             <a
                                 href="#resume"
                                 onClick={() => setMenuOpen(false)}
-                                className="w-full inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-md shadow-blue-500/20 transition-all text-sm"
+                                className="w-full inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-[#059669] dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-medium shadow-md shadow-emerald-500/20 dark:shadow-blue-500/20 transition-all text-sm"
                             >
                                 Resume
                             </a>
