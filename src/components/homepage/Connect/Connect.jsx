@@ -77,7 +77,7 @@ export default function Connect() {
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 className="flex items-center gap-4 p-4 rounded-xl border border-[#E5E7EB] dark:border-slate-700/50 bg-white dark:bg-slate-900/40 backdrop-blur-md hover:border-emerald-500 dark:hover:border-cyan-500/40 hover:bg-[#FCFCFD] dark:hover:bg-slate-800/60 transition-all duration-300 group shadow-sm dark:shadow-lg"
                             >
-                                <div className="w-11 h-11 rounded-lg border border-[#E5E7EB] dark:border-slate-700/60 bg-[#F8FAFC] dark:bg-slate-800/80 flex items-center justify-center shrink-0 group-hover:border-emerald-500/50 dark:group-hover:border-cyan-500/50 group-hover:bg-[#ECFDF5] dark:group-hover:bg-cyan-500/10 transition-colors">
+                                <div className="w-11 h-11 rounded-lg border border-[#E5E7EB] dark:border-slate-700/60 bg-[#F8FAFC] dark:bg-slate-800/80 flex items-center justify-center shrink-0 group-hover:border-emerald-500/50 dark:group-hover:border-cyan-500/50 group-hover:bg-[#ECFDF5] dark:group-hover:bg-slate-800/80 transition-colors">
                                     {item.icon}
                                 </div>
                                 <div className="min-w-0">

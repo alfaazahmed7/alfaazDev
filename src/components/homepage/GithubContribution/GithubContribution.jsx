@@ -194,7 +194,7 @@ export default function GithubContributions() {
                     {stats.map((stat, idx) => (
                         <div
                             key={idx}
-                            className="p-4 sm:p-5 rounded-2xl border border-[#E5E7EB] dark:border-slate-800 bg-white dark:bg-slate-900/40 backdrop-blur-md flex flex-col justify-between hover:border-emerald-500 dark:hover:border-cyan-500/40 hover:bg-[#FCFCFD] transition-all duration-300 group shadow-sm dark:shadow-none"
+                            className="p-4 sm:p-5 rounded-2xl border border-[#E5E7EB] dark:border-slate-800 bg-white dark:bg-slate-900/40 backdrop-blur-md flex flex-col justify-between hover:border-emerald-500 dark:hover:border-cyan-500/40 hover:bg-[#FCFCFD] dark:hover:bg-slate-900/40 transition-all duration-300 group shadow-sm dark:shadow-none"
                         >
                             <div className="flex items-center justify-between mb-3">
                                 <span className="text-xs sm:text-sm font-medium text-[#6B7280] dark:text-slate-400">{stat.label}</span>

@@ -43,7 +43,7 @@ export default function TechStack() {
                 {techs.map((tech, index) => (
                     <motion.div
                         key={index}
-                        className="flex flex-col items-center justify-center bg-white hover:bg-[#FCFCFD] hover:border-emerald-500 dark:bg-[#0b1221] dark:hover:bg-[#111a2e] border border-[#E5E7EB] hover:border-[#A7F3D0] dark:border-transparent dark:hover:border-transparent transition-colors rounded-xl py-6 shadow-sm dark:shadow-md"
+                        className="flex flex-col items-center justify-center bg-white hover:bg-[#FCFCFD] dark:hover:bg-[#111a2e] hover:border-emerald-500 dark:bg-[#0b1221] dark:hover:border-transparent border border-[#E5E7EB] hover:border-[#A7F3D0] dark:border-transparent transition-colors rounded-xl py-6 shadow-sm dark:shadow-md"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         // transition={{ delay: index * 0.1, duration: 0.5 }}

@@ -87,7 +87,7 @@ export default function HeroBanner() {
         >
             {/* Background Texture Overlay */}
             <div
-                className="absolute inset-0 opacity-[0.6] dark:opacity-[0.04] pointer-events-none bg-grid-themed"
+                className="absolute inset-0 opacity-[0.6] dark:opacity-[0.04] pointer-events-none"
             />
 
             {/* Glowing Orb Bottom-Right */}

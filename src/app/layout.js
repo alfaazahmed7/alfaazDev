@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body
-        className="bg-[#F6F7FB] text-[#374151] min-h-screen dark:bg-[#020817] dark:text-white"
+        className="min-h-screen bg-[#F6F7FB] text-[#374151] dark:bg-[#020817] dark:text-white"
       >
         <ThemeProvider>
         <SmoothScroll>

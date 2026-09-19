@@ -181,7 +181,7 @@ export default function AboutPage() {
               target="_blank"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide text-[#374151] uppercase border border-[#E5E7EB] bg-white hover:border-emerald-500/40 hover:text-emerald-600 hover:bg-[#ECFDF5] dark:text-slate-300 dark:border-slate-700 dark:bg-slate-800/40 dark:hover:border-cyan-500/40 dark:hover:text-cyan-400 transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide text-[#374151] uppercase border border-[#E5E7EB] bg-white hover:border-emerald-500/40 hover:text-emerald-600 hover:bg-[#ECFDF5] dark:text-slate-300 dark:border-slate-700 dark:bg-slate-800/40 dark:hover:bg-slate-800/40 dark:hover:border-cyan-500/40 dark:hover:text-cyan-400 transition-colors duration-200"
             >
               Resume
 

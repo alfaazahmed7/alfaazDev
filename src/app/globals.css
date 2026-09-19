@@ -87,21 +87,22 @@ html.theme-transition-disable *::after {
 }
 
 /* ─── Shared themed helpers (dark stays pixel-identical) ─── */
-
-/* Gradient headline text: emerald in light, sky→indigo in dark */
-.accent-gradient-text {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-.dark .accent-gradient-text {
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+@layer utilities {
+  /* Gradient headline text: emerald in light, sky→indigo in dark */
+  .accent-gradient-text {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .dark .accent-gradient-text {
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
 
 /* Primary CTA: solid emerald in light, blue→indigo gradient in dark */
@@ -119,11 +120,10 @@ html.theme-transition-disable *::after {
 }
 .dark .btn-primary-themed:hover {
   background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
-  filter: brightness(1.1);
 }
 
 /* Decorative grid: subtle gray in light, blue-tinted in dark */
-.bg-grid-themed {
+/* .bg-grid-themed {
   background-image: linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -131,7 +131,7 @@ html.theme-transition-disable *::after {
 .dark .bg-grid-themed {
   background-image: linear-gradient(rgba(99, 179, 237, 0.3) 1px, transparent 1px),
     linear-gradient(90deg, rgba(99, 179, 237, 0.3) 1px, transparent 1px);
-}
+} */
 
 /* Ambient glows: emerald-tinted low opacity in light, blue/indigo in dark */
 .glow-orb-themed {
@@ -200,7 +200,7 @@ html.theme-transition-disable *::after {
     0 4px 12px -4px rgba(15, 23, 42, 0.06);
 }
 .dark .project-card-themed {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 .dark .project-card-themed:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);

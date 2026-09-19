@@ -56,7 +56,7 @@ const ProjectCard = ({ project }) => {
                         </div>
 
                         {project.featured && (
-                            <span className="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 bg-[#ECFDF5] dark:bg-gradient-to-r dark:from-violet-500/20 dark:to-fuchsia-500/20 text-emerald-700 dark:text-violet-300 rounded-full border border-[#A7F3D0] dark:border-violet-500/30 dark:shadow-[0_0_15px_rgba(139,92,246,0.1)]">
+                            <span className="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 bg-[#ECFDF5] dark:bg-transparent dark:bg-gradient-to-r dark:from-violet-500/20 dark:to-fuchsia-500/20 text-emerald-700 dark:text-violet-300 rounded-full border border-[#A7F3D0] dark:border-violet-500/30 dark:shadow-[0_0_15px_rgba(139,92,246,0.1)]">
                                 Featured
                             </span>
                         )}
@@ -72,7 +72,7 @@ const ProjectCard = ({ project }) => {
                         {project.tags.slice(0, 6).map((tag, index) => (
                             <span
                                 key={index}
-                                className="text-[11px] font-medium px-2.5 py-1 rounded-md border border-transparent dark:border-slate-800 text-[#374151] dark:text-slate-400 bg-[#F3F4F6] dark:bg-slate-950/40 group-hover:border-[#A7F3D0] dark:group-hover:border-violet-500/20 group-hover:bg-[#ECFDF5] group-hover:text-[#047857] dark:group-hover:text-violet-200 transition-all duration-300"
+                                className="text-[11px] font-medium px-2.5 py-1 rounded-md border border-transparent dark:border-slate-800 text-[#374151] dark:text-slate-400 bg-[#F3F4F6] dark:bg-slate-950/40 group-hover:border-[#A7F3D0] dark:group-hover:border-violet-500/20 group-hover:bg-[#ECFDF5] dark:group-hover:bg-slate-950/40 group-hover:text-[#047857] dark:group-hover:text-violet-200 transition-all duration-300"
                             >
                                 {tag}
                             </span>
