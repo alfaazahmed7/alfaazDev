@@ -130,7 +130,7 @@ export default function Navbar() {
                         {/* Action Button */}
                         <div className="pt-3 border-t border-[#EDF1F5] dark:border-white/10 flex items-center gap-3">
                             <a
-                                href="#resume"
+                                href="/resume"
                                 onClick={() => setMenuOpen(false)}
                                 className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-[#059669] dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-medium shadow-md shadow-emerald-500/20 dark:shadow-blue-500/20 transition-all text-sm"
                             >

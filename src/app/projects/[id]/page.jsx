@@ -37,7 +37,7 @@ export default function ProjectDetailsPage() {
     };
 
     return (
-        <div className="min-h-screen bg-[#F6F7FB] dark:bg-[#020617] text-[#374151] dark:text-slate-100 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="bg-[#F6F7FB] dark:bg-[#020617] text-[#374151] dark:text-slate-100 pt-28 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
             {/* AMBIENT GLOW BACKGROUND EFFECT (capped so it never overflows on small screens) */}
             <div className="absolute top-[-10%] left-[-10%] w-[70vw] max-w-[500px] aspect-square rounded-full bg-emerald-500/10 dark:bg-violet-600/10 blur-[130px] pointer-events-none" />
             <div className="absolute bottom-[20%] right-[-10%] w-[80vw] max-w-[600px] aspect-square rounded-full bg-emerald-500/10 dark:bg-cyan-500/10 blur-[160px] pointer-events-none" />

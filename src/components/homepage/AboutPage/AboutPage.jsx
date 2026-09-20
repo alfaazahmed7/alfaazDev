@@ -32,7 +32,7 @@ export default function AboutPage() {
   return (
     <section
       id="about"
-      className="w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40 overflow-x-hidden">
+      className="w-full px-6 pt-4 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40 overflow-x-hidden">
 
       {/* ════════════════════════════════════════
           TWO-COLUMN LAYOUT
@@ -223,14 +223,6 @@ export default function AboutPage() {
               }}
             />
 
-            {/* ── Glow behind image ── */}
-            <div
-              className="absolute inset-0 rounded-2xl pointer-events-none"
-              style={{
-                boxShadow: "0 0 60px rgba(14,165,233,0.15), 0 0 120px rgba(99,102,241,0.1)",
-              }}
-            />
-
             {/* ── Profile image ── */}
             <motion.div
               initial={{ opacity: 0, scale: 0.88 }}
@@ -247,14 +239,6 @@ export default function AboutPage() {
                 className="w-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 style={{ aspectRatio: "4/5" }}
                 priority
-              />
-
-              {/* Overlay gradient at bottom */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-1/3 pointer-events-none"
-                style={{
-                  background: "linear-gradient(to top, rgba(2,8,23,0.9) 0%, transparent 100%)",
-                }}
               />
             </motion.div>
 
