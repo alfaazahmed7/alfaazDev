@@ -32,7 +32,7 @@ export default function AboutPage() {
   return (
     <section
       id="about"
-      className="w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40">
+      className="w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40 overflow-x-hidden">
 
       {/* ════════════════════════════════════════
           TWO-COLUMN LAYOUT
@@ -263,7 +263,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 20, y: -10 }}
               animate={rightInView ? { opacity: 1, x: 0, y: 0 } : {}}
               transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
-              className="absolute -top-4 -right-4 sm:-right-6 flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-emerald-500/30 bg-white dark:bg-slate-900/90 backdrop-blur-sm shadow-sm dark:shadow-lg"
+              className="absolute -top-4 -right-2 sm:-right-4 sm:-right-6 flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-emerald-500/30 bg-white dark:bg-slate-900/90 backdrop-blur-sm shadow-sm dark:shadow-lg"
             >
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -279,7 +279,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: -20, y: 10 }}
               animate={rightInView ? { opacity: 1, x: 0, y: 0 } : {}}
               transition={{ delay: 0.65, duration: 0.5, ease: "easeOut" }}
-              className="absolute -bottom-5 -left-4 sm:-left-6 flex items-center gap-3 px-3 sm:px-4 py-3 rounded-xl border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-slate-900/90 backdrop-blur-sm shadow-sm dark:shadow-lg"
+              className="absolute -bottom-5 -left-2 sm:-left-4 sm:-left-6 flex items-center gap-3 px-3 sm:px-4 py-3 rounded-xl border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-slate-900/90 backdrop-blur-sm shadow-sm dark:shadow-lg"
             >
               <div className="flex -space-x-1.5">
                 {[
@@ -306,7 +306,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={rightInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.8, duration: 0.5, ease: "easeOut" }}
-              className="absolute top-1/2 -right-4 sm:-right-8 -translate-y-1/2 flex flex-col items-center px-3 sm:px-4 py-3 rounded-xl border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-slate-900/90 backdrop-blur-sm shadow-sm dark:shadow-lg"
+              className="absolute top-1/2 -right-2 sm:-right-4 sm:-right-8 -translate-y-1/2 flex flex-col items-center px-3 sm:px-4 py-3 rounded-xl border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-slate-900/90 backdrop-blur-sm shadow-sm dark:shadow-lg"
             >
               <span
                 className="accent-gradient-text text-2xl font-black leading-none"
