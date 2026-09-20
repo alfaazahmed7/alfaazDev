@@ -14,9 +14,9 @@ export default function Footer() {
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-emerald-500/40 dark:via-cyan-500/40 to-transparent" />
 
             {/* Ambient Radial Bottom Glow */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[150px] pointer-events-none opacity-10 blur-3xl dark:hidden glow-connect-themed" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] max-w-[90vw] h-[150px] pointer-events-none opacity-10 blur-3xl dark:hidden glow-connect-themed" />
             <div
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[150px] pointer-events-none opacity-20 blur-3xl hidden dark:block"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] max-w-[90vw] h-[150px] pointer-events-none opacity-20 blur-3xl hidden dark:block"
                 style={{
                     background: "radial-gradient(ellipse at bottom, rgba(56,189,248,0.4) 0%, rgba(99,102,241,0.1) 70%, transparent 100%)",
                 }}

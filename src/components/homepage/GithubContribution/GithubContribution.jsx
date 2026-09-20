@@ -165,13 +165,13 @@ export default function GithubContributions() {
     ];
 
     return (
-        <section id="github" className="relative pb-32 lg:pb-52 px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto w-full scroll-mt-40">
+        <section id="github" className="relative pb-32 lg:pb-52 px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto w-full min-w-0 scroll-mt-40">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
-                className="flex flex-col gap-8"
+                className="flex flex-col gap-8 min-w-0"
             >
                 {/* Section Header */}
                 <div className="flex flex-col">
@@ -215,7 +215,7 @@ export default function GithubContributions() {
                 {/* Contribution Graph Card */}
                 <motion.div
                     variants={itemVariants}
-                    className="p-5 sm:p-7 rounded-2xl border border-[#E5E7EB] dark:border-slate-800 bg-white dark:bg-slate-900/40 backdrop-blur-md flex flex-col gap-4 overflow-hidden shadow-sm dark:shadow-none"
+                    className="p-5 sm:p-7 rounded-2xl border border-[#E5E7EB] dark:border-slate-800 bg-white dark:bg-slate-900/40 backdrop-blur-md flex flex-col gap-4 shadow-sm dark:shadow-none min-w-0 max-w-full"
                 >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-[#EDF1F5] dark:border-slate-800/80">
                         <span className="text-sm font-semibold text-[#374151] dark:text-slate-300 flex items-center gap-2">
@@ -225,26 +225,37 @@ export default function GithubContributions() {
                         <span className="text-xs text-[#6B7280] dark:text-slate-500">Last 365 Days</span>
                     </div>
 
-                    {/* Calendar Heatmap Container */}
-                    <div className="overflow-x-auto pb-2 pt-1 flex justify-center">
-                        <GitHubCalendar
-                            username={USERNAME}
-                            theme={explicitTheme}
-                            fontSize={12}
-                            blockSize={13}
-                            blockMargin={4}
-                            colorScheme={colorScheme}
-                            renderBlock={(block, activity) =>
-                                cloneElement(block, {
-                                    "data-tooltip-id": "react-github-tooltip",
-                                    "data-tooltip-content": `${activity.count} contributions on ${activity.date}`,
-                                })
-                            }
-                            transformData={(data) => {
-                                handleCalendarData(data);
-                                return data;
-                            }}
-                        />
+                    {/* Calendar Heatmap Container — the library's own scroll container
+                        (maxWidth:100% + overflowX:auto) handles all horizontal scrolling, so the
+                        graph can never widen the page. This wrapper stays overflow-visible so no
+                        second scrollbar is created and the graph can use the card's full width. */}
+                    <div
+                        data-graph-scroll
+                        className="graph-scroll-box max-w-full min-w-0 w-full pb-2 pt-1"
+                    >
+                        <style dangerouslySetInnerHTML={{
+                            __html: `
+                            div[data-graph-scroll] .react-activity-calendar { width: 100% !important; max-width: 100% !important; }
+                            div[data-graph-scroll] .react-activity-calendar__scroll-container { max-width: 100% !important; }
+                        `}} />
+                            <GitHubCalendar
+                                username={USERNAME}
+                                theme={explicitTheme}
+                                fontSize={12}
+                                blockSize={13}
+                                blockMargin={4}
+                                colorScheme={colorScheme}
+                                renderBlock={(block, activity) =>
+                                    cloneElement(block, {
+                                        "data-tooltip-id": "react-github-tooltip",
+                                        "data-tooltip-content": `${activity.count} contributions on ${activity.date}`,
+                                    })
+                                }
+                                transformData={(data) => {
+                                    handleCalendarData(data);
+                                    return data;
+                                }}
+                            />
                         {/* Styled Dark Tooltip */}
                         <Tooltip
                             id="react-github-tooltip"
@@ -260,7 +271,7 @@ export default function GithubContributions() {
                     </div>
 
                     {/* Legend Footer */}
-                    <div className="flex items-center justify-between text-xs text-[#6B7280] dark:text-slate-500 pt-2 border-t border-[#EDF1F5] dark:border-slate-800/60">
+                    <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 text-xs text-[#6B7280] dark:text-slate-500 pt-2 border-t border-[#EDF1F5] dark:border-slate-800/60">
                         <span>{totalContributions.toLocaleString()} contributions in the past year</span>
                         <div className="flex items-center gap-1.5">
                             <span>Less</span>
@@ -280,7 +291,7 @@ export default function GithubContributions() {
                         variants={itemVariants}
                         className="p-5 sm:p-6 rounded-2xl border border-[#E5E7EB] dark:border-slate-800 bg-white dark:bg-slate-900/40 backdrop-blur-md flex flex-col gap-4 shadow-sm dark:shadow-none"
                     >
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                             <span className="text-sm font-semibold text-[#374151] dark:text-slate-300">Most Used Languages</span>
                             <span className="text-xs text-[#6B7280] dark:text-slate-500">Calculated from public repositories</span>
                         </div>

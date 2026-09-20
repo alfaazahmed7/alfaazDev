@@ -18,7 +18,7 @@ export const Projects = () => {
   });
 
   return (
-    <div id="projects" className="min-h-screen pb-32 lg:pb-52 scroll-mt-40">
+    <div id="projects" className="min-h-screen pb-32 lg:pb-52 scroll-mt-40 overflow-x-hidden">
       <div className="w-full px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto">
 
         {/* Heading */}
@@ -58,7 +58,7 @@ export const Projects = () => {
         />
 
         {/* Card */}
-        <div className={`grid lg:grid-cols-2 xl:grid-cols-3 justify-items-center gap-10 ${outfit.className}`}>
+        <div className={`grid lg:grid-cols-2 xl:grid-cols-3 justify-items-center gap-10 lg:gap-6 xl:gap-10 ${outfit.className}`}>
 
           {filteredProjects.slice(0, 6).map((project) => (
             <ProjectCard

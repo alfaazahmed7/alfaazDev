@@ -12,14 +12,14 @@ export default function ResumePage() {
             <div className="max-w-[800px] mx-auto text-left font-sans antialiased text-[15px] leading-normal space-y-6 bg-white dark:bg-transparent border border-[#E5E7EB] dark:border-transparent rounded-2xl p-6 sm:p-10 shadow-sm dark:shadow-none">
 
                 {/* Header */}
-                <div className="text-center space-y-1">
+                <div className="text-center space-y-1 break-words">
                     <h1 className="text-3xl font-bold tracking-wide text-emerald-600 dark:text-[#3b82f6] uppercase">
                         ALFAAZ AHMED
                     </h1>
-                    <p className="text-[#111827] dark:text-white font-bold text-base">
+                    <p className="text-[#111827] dark:text-white font-bold text-sm sm:text-base break-words">
                         Full-Stack Developer(MERN) | React.js | Next.js | Node.js | MongoDB
                     </p>
-                    <p className="text-[#6B7280] dark:text-gray-400 text-sm">
+                    <p className="text-[#6B7280] dark:text-gray-400 text-sm break-words">
                         Noakhali, Bangladesh | +880 16101 97258 |{" "}
                         <a href="mailto:alfaazahmed010@gmail.com" className="text-emerald-600 dark:text-blue-400 underline">alfaazahmed010@gmail.com</a>{" "}
                         | <Link href="https://github.com/alfaazahmed7" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Github</Link>{" "}

@@ -15,7 +15,7 @@ const ProjectsPage = () => {
     });
 
     return (
-        <div className="pt-36 w-full px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto pb-20">
+        <div className="pt-36 w-full px-6 sm:px-10 lg:px-20 max-w-[1500px] mx-auto pb-20 overflow-x-hidden">
 
             {/* Heading */}
             <section className="mb-10">
@@ -54,7 +54,7 @@ const ProjectsPage = () => {
             />
 
             {/* Card */}
-            <div className={`grid lg:grid-cols-2 xl:grid-cols-3 justify-items-center gap-10 ${outfit.className}`}>
+            <div className={`grid lg:grid-cols-2 xl:grid-cols-3 justify-items-center gap-10 lg:gap-6 xl:gap-10 ${outfit.className}`}>
 
                 {filteredProjects.map((project) => (
                     <ProjectCard

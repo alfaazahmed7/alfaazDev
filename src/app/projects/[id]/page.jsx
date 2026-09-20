@@ -38,9 +38,9 @@ export default function ProjectDetailsPage() {
 
     return (
         <div className="min-h-screen bg-[#F6F7FB] dark:bg-[#020617] text-[#374151] dark:text-slate-100 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-            {/* AMBIENT GLOW BACKGROUND EFFECT */}
-            <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-emerald-500/10 dark:bg-violet-600/10 blur-[130px] pointer-events-none" />
-            <div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-emerald-500/10 dark:bg-cyan-500/10 blur-[160px] pointer-events-none" />
+            {/* AMBIENT GLOW BACKGROUND EFFECT (capped so it never overflows on small screens) */}
+            <div className="absolute top-[-10%] left-[-10%] w-[70vw] max-w-[500px] aspect-square rounded-full bg-emerald-500/10 dark:bg-violet-600/10 blur-[130px] pointer-events-none" />
+            <div className="absolute bottom-[20%] right-[-10%] w-[80vw] max-w-[600px] aspect-square rounded-full bg-emerald-500/10 dark:bg-cyan-500/10 blur-[160px] pointer-events-none" />
 
             <div className="max-w-6xl mx-auto relative z-10">
                 {/* BACK NAVIGATION */}
@@ -138,7 +138,7 @@ export default function ProjectDetailsPage() {
                     <div className="space-y-6">
 
                         {/* TARGETED REPOSITORY ENGINE */}
-                        <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="bg-white dark:bg-slate-900/40 backdrop-blur-md border border-[#E5E7EB] dark:border-slate-800/60 rounded-2xl p-6 space-y-4 shadow-sm dark:shadow-xl">
+                        <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="bg-white dark:bg-slate-900/40 backdrop-blur-md border border-[#E5E7EB] dark:border-slate-800/60 rounded-2xl p-4 sm:p-6 space-y-4 shadow-sm dark:shadow-xl min-w-0">
                             <h3 className="text-xs font-bold uppercase tracking-wider text-[#6B7280] dark:text-slate-400 flex items-center gap-2">
                                 <Terminal size={15} className="text-emerald-600 dark:text-cyan-400" />
                                 Source Management
@@ -152,9 +152,9 @@ export default function ProjectDetailsPage() {
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-between p-3.5 bg-[#F8FAFC] hover:bg-[#ECFDF5] dark:bg-slate-950/40 dark:hover:bg-slate-950 border border-[#E5E7EB] dark:border-slate-800/60 hover:border-[#A7F3D0] dark:hover:border-violet-500/40 rounded-xl transition-all duration-300 group"
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <FaGithub size={18} className="text-[#6B7280] group-hover:text-emerald-600 dark:text-slate-400 dark:group-hover:text-white transition-colors" />
-                                        <div>
+                                    <div className="flex items-center gap-3 min-w-0">
+                                        <FaGithub size={18} className="text-[#6B7280] group-hover:text-emerald-600 dark:text-slate-400 dark:group-hover:text-white transition-colors shrink-0" />
+                                        <div className="min-w-0">
                                             <p className="text-sm font-semibold text-[#111827] dark:text-white">
                                                 {project.githubServerUrl ? "Client Repository" : "Source Code"}
                                             </p>
@@ -174,9 +174,9 @@ export default function ProjectDetailsPage() {
                                         rel="noopener noreferrer"
                                         className="flex items-center justify-between p-3.5 bg-[#F8FAFC] hover:bg-[#ECFDF5] dark:bg-slate-950/40 dark:hover:bg-slate-950 border border-[#E5E7EB] dark:border-slate-800/60 hover:border-[#A7F3D0] dark:hover:border-violet-500/40 rounded-xl transition-all duration-300 group"
                                     >
-                                        <div className="flex items-center gap-3">
-                                            <FaCode size={18} className="text-[#6B7280] group-hover:text-emerald-600 dark:text-slate-400 dark:group-hover:text-white transition-colors" />
-                                            <div>
+                                        <div className="flex items-center gap-3 min-w-0">
+                                            <FaCode size={18} className="text-[#6B7280] group-hover:text-emerald-600 dark:text-slate-400 dark:group-hover:text-white transition-colors shrink-0" />
+                                            <div className="min-w-0">
                                                 <p className="text-sm font-semibold text-[#111827] dark:text-white">Server Repository</p>
                                                 <p className="text-xs text-[#6B7280] dark:text-slate-500">API, Routing & Control Logic</p>
                                             </div>
@@ -188,7 +188,7 @@ export default function ProjectDetailsPage() {
                         </motion.div>
 
                         {/* SYSTEM ENGINE STACK CORE */}
-                        <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="bg-white dark:bg-slate-900/40 backdrop-blur-md border border-[#E5E7EB] dark:border-slate-800/60 rounded-2xl p-6 space-y-4 shadow-sm dark:shadow-xl">
+                        <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="bg-white dark:bg-slate-900/40 backdrop-blur-md border border-[#E5E7EB] dark:border-slate-800/60 rounded-2xl p-4 sm:p-6 space-y-4 shadow-sm dark:shadow-xl min-w-0">
                             <h3 className="text-xs font-bold uppercase tracking-wider text-[#6B7280] dark:text-slate-400 flex items-center gap-2">
                                 <Server size={15} className="text-emerald-600 dark:text-violet-400" />
                                 Core Technologies Used

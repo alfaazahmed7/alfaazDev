@@ -37,11 +37,11 @@ const ProjectCard = ({ project }) => {
                 </div>
 
                 {/* CONTENT SECTION */}
-                <div className="p-6 relative z-20">
+                <div className="p-4 sm:p-6 relative z-20">
                     {/* TITLE + BADGE */}
-                    <div className="flex justify-between items-center mb-4">
-                        <div className="flex items-center gap-3">
-                            <div className="relative p-1 bg-[#F3F4F6] dark:bg-slate-800 rounded-lg border border-[#E5E7EB] dark:border-slate-700 group-hover:border-emerald-500/50 dark:group-hover:border-violet-400/50 transition-colors duration-300">
+                    <div className="flex justify-between items-start gap-2 sm:gap-3 mb-4">
+                        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                            <div className="relative p-1 bg-[#F3F4F6] dark:bg-slate-800 rounded-lg border border-[#E5E7EB] dark:border-slate-700 group-hover:border-emerald-500/50 dark:group-hover:border-violet-400/50 transition-colors duration-300 shrink-0">
                                 <Image
                                     src={project.icon}
                                     alt={project.title}
@@ -50,13 +50,13 @@ const ProjectCard = ({ project }) => {
                                     className="rounded-md"
                                 />
                             </div>
-                            <h3 className="text-[#111827] dark:text-white font-bold text-xl tracking-tight group-hover:text-[#047857] dark:group-hover:text-transparent dark:group-hover:bg-clip-text dark:group-hover:bg-gradient-to-r dark:group-hover:from-white dark:group-hover:to-violet-300 transition-all duration-300">
+                            <h3 className="text-[#111827] dark:text-white font-bold text-lg sm:text-xl tracking-tight min-w-0 break-words group-hover:text-[#047857] dark:group-hover:text-transparent dark:group-hover:bg-clip-text dark:group-hover:bg-gradient-to-r dark:group-hover:from-white dark:group-hover:to-violet-300 transition-all duration-300">
                                 {project.title}
                             </h3>
                         </div>
 
                         {project.featured && (
-                            <span className="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 bg-[#ECFDF5] dark:bg-transparent dark:bg-gradient-to-r dark:from-violet-500/20 dark:to-fuchsia-500/20 text-emerald-700 dark:text-violet-300 rounded-full border border-[#A7F3D0] dark:border-violet-500/30 dark:shadow-[0_0_15px_rgba(139,92,246,0.1)]">
+                            <span className="shrink-0 text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase px-2 sm:px-2.5 py-1 bg-[#ECFDF5] dark:bg-transparent dark:bg-gradient-to-r dark:from-violet-500/20 dark:to-fuchsia-500/20 text-emerald-700 dark:text-violet-300 rounded-full border border-[#A7F3D0] dark:border-violet-500/30 dark:shadow-[0_0_15px_rgba(139,92,246,0.1)]">
                                 Featured
                             </span>
                         )}
@@ -86,8 +86,8 @@ const ProjectCard = ({ project }) => {
                     </div>
 
                     {/* LIKES & ACTIONS */}
-                    <div className="flex justify-between items-center pt-4 border-t border-[#EDF1F5] dark:border-slate-800/60 group-hover:border-[#A7F3D0] dark:group-hover:border-violet-500/20 transition-colors duration-500">
-                        <div className="flex gap-4 text-[#6B7280] dark:text-slate-400">
+                    <div className="flex flex-wrap justify-between items-center gap-x-3 gap-y-3 pt-4 border-t border-[#EDF1F5] dark:border-slate-800/60 group-hover:border-[#A7F3D0] dark:group-hover:border-violet-500/20 transition-colors duration-500">
+                        <div className="flex gap-2 sm:gap-4 text-[#6B7280] dark:text-slate-400">
                             {/* LIVE */}
                             <a
                                 href={project.liveUrl}

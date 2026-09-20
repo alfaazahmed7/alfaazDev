@@ -199,18 +199,18 @@ export default function NotFound() {
                     <div
                         className="absolute rounded-full border border-dashed border-sky-900/50 pointer-events-none"
                         style={{
-                            width: 520, height: 520,
+                            width: "min(520px, 88vw)", height: "min(520px, 88vw)",
                             top: "50%", left: "50%",
-                            marginTop: -260, marginLeft: -260,
+                            transform: "translate(-50%, -50%)",
                             animation: "orbitSpin 18s linear infinite",
                         }}
                     />
                     <div
                         className="absolute rounded-full border border-dashed border-slate-700/40 pointer-events-none"
                         style={{
-                            width: 700, height: 700,
+                            width: "min(700px, 114vw)", height: "min(700px, 114vw)",
                             top: "50%", left: "50%",
-                            marginTop: -350, marginLeft: -350,
+                            transform: "translate(-50%, -50%)",
                             animation: "orbitSpinReverse 28s linear infinite",
                         }}
                     />
@@ -225,8 +225,8 @@ export default function NotFound() {
                             key={i}
                             className="absolute rounded-full border border-sky-500/20"
                             style={{
-                                width: 220, height: 220,
-                                top: -110, left: -110,
+                                width: "min(220px, 60vw)", height: "min(220px, 60vw)",
+                                top: "calc(min(220px, 60vw) / -2)", left: "calc(min(220px, 60vw) / -2)",
                                 animation: `pulseRing 3s ${delay}s ease-out infinite`,
                             }}
                         />
@@ -245,7 +245,7 @@ export default function NotFound() {
                     style={{ willChange: "transform" }}
                 >
                     <h1
-                        className="text-[10rem] sm:text-[14rem] font-black leading-none select-none tracking-tighter"
+                        className="text-[7rem] sm:text-[14rem] font-black leading-none select-none tracking-tighter"
                         style={{ textShadow: "0 0 60px rgba(56,189,248,0.25), 0 0 120px rgba(56,189,248,0.1)" }}
                     >
                         <GlitchText text="404" />

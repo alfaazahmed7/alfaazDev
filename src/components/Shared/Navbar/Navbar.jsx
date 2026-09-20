@@ -39,9 +39,9 @@ export default function Navbar() {
                         : "bg-white/70 backdrop-blur-sm border-[#E5E7EB] dark:bg-[#080e22]/80 dark:border-white/10"
                     }`}
             >
-                <div className="flex items-center justify-between px-6 py-3">
+                <div className="flex items-center justify-between gap-2 px-4 sm:px-6 py-3">
                     {/* Logo */}
-                    <a href="/" className="text-xl font-bold text-emerald-500 dark:text-blue-400 tracking-wider">
+                    <a href="/" className="text-lg sm:text-xl font-bold text-emerald-500 dark:text-blue-400 tracking-wider shrink-0">
                         AZ<span className="text-[#111827] dark:text-white">.</span>
                     </a>
 
@@ -95,8 +95,8 @@ export default function Navbar() {
 
             {/* Mobile Menu Dropdown Card */}
             {menuOpen && (
-                <div className="md:hidden fixed inset-x-4 top-20 z-50 max-w-md mx-auto">
-                    <div className="bg-white/95 dark:bg-[#020817]/95 backdrop-blur-xl border border-[#E5E7EB] dark:border-white/10 rounded-2xl p-6 shadow-xl dark:shadow-2xl flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
+                <div className="md:hidden fixed left-0 right-0 top-20 z-50 px-4 sm:px-6">
+                    <div className="mx-auto max-w-md bg-white/95 dark:bg-[#020817]/95 backdrop-blur-xl border border-[#E5E7EB] dark:border-white/10 rounded-2xl p-6 shadow-xl dark:shadow-2xl flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
                         {/* Header inside mobile menu */}
                         <div className="flex items-center justify-between pb-3 border-b border-[#EDF1F5] dark:border-white/10">
                             <span className="text-lg font-bold text-emerald-500 dark:text-blue-400 tracking-wider">
@@ -128,14 +128,15 @@ export default function Navbar() {
                         </div>
 
                         {/* Action Button */}
-                        <div className="pt-3 border-t border-[#EDF1F5] dark:border-white/10">
+                        <div className="pt-3 border-t border-[#EDF1F5] dark:border-white/10 flex items-center gap-3">
                             <a
                                 href="#resume"
                                 onClick={() => setMenuOpen(false)}
-                                className="w-full inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-[#059669] dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-medium shadow-md shadow-emerald-500/20 dark:shadow-blue-500/20 transition-all text-sm"
+                                className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-[#059669] dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-medium shadow-md shadow-emerald-500/20 dark:shadow-blue-500/20 transition-all text-sm"
                             >
                                 Resume
                             </a>
+                            <ThemeToggle />
                         </div>
                     </div>
                 </div>

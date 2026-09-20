@@ -34,14 +34,17 @@ export default function Connect() {
     return (
         <section
             id="contact"
-            className="relative w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40 overflow-hidden"
+            className="relative w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40 overflow-hidden min-w-0"
         >
-            {/* Ambient Background Glow (Transparent overlay - no base bg color override) */}
+            {/* Ambient Background Glow (extra wrapper clips the oversized glow on
+                narrow screens — decorative only, so local clipping is correct) */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-20 dark:opacity-20 blur-3xl glow-connect-themed"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] max-w-full aspect-square rounded-full opacity-20 dark:opacity-20 blur-3xl glow-connect-themed"
             />
+            </div>
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center min-w-0">
 
                 {/* LEFT CONTENT — Glassmorphic Info Cards */}
                 <motion.div
@@ -49,7 +52,7 @@ export default function Connect() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true, amount: 0.2 }}
-                    className="lg:col-span-5 flex flex-col justify-center"
+                    className="lg:col-span-5 flex flex-col justify-center min-w-0"
                 >
 
                     {/* Section Title */}
@@ -99,14 +102,14 @@ export default function Connect() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true, amount: 0.2 }}
-                    className="lg:col-span-7"
+                    className="lg:col-span-7 min-w-0"
                 >
                     <form
                         onSubmit={(e) => e.preventDefault()}
-                        className="relative rounded-2xl border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-slate-900/50 backdrop-blur-xl p-6 sm:p-10 shadow-sm dark:shadow-2xl space-y-6"
+                        className="relative rounded-2xl border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-slate-900/50 backdrop-blur-xl p-4 sm:p-10 shadow-sm dark:shadow-2xl space-y-6 min-w-0"
                     >
                         {/* Header bar indicator */}
-                        <div className="flex items-center justify-between pb-4 border-b border-[#EDF1F5] dark:border-slate-800/80 mb-2">
+                        <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-[#EDF1F5] dark:border-slate-800/80 mb-2">
                             <div className="flex items-center gap-2">
                                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 dark:bg-cyan-400 animate-pulse" />
                                 <span className="text-xs font-mono text-[#6B7280] dark:text-slate-400 tracking-wide uppercase">
@@ -155,15 +158,15 @@ export default function Connect() {
                             ></textarea>
                         </div>
 
-                        {/* Submit Button */}
+                        {/* Submit Button — label + icon sized to always fit a 350px viewport */}
                         <motion.button
                             whileHover={{ scale: 1.01, filter: "brightness(1.1)" }}
                             whileTap={{ scale: 0.98 }}
                             type="submit"
-                            className="btn-primary-themed w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-xs sm:text-sm tracking-wider uppercase cursor-pointer transition-all"
+                            className="btn-primary-themed w-full min-w-0 max-w-full flex items-center justify-center gap-2 py-3.5 px-4 sm:px-6 rounded-xl font-bold text-xs sm:text-sm tracking-wider uppercase cursor-pointer transition-all overflow-hidden"
                         >
-                            <span>Send Message</span>
-                            <FaPaperPlane className="text-xs" />
+                            <span className="truncate">Send Message</span>
+                            <FaPaperPlane className="text-xs shrink-0" />
                         </motion.button>
                     </form>
                 </motion.div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
@@ -236,7 +236,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.88 }}
               animate={rightInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative rounded-2xl overflow-hidden border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-[rgba(15,23,42,0.6)] shadow-sm dark:shadow-none"
+              className="relative rounded-2xl overflow-hidden border border-[#E5E7EB] dark:border-slate-700/60 shadow-sm dark:shadow-none"
             >
               {/* Replace src with your real image path */}
               <Image
