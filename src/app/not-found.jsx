@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 /* ── Glitch text — CSS only, zero JS ────────────────────────────── */
@@ -9,8 +9,13 @@ function GlitchText({ text }) {
     return (
         <>
             <style>{`
+                /* Light: slate headline with emerald tint ghosting.
+                   Dark: identical to before (slate-50 + sky/rose ghosts). */
                 .glitch {
                     position: relative;
+                    color: #111827;
+                }
+                .dark .glitch {
                     color: #f8fafc;
                 }
                 .glitch::before,
@@ -21,9 +26,12 @@ function GlitchText({ text }) {
                     background: transparent;
                 }
                 .glitch::before {
-                    color: #38bdf8;
+                    color: #10b981;
                     animation: glitch-top 3.5s infinite linear;
                     clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+                }
+                .dark .glitch::before {
+                    color: #38bdf8;
                 }
                 .glitch::after {
                     color: #f43f5e;
@@ -45,7 +53,14 @@ function GlitchText({ text }) {
                     97%            { transform: translate(-3px,-1px); opacity: 0.85; }
                 }
 
-                /* Scanlines overlay */
+                /* Scanlines overlay — dark only (light mode keeps the clean
+                   homepage surface with no texture). */
+                .scanlines {
+                    opacity: 0;
+                }
+                .dark .scanlines {
+                    opacity: 1;
+                }
                 .scanlines::after {
                     content: "";
                     position: absolute;
@@ -101,6 +116,73 @@ function GlitchText({ text }) {
                     0%, 100% { opacity: 1; }
                     50%      { opacity: 0; }
                 }
+
+                /* ── Themed background layers (light = portfolio surface,
+                      dark = original deep-space, unchanged) ── */
+                .nf-page {
+                    animation: flicker 8s infinite;
+                }
+                /* Light backdrop = exactly the homepage surface: the #f6f7fb
+                   body colour with its soft top emerald glow. No additive
+                   layers, no texture. Dark keeps deep space, unchanged. */
+                .nf-space {
+                    background: transparent;
+                }
+                .dark .nf-space {
+                    background: radial-gradient(ellipse at center, #0c1a2e 0%, #030712 70%);
+                }
+
+                /* Star dots: hidden in light, sky glow in dark */
+                .nf-star {
+                    display: none;
+                }
+                .dark .nf-star {
+                    display: block;
+                    background-color: #7dd3fc;
+                    opacity: 0.4;
+                }
+                .nf-halo {
+                    display: none;
+                }
+                .dark .nf-halo {
+                    display: block;
+                    background: radial-gradient(
+                        circle,
+                        rgba(56,189,248,0.4) 0%,
+                        rgba(99,102,241,0.2) 60%,
+                        transparent 100%
+                    );
+                }
+                /* Decorative orbit + pulse rings: dark only */
+                .nf-rings {
+                    display: none;
+                }
+                .dark .nf-rings {
+                    display: block;
+                }
+
+                /* Terminal: white card in light, original slate-black in dark */
+                .nf-term {
+                    background-color: #ffffff;
+                    box-shadow: 0 12px 32px -12px rgba(16,185,129,0.22),
+                        0 4px 12px -4px rgba(15,23,42,0.06);
+                }
+                .dark .nf-term {
+                    background-color: #0a0f1a;
+                    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6);
+                }
+                .nf-term-bar {
+                    background-color: #f3f4f6;
+                }
+                .dark .nf-term-bar {
+                    background-color: #0d1424;
+                }
+                .nf-term-caret {
+                    background-color: #10b981;
+                }
+                .dark .nf-term-caret {
+                    background-color: #38bdf8;
+                }
             `}</style>
             <span className="glitch" data-text={text}>{text}</span>
         </>
@@ -111,14 +193,13 @@ function GlitchText({ text }) {
 function Star({ x, y, size, delay, duration }) {
     return (
         <div
-            className="absolute rounded-full bg-sky-300 pointer-events-none"
+            className="nf-star absolute rounded-full pointer-events-none"
             style={{
                 left: `${x}%`,
                 top: `${y}%`,
                 width: size,
                 height: size,
                 animation: `starFloat ${duration}s ${delay}s ease-in-out infinite`,
-                opacity: 0.4,
             }}
         />
     );
@@ -160,11 +241,11 @@ function TerminalLine({ text, delay = 0, color = "text-sky-400" }) {
 
     return (
         <p className={`font-mono text-sm ${color} leading-relaxed`}>
-            <span className="text-slate-500 select-none mr-2">$</span>
+            <span className="text-[#94A3B8] dark:text-slate-500 select-none mr-2">$</span>
             {displayed}
             {!done && (
                 <span
-                    className="inline-block w-[7px] h-[13px] bg-sky-400 ml-0.5 align-middle"
+                    className="nf-term-caret inline-block w-[7px] h-[13px] ml-0.5 align-middle"
                     style={{ animation: "blink 0.8s step-end infinite" }}
                 />
             )}
@@ -181,11 +262,14 @@ export default function NotFound() {
 
     return (
         <div
-            className="min-h-screen bg-[#030712] relative overflow-hidden flex items-center justify-center"
-            style={{ animation: mounted && !shouldReduce ? "flicker 8s infinite" : "none" }}
+            className="nf-page min-h-screen relative overflow-hidden flex items-center justify-center"
+            style={{ animationPlayState: mounted && !shouldReduce ? "running" : "paused" }}
         >
-            {/* ── Static deep-space gradient ── */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#0c1a2e_0%,_#030712_70%)] pointer-events-none" />
+            {/* ── Static backdrop: light = quiet emerald wash, dark = deep space ── */}
+            <div className="nf-space absolute inset-0 pointer-events-none" />
+
+            {/* ── Ambient halo behind the 404 ── */}
+            <div className="nf-halo absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] w-[420px] max-w-[92vw] aspect-square rounded-full blur-3xl pointer-events-none" />
 
             {/* ── Scanlines ── */}
             {!shouldReduce && <div className="scanlines absolute inset-0 pointer-events-none z-10" />}
@@ -193,9 +277,9 @@ export default function NotFound() {
             {/* ── Stars ── */}
             {!shouldReduce && stars.map((s) => <Star key={s.id} {...s} />)}
 
-            {/* ── Dashed orbit rings (CSS spin, no JS) ── */}
+            {/* ── Dashed orbit rings (dark only — CSS spin, no JS) ── */}
             {!shouldReduce && (
-                <>
+                <div className="nf-rings">
                     <div
                         className="absolute rounded-full border border-dashed border-sky-900/50 pointer-events-none"
                         style={{
@@ -214,12 +298,12 @@ export default function NotFound() {
                             animation: "orbitSpinReverse 28s linear infinite",
                         }}
                     />
-                </>
+                </div>
             )}
 
-            {/* ── Pulse rings behind 404 ── */}
+            {/* ── Pulse rings behind 404 (dark only) ── */}
             {!shouldReduce && (
-                <div className="absolute pointer-events-none" style={{ top: "50%", left: "50%", transform: "translate(-50%,-60%)" }}>
+                <div className="nf-rings absolute pointer-events-none" style={{ top: "50%", left: "50%", transform: "translate(-50%,-60%)" }}>
                     {[0, 0.8, 1.6].map((delay, i) => (
                         <div
                             key={i}
@@ -245,8 +329,7 @@ export default function NotFound() {
                     style={{ willChange: "transform" }}
                 >
                     <h1
-                        className="text-[7rem] sm:text-[14rem] font-black leading-none select-none tracking-tighter"
-                        style={{ textShadow: "0 0 60px rgba(56,189,248,0.25), 0 0 120px rgba(56,189,248,0.1)" }}
+                        className="text-[7rem] sm:text-[14rem] font-black leading-none select-none tracking-tighter [text-shadow:0_0_60px_rgba(16,185,129,0.18),0_0_120px_rgba(16,185,129,0.08)] dark:[text-shadow:0_0_60px_rgba(56,189,248,0.25),0_0_120px_rgba(56,189,248,0.1)]"
                     >
                         <GlitchText text="404" />
                     </h1>
@@ -254,7 +337,7 @@ export default function NotFound() {
 
                 {/* Divider line */}
                 <motion.div
-                    className="h-[1px] bg-gradient-to-r from-transparent via-sky-500/60 to-transparent"
+                    className="h-[1px] bg-gradient-to-r from-transparent via-emerald-500/60 dark:via-sky-500/60 to-transparent"
                     initial={{ width: 0 }}
                     animate={{ width: "280px" }}
                     transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
@@ -262,7 +345,7 @@ export default function NotFound() {
 
                 {/* Subtitle */}
                 <motion.p
-                    className="mt-5 text-slate-400 text-lg sm:text-xl font-light tracking-widest uppercase"
+                    className="mt-5 text-[#6B7280] dark:text-slate-400 text-lg sm:text-xl font-light tracking-widest uppercase"
                     initial={shouldReduce ? false : { opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.7 }}
@@ -273,28 +356,28 @@ export default function NotFound() {
 
                 {/* Terminal block */}
                 <motion.div
-                    className="mt-8 w-full max-w-sm bg-[#0a0f1a] border border-slate-800 rounded-xl overflow-hidden shadow-2xl shadow-black/60 text-left"
+                    className="nf-term mt-8 w-full max-w-sm border border-[#E5E7EB] dark:border-slate-800 rounded-xl overflow-hidden text-left"
                     initial={shouldReduce ? false : { opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.9 }}
                     style={{ willChange: "transform" }}
                 >
                     {/* Terminal title bar */}
-                    <div className="flex items-center gap-2 px-4 py-2.5 bg-[#0d1424] border-b border-slate-800">
+                    <div className="nf-term-bar flex items-center gap-2 px-4 py-2.5 border-b border-[#E5E7EB] dark:border-slate-800">
                         <span className="w-3 h-3 rounded-full bg-rose-500/80" />
                         <span className="w-3 h-3 rounded-full bg-amber-400/80" />
                         <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                        <span className="ml-2 text-xs text-slate-500 font-mono tracking-wide">bash — alfaaz.dev</span>
+                        <span className="ml-2 text-xs text-[#6B7280] dark:text-slate-500 font-mono tracking-wide">bash — alfaaz.dev</span>
                     </div>
                     {/* Terminal lines */}
                     <div className="px-4 py-4 flex flex-col gap-2">
-                        <TerminalLine text="GET /this-page HTTP/1.1" delay={1.1} color="text-slate-400" />
-                        <TerminalLine text="Error: 404 Not Found" delay={1.9} color="text-rose-400" />
-                        <TerminalLine text="Redirecting you to safety..." delay={2.7} color="text-sky-400" />
+                        <TerminalLine text="GET /this-page HTTP/1.1" delay={1.1} color="text-[#374151] dark:text-slate-400" />
+                        <TerminalLine text="Error: 404 Not Found" delay={1.9} color="text-rose-500 dark:text-rose-400" />
+                        <TerminalLine text="Redirecting you to safety..." delay={2.7} color="text-emerald-600 dark:text-sky-400" />
                     </div>
                 </motion.div>
 
-                {/* CTA button */}
+                {/* CTA button — shared project CTA token (light: emerald, dark: unchanged sky→indigo) */}
                 <motion.div
                     initial={shouldReduce ? false : { opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -304,13 +387,9 @@ export default function NotFound() {
                 >
                     <Link href="/">
                         <motion.button
-                            className="relative px-8 py-3 rounded-xl font-semibold text-white overflow-hidden border border-sky-500/40"
-                            style={{
-                                background: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)",
-                                boxShadow: "0 0 24px rgba(14,165,233,0.25)",
-                                willChange: "transform",
-                            }}
-                            whileHover={{ scale: 1.06, boxShadow: "0 0 36px rgba(14,165,233,0.5)" }}
+                            className="btn-primary-themed relative px-8 py-3 rounded-xl font-semibold text-white overflow-hidden border border-emerald-500/40 dark:border-sky-500/40 cursor-pointer"
+                            style={{ willChange: "transform" }}
+                            whileHover={{ scale: 1.06 }}
                             whileTap={{ scale: 0.96 }}
                         >
                             {/* CSS shimmer */}
@@ -331,7 +410,7 @@ export default function NotFound() {
 
                 {/* Bottom hint */}
                 <motion.p
-                    className="mt-6 text-xs text-slate-600 font-mono tracking-widest"
+                    className="mt-6 text-xs text-[#94A3B8] dark:text-slate-600 font-mono tracking-widest"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 2.2, duration: 0.8 }}
