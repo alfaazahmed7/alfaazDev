@@ -9,7 +9,7 @@ export default function ResumePage() {
         <div className={`w-11/12 lg:w-8/12 mx-auto min-h-screen pt-28 pb-16 text-[#374151] dark:text-white ${outfit.className}`}>
 
             {/* Container to give it that structured paper feel */}
-            <div className="max-w-[800px] mx-auto text-left font-sans antialiased text-[15px] leading-normal space-y-6 bg-white dark:bg-transparent border border-[#E5E7EB] dark:border-transparent rounded-2xl p-6 sm:p-10 shadow-sm dark:shadow-none">
+            <div className="max-w-[800px] mx-auto text-left font-sans antialiased text-[15px] leading-normal space-y-6 bg-white dark:bg-slate-900 border border-[#E5E7EB] dark:border-slate-800 rounded-2xl p-6 sm:p-10 shadow-sm dark:shadow-none">
 
                 {/* Header */}
                 <div className="text-center space-y-1 break-words">
@@ -33,7 +33,7 @@ export default function ResumePage() {
                     <h2 className="text-lg font-bold text-black dark:text-white uppercase tracking-wide mb-2">
                         CAREER OBJECTIVE
                     </h2>
-                    <p className="text-[#374151] dark:text-gray-300 text-justify">
+                    <p className="text-[#374151] dark:text-gray-300">
                         To leverage expertise in React.js, Next.js, Node.js, Express.js, and MongoDB to develop scalable, secure, and user-focused web applications while applying strong problem-solving skills and modern software development practices.
                     </p>
                 </section>
