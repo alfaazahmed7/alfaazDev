@@ -154,12 +154,13 @@ export default function ResumePage() {
             {/* Action Button outside the layout container */}
             <div className="text-center mt-12">
                 <a
-                    href="/resume.pdf"
-                    download="Alfaaz_Ahmed_Resume.pdf"
+                    href="/Alfaaz_Ahmed_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-[#059669] dark:bg-blue-600 dark:hover:bg-blue-700 transition rounded-lg font-medium text-white"
                 >
                     <FaDownload />
-                    Download Resume
+                    Preview Resume
                 </a>
             </div>
         </div>

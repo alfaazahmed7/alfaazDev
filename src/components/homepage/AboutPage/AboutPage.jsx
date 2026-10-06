@@ -153,7 +153,7 @@ export default function AboutPage() {
           >
             {/* Primary */}
             <motion.a
-              href="/contact"
+              href="/#contact"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="btn-primary-themed inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide uppercase"
@@ -177,8 +177,9 @@ export default function AboutPage() {
 
             {/* Secondary */}
             <motion.a
-              href="/resume.pdf"
+              href="/Alfaaz_Ahmed_Resume.pdf"
               target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold tracking-wide text-[#374151] uppercase border border-[#E5E7EB] bg-white hover:border-emerald-500/40 hover:text-emerald-600 hover:bg-[#ECFDF5] dark:text-slate-300 dark:border-slate-700 dark:bg-slate-800/40 dark:hover:bg-slate-800/40 dark:hover:border-cyan-500/40 dark:hover:text-cyan-400 transition-colors duration-200"

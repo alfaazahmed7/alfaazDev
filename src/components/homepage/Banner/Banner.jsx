@@ -198,8 +198,9 @@ export default function HeroBanner() {
                             </Link>
 
                             <a
-                                href="/resume.pdf"
+                                href="/Alfaaz_Ahmed_Resume.pdf"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-xs sm:text-sm tracking-wide uppercase border border-[#E5E7EB] text-[#374151] bg-white hover:border-emerald-500/50 hover:text-emerald-600 hover:bg-[#ECFDF5] dark:border-slate-600 dark:text-slate-300 dark:bg-slate-800/40 dark:hover:border-cyan-500/50 dark:hover:text-cyan-400 dark:hover:bg-cyan-500/10 transition-all duration-200"
                             >
                                 Get Resume
