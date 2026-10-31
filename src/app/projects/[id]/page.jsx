@@ -145,26 +145,28 @@ export default function ProjectDetailsPage() {
                             </h3>
 
                             <div className="space-y-3 pt-1">
-                                {/* ALWAYS RENDER CLIENT OR STANDARD MAIN REPO */}
-                                <a
-                                    href={project.githubClientUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-between p-3.5 bg-[#F8FAFC] hover:bg-[#ECFDF5] dark:bg-slate-950/40 dark:hover:bg-slate-950 border border-[#E5E7EB] dark:border-slate-800/60 hover:border-[#A7F3D0] dark:hover:border-violet-500/40 rounded-xl transition-all duration-300 group"
-                                >
-                                    <div className="flex items-center gap-3 min-w-0">
-                                        <FaGithub size={18} className="text-[#6B7280] group-hover:text-emerald-600 dark:text-slate-400 dark:group-hover:text-white transition-colors shrink-0" />
-                                        <div className="min-w-0">
-                                            <p className="text-sm font-semibold text-[#111827] dark:text-white">
-                                                {project.githubServerUrl ? "Client Repository" : "Source Code"}
-                                            </p>
-                                            <p className="text-xs text-[#6B7280] dark:text-slate-500">
-                                                {project.githubServerUrl ? "UI & State Architecture" : "View complete codebase"}
-                                            </p>
+                                {/* CLIENT REPO */}
+                                {project.githubClientUrl && (
+                                    <a
+                                        href={project.githubClientUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-between p-3.5 bg-[#F8FAFC] hover:bg-[#ECFDF5] dark:bg-slate-950/40 dark:hover:bg-slate-950 border border-[#E5E7EB] dark:border-slate-800/60 hover:border-[#A7F3D0] dark:hover:border-violet-500/40 rounded-xl transition-all duration-300 group"
+                                    >
+                                        <div className="flex items-center gap-3 min-w-0">
+                                            <FaGithub size={18} className="text-[#6B7280] group-hover:text-emerald-600 dark:text-slate-400 dark:group-hover:text-white transition-colors shrink-0" />
+                                            <div className="min-w-0">
+                                                <p className="text-sm font-semibold text-[#111827] dark:text-white">
+                                                    Client Repository
+                                                </p>
+                                                <p className="text-xs text-[#6B7280] dark:text-slate-500">
+                                                    UI & State Architecture
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <ExternalLink size={13} className="text-[#94A3B8] group-hover:text-emerald-600 dark:text-slate-500 dark:group-hover:text-violet-400 transition-colors" />
-                                </a>
+                                        <ExternalLink size={13} className="text-[#94A3B8] group-hover:text-emerald-600 dark:text-slate-500 dark:group-hover:text-violet-400 transition-colors" />
+                                    </a>
+                                )}
 
                                 {/* SMART CONDITIONAL RENDERING FOR SERVER-SIDE CODES */}
                                 {project.githubServerUrl && (
@@ -184,6 +186,25 @@ export default function ProjectDetailsPage() {
                                         <ExternalLink size={13} className="text-[#94A3B8] group-hover:text-emerald-600 dark:text-slate-500 dark:group-hover:text-violet-400 transition-colors" />
                                     </a>
                                 )}
+
+                                {/* ONLY GITHUB REPO */}
+                                {project.githubUrl && (
+                                    <a
+                                        href={project.githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-between p-3.5 bg-[#F8FAFC] hover:bg-[#ECFDF5] dark:bg-slate-950/40 dark:hover:bg-slate-950 border border-[#E5E7EB] dark:border-slate-800/60 hover:border-[#A7F3D0] dark:hover:border-violet-500/40 rounded-xl transition-all duration-300 group"
+                                    >
+                                        <div className="flex items-center gap-3 min-w-0">
+                                            <FaCode size={18} className="text-[#6B7280] group-hover:text-emerald-600 dark:text-slate-400 dark:group-hover:text-white transition-colors shrink-0" />
+                                            <div className="min-w-0">
+                                                <p className="text-sm font-semibold text-[#111827] dark:text-white">GitHub Repository</p>
+                                                <p className="text-xs text-[#6B7280] dark:text-slate-500">FUI, API & Control Logic</p>
+                                            </div>
+                                        </div>
+                                        <ExternalLink size={13} className="text-[#94A3B8] group-hover:text-emerald-600 dark:text-slate-500 dark:group-hover:text-violet-400 transition-colors" />
+                                    </a>
+                                )}
                             </div>
                         </motion.div>
 
@@ -198,7 +219,7 @@ export default function ProjectDetailsPage() {
                                 {project.tags.map((tag, index) => (
                                     <span
                                         key={index}
-                                className="text-[11px] font-medium px-3 py-1 rounded-lg border border-transparent dark:border-slate-800 bg-[#F3F4F6] dark:bg-slate-950/40 text-[#374151] dark:text-slate-400 hover:border-[#A7F3D0] dark:hover:border-violet-500/30 dark:hover:bg-slate-950/40 hover:bg-[#ECFDF5] dark:hover:text-violet-200 hover:text-[#047857] transition-all duration-300"
+                                        className="text-[11px] font-medium px-3 py-1 rounded-lg border border-transparent dark:border-slate-800 bg-[#F3F4F6] dark:bg-slate-950/40 text-[#374151] dark:text-slate-400 hover:border-[#A7F3D0] dark:hover:border-violet-500/30 dark:hover:bg-slate-950/40 hover:bg-[#ECFDF5] dark:hover:text-violet-200 hover:text-[#047857] transition-all duration-300"
                                     >
                                         {tag}
                                     </span>

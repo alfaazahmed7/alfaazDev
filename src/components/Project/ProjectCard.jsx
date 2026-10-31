@@ -100,15 +100,17 @@ const ProjectCard = ({ project }) => {
                             </a>
 
                             {/* GITHUB CLIENT */}
-                            <a
-                                href={project.githubClientUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-2 bg-white rounded-xl text-[#374151] hover:text-emerald-600 hover:bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#CBD5E1] dark:bg-slate-950/40 dark:text-slate-400 dark:hover:text-white dark:hover:bg-violet-600 dark:border-slate-800 dark:hover:border-violet-500 transition-all duration-300"
-                                title="Client Repository"
-                            >
-                                <FaGithub size={18} />
-                            </a>
+                            {project.githubClientUrl && (
+                                <a
+                                    href={project.githubClientUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-2 bg-white rounded-xl text-[#374151] hover:text-emerald-600 hover:bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#CBD5E1] dark:bg-slate-950/40 dark:text-slate-400 dark:hover:text-white dark:hover:bg-violet-600 dark:border-slate-800 dark:hover:border-violet-500 transition-all duration-300"
+                                    title="Client Repository"
+                                >
+                                    <FaGithub size={18} />
+                                </a>
+                            )}
 
                             {/* GITHUB SERVER */}
                             {project.githubServerUrl && (
@@ -120,6 +122,19 @@ const ProjectCard = ({ project }) => {
                                     title="Server Repository"
                                 >
                                     <FaCode size={18} />
+                                </a>
+                            )}
+
+                            {/* GITHUB URL */}
+                            {project.githubUrl && (
+                                <a
+                                    href={project.githubUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-2 bg-white rounded-xl text-[#374151] hover:text-emerald-600 hover:bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#CBD5E1] dark:bg-slate-950/40 dark:text-slate-400 dark:hover:text-white dark:hover:bg-violet-600 dark:border-slate-800 dark:hover:border-violet-500 transition-all duration-300"
+                                    title="GitHub Repository"
+                                >
+                                    <FaGithub size={18} />
                                 </a>
                             )}
                         </div>
