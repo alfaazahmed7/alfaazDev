@@ -108,7 +108,7 @@ export default function HeroBanner() {
                             initial="hidden"
                             animate="visible"
                             custom={0}
-                            className="inline-block mb-3 lg:mb-4"
+                            className="inline-block mt-10 sm:mt-0 mb-3 lg:mb-4"
                         >
                             <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-3.5 py-1.5 rounded-full border border-emerald-500/30 text-emerald-600 bg-emerald-500/10 dark:border-cyan-500/30 dark:text-cyan-400 dark:bg-cyan-500/5">
                                 Welcome to my Universe
