@@ -237,6 +237,7 @@ export default function GithubContributions() {
                             __html: `
                             div[data-graph-scroll] .react-activity-calendar { width: 100% !important; max-width: 100% !important; }
                             div[data-graph-scroll] .react-activity-calendar__scroll-container { max-width: 100% !important; }
+                            div[data-graph-scroll] .react-activity-calendar__calendar { margin: auto; }
                         `}} />
                             <GitHubCalendar
                                 username={USERNAME}
@@ -271,7 +272,7 @@ export default function GithubContributions() {
                     </div>
 
                     {/* Legend Footer */}
-                    <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 text-xs text-[#6B7280] dark:text-slate-500 pt-2 border-t border-[#EDF1F5] dark:border-slate-800/60">
+                    {/* <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 text-xs text-[#6B7280] dark:text-slate-500 pt-2 border-t border-[#EDF1F5] dark:border-slate-800/60">
                         <span>{totalContributions.toLocaleString()} contributions in the past year</span>
                         <div className="flex items-center gap-1.5">
                             <span>Less</span>
@@ -282,7 +283,7 @@ export default function GithubContributions() {
                             <div className="w-3 h-3 rounded-[3px] bg-[#047857] dark:bg-blue-400" />
                             <span>More</span>
                         </div>
-                    </div>
+                    </div> */}
                 </motion.div>
 
                 {/* Bottom Card: Top Languages Breakdown */}

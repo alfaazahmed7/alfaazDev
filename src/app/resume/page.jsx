@@ -17,14 +17,14 @@ export default function ResumePage() {
                         ALFAAZ AHMED
                     </h1>
                     <p className="text-[#111827] dark:text-white font-bold text-sm sm:text-base break-words">
-                        Full-Stack MERN Developer | React.js | Next.js | Node.js | Express.js | MongoDB
+                        Full-Stack MERN Developer
                     </p>
                     <p className="text-[#6B7280] dark:text-gray-400 text-sm break-words">
                         Noakhali, Bangladesh | +880 16101 97258 |{" "}
-                        <a href="mailto:alfaazahmed010@gmail.com" className="text-emerald-600 dark:text-blue-400 underline">alfaazahmed010@gmail.com</a>{" "}
-                        | <Link href="https://github.com/alfaazahmed7" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Github</Link>{" "}
-                        | <Link href="https://linkedin.com/in/alfaazahmed7" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">LinkedIn</Link>{" "}
-                        | <Link href="https://alfaazahmed7.github.io" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Portfolio</Link>
+                        <a href="mailto:alfaazahmed010@gmail.com" className="text-emerald-600 dark:text-blue-400">alfaazahmed010@gmail.com</a>{" "}
+                        | <Link href="https://github.com/alfaazahmed7" target="_blank" className="text-emerald-600 dark:text-blue-400">Github</Link>{" "}
+                        | <Link href="https://linkedin.com/in/alfaazahmed7" target="_blank" className="text-emerald-600 dark:text-blue-400">LinkedIn</Link>{" "}
+                        | <Link href="https://alfaazdev.vercel.app" target="_blank" className="text-emerald-600 dark:text-blue-400">Portfolio</Link>
                     </p>
                 </div>
 
@@ -62,67 +62,75 @@ export default function ResumePage() {
                     <div className="space-y-4">
                         {/* Project 1: FITORA */}
                         <div>
-                            <h3 className="font-bold text-[#111827] dark:text-gray-100 text-[16px]">FITORA - Fitness Management Platform</h3>
-                            <p className="text-sm text-[#374151] dark:text-gray-300">
+                            <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-y-1 gap-x-4 items-baseline">
+                                <h3 className="font-bold text-[#111827] dark:text-gray-100 text-[16px]">FITORA — Fitness Management Platform</h3>
+                                <div className="flex flex-wrap items-center gap-x-1 text-sm text-[#6B7280] dark:text-gray-400 sm:justify-self-end">
+                                    <Link href="https://fitora-fitness.vercel.app" target="_blank" className="text-emerald-600 dark:text-blue-400">Live Demo</Link>
+                                    <span>|</span>
+                                    <Link href="https://github.com/Developer-Moy/Fitora" target="_blank" className="text-emerald-600 dark:text-blue-400">GitHub Repo</Link>
+                                </div>
+                            </div>
+                            <p className="text-sm text-[#374151] dark:text-gray-300 mt-1">
                                 <strong className="text-[#111827] dark:text-gray-200">Role:</strong> Full-Stack Developer | Team Project
                             </p>
                             <p className="text-sm text-[#374151] dark:text-gray-300">
                                 <strong className="text-[#111827] dark:text-gray-200">Tech Stack:</strong> Next.js, TypeScript, Node.js, Express.js, MongoDB, Better Auth
                             </p>
-                            <p className="text-sm text-[#6B7280] dark:text-gray-400 space-x-1">
-                                <Link href="https://fit-75908.web.app" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Live Demo</Link>
-                                <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/fitora-client" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">GitHub Repo</Link>
-                            </p>
                             <p className="text-sm text-[#111827] dark:text-gray-200 font-semibold mt-1">Team Contributions:</p>
                             <ul className="list-disc pl-5 text-[#374151] dark:text-gray-300 space-y-0.5">
-                                <li>Collaborated on a full-stack fitness platform featuring role-based dashboards, membership management, attendance tracking, and administrative workflows.</li>
-                                <li>Contributed to scalable RESTful APIs, responsive dashboard interfaces, authentication, RBAC, and real-time branch operations.</li>
+                                <li>Provides members with accessible fitness tools, clear membership plans, workout statistics, and streamlined subscription and billing experiences.</li>
+                                <li>Enables administrators to monitor branch occupancy, track attendance, manage users and memberships, and oversee operations through role-based dashboards.</li>
                             </ul>
                             <p className="text-sm text-[#111827] dark:text-gray-200 font-semibold mt-1">Individual Contributions:</p>
                             <ul className="list-disc pl-5 text-[#374151] dark:text-gray-300 space-y-0.5">
-                                <li>Developed the Trainer Management module with Mongoose schema, CRUD APIs, validation, slug generation, soft deletion, and RBAC-protected routes.</li>
-                                <li>Implemented live branch attendance and occupancy dashboards with check-in/check-out tracking, capacity monitoring, pagination, and real-time data.</li>
+                                <li>Helps members discover trainers through public profiles featuring professional backgrounds, specializations, experience, ratings, and availability.</li>
+                                <li>Enables branch administrators to track live attendance, monitor gym capacity, view available spots, and review paginated daily check-in records.</li>
                             </ul>
                         </div>
 
                         {/* Project 2: PROMPTAI */}
                         <div>
-                            <h3 className="font-bold text-[#111827] dark:text-gray-100 text-[16px]">PROMPTAI - AI Prompt Marketplace</h3>
-                            <p className="text-sm text-[#374151] dark:text-gray-300">
+                            <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-y-1 gap-x-4 items-baseline">
+                                <h3 className="font-bold text-[#111827] dark:text-gray-100 text-[16px]">PROMPTAI — AI Prompt Marketplace</h3>
+                                <div className="flex flex-wrap items-center gap-x-1 text-sm text-[#6B7280] dark:text-gray-400 sm:justify-self-end">
+                                    <Link href="https://prompt-ai-client.vercel.app" target="_blank" className="text-emerald-600 dark:text-blue-400">Live Demo</Link>
+                                    <span>|</span>
+                                    <Link href="https://github.com/alfaazahmed7/promptAI-client" target="_blank" className="text-emerald-600 dark:text-blue-400">Client Repo</Link>
+                                    <span>|</span>
+                                    <Link href="https://github.com/alfaazahmed7/promptAI-server" target="_blank" className="text-emerald-600 dark:text-blue-400">Server Repo</Link>
+                                </div>
+                            </div>
+                            <p className="text-sm text-[#374151] dark:text-gray-300 mt-1">
                                 <strong className="text-[#111827] dark:text-gray-200">Tech Stack:</strong> Next.js, React, Node.js, Express.js, MongoDB
                             </p>
-                            <p className="text-sm text-[#6B7280] dark:text-gray-400 space-x-1">
-                                <Link href="https://prompt-ai-client.vercel.app" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Live Demo</Link>
-                                <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/promptAI-client" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Client Repo</Link>
-                                <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/promptAI-server" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Server Repo</Link>
-                            </p>
-                            <ul className="list-disc pl-5 text-[#374151] dark:text-gray-300 mt-1 space-y-0.5">
-                                <li>Developed a full-stack AI prompt marketplace using Next.js, Express.js, MongoDB, and RESTful APIs.</li>
-                                <li>Implemented authentication, protected routes, and role-based authorization for User, Creator, and Admin roles.</li>
-                                <li>Integrated Stripe payments and developed RESTful APIs for prompts, reviews, bookmarks, reports, and analytics.</li>
+                            <p className="text-sm text-[#111827] dark:text-gray-200 font-semibold mt-1">Responsibilities:</p>
+                            <ul className="list-disc pl-5 text-[#374151] dark:text-gray-300 space-y-0.5">
+                                <li>Enables users to discover, purchase, bookmark, and review AI prompts in one marketplace.</li>
+                                <li>Helps creators publish prompts, track performance, and monitor earnings through dedicated dashboards.</li>
+                                <li>Supports secure purchases and role-based access, while enabling admins to manage users, prompts, reports, and platform analytics.</li>
                             </ul>
                         </div>
 
                         {/* Project 3: LAUNCHDECK */}
                         <div>
-                            <h3 className="font-bold text-[#111827] dark:text-gray-100 text-[16px]">LAUNCHDECK - Project Showcase Platform</h3>
-                            <p className="text-sm text-[#374151] dark:text-gray-300">
+                            <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-y-1 gap-x-4 items-baseline">
+                                <h3 className="font-bold text-[#111827] dark:text-gray-100 text-[16px]">LAUNCHDECK — Project Showcase Platform</h3>
+                                <div className="flex flex-wrap items-center gap-x-1 text-sm text-[#6B7280] dark:text-gray-400 sm:justify-self-end">
+                                    <Link href="https://launch-deck-fawn.vercel.app" target="_blank" className="text-emerald-600 dark:text-blue-400">Live Demo</Link>
+                                    <span>|</span>
+                                    <Link href="https://github.com/alfaazahmed7/launchDeck-client" target="_blank" className="text-emerald-600 dark:text-blue-400">Client Repo</Link>
+                                    <span>|</span>
+                                    <Link href="https://github.com/alfaazahmed7/launchDeck-server" target="_blank" className="text-emerald-600 dark:text-blue-400">Server Repo</Link>
+                                </div>
+                            </div>
+                            <p className="text-sm text-[#374151] dark:text-gray-300 mt-1">
                                 <strong className="text-[#111827] dark:text-gray-200">Tech Stack:</strong> TypeScript, Next.js, React, Node.js, Express.js, MongoDB
                             </p>
-                            <p className="text-sm text-[#6B7280] dark:text-gray-400 space-x-1">
-                                <Link href="https://launch-deck-fawn.vercel.app" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Live Demo</Link>
-                                <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/launchDeck-client" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Client Repo</Link>
-                                <span>|</span>
-                                <Link href="https://github.com/alfaazahmed7/launchDeck-server" target="_blank" className="text-emerald-600 dark:text-blue-400 underline">Server Repo</Link>
-                            </p>
-                            <ul className="list-disc pl-5 text-[#374151] dark:text-gray-300 mt-1 space-y-0.5">
-                                <li>Developed a full-stack project showcase platform using Next.js, Express.js, TypeScript, and MongoDB.</li>
-                                <li>Implemented authentication, protected routes, and project discovery with search, filtering, sorting, and pagination.</li>
-                                <li>Designed RESTful APIs with Express.js and Mongoose for efficient CRUD operations and data management.</li>
+                            <p className="text-sm text-[#111827] dark:text-gray-200 font-semibold mt-1">Responsibilities:</p>
+                            <ul className="list-disc pl-5 text-[#374151] dark:text-gray-300 space-y-0.5">
+                                <li>Helped developers discover relevant projects through search, filtering, sorting, and pagination.</li>
+                                <li>Enabled authenticated developers to publish new projects and manage their own submissions.</li>
+                                <li>Helped developers explore project information through dedicated detail pages.</li>
                             </ul>
                         </div>
                     </div>
@@ -135,7 +143,7 @@ export default function ResumePage() {
                     </h2>
                     <div className="text-[#374151] dark:text-gray-300">
                         <p className="font-bold text-[#111827] dark:text-gray-100">HSC | GOVERNMENT MUJIB COLLEGE</p>
-                        <p className="text-sm text-[#6B7280] dark:text-gray-400">Noakhali, Bangladesh | 2022-2024</p>
+                        <p className="text-sm text-[#6B7280] dark:text-gray-400">Noakhali, Bangladesh | 2022–2024</p>
                     </div>
                 </section>
 
@@ -144,10 +152,9 @@ export default function ResumePage() {
                     <h2 className="text-lg font-bold text-black dark:text-white uppercase tracking-wide mb-2">
                         LANGUAGES
                     </h2>
-                    <ul className="list-disc pl-5 text-[#374151] dark:text-gray-300 space-y-0.5">
-                        <li>Bengali - Native</li>
-                        <li>English - Professional Working Proficiency</li>
-                    </ul>
+                    <p className="text-[#374151] dark:text-gray-300">
+                        <strong className="text-[#111827] dark:text-gray-200">Bengali</strong> — Native | <strong className="text-[#111827] dark:text-gray-200">English</strong> — Professional Working Proficiency
+                    </p>
                 </section>
             </div>
 

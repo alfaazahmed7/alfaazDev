@@ -237,7 +237,7 @@ export default function AboutPage() {
                 alt="Abdul Basit — Developer"
                 width={500}
                 height={600}
-                className="w-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full object-cover transition-all duration-700"
                 style={{ aspectRatio: "4/5" }}
                 priority
               />
