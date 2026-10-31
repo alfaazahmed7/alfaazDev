@@ -1,24 +1,113 @@
-'use client';
+﻿'use client';
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiMongodb, SiExpress, SiJavascript, SiTypescript } from "react-icons/si";
+import {
+    SiJavascript,
+    SiTypescript,
+    SiHtml5,
+    SiCss,
+    SiReact,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiNodedotjs,
+    SiExpress,
+    SiMongodb,
+    SiMongoose,
+    SiBetterauth,
+    SiHeroui,
+    SiDaisyui,
+    SiFigma,
+    SiGit,
+    SiGithub,
+    SiNpm,
+    SiEslint,
+    SiPrettier,
+    SiVercel,
+    SiNetlify,
+    SiRender,
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { KeyRound, ShieldCheck, ShieldUser, MonitorSmartphone, Globe } from "lucide-react";
+
+const categories = [
+    {
+        title: "Languages",
+        items: [
+            { icon: <SiJavascript />, name: "JavaScript (ES6+)" },
+            { icon: <SiTypescript />, name: "TypeScript" },
+            { icon: <SiHtml5 />, name: "HTML5" },
+            { icon: <SiCss />, name: "CSS3" },
+        ],
+    },
+    {
+        title: "Frontend",
+        items: [
+            { icon: <SiReact />, name: "React.js" },
+            { icon: <SiNextdotjs />, name: "Next.js" },
+            { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+            { icon: <MonitorSmartphone />, name: "Responsive Design" },
+        ],
+    },
+    {
+        title: "Backend",
+        items: [
+            { icon: <SiNodedotjs />, name: "Node.js" },
+            { icon: <SiExpress />, name: "Express.js" },
+            { icon: <Globe />, name: "RESTful APIs" },
+            { icon: <SiMongodb />, name: "MongoDB" },
+            { icon: <SiMongoose />, name: "Mongoose" },
+        ],
+    },
+    {
+        title: "Authentication & Security",
+        items: [
+            { icon: <SiBetterauth />, name: "Better Auth" },
+            { icon: <KeyRound />, name: "JWT" },
+            { icon: <ShieldCheck />, name: "Authorization" },
+            { icon: <ShieldUser />, name: "RBAC" },
+        ],
+    },
+    {
+        title: "UI & Tools",
+        items: [
+            { icon: <SiHeroui />, name: "HeroUI" },
+            { icon: <SiDaisyui />, name: "DaisyUI" },
+            { icon: <SiFigma />, name: "Figma" },
+            { icon: <SiGit />, name: "Git" },
+            { icon: <SiGithub />, name: "GitHub" },
+            { icon: <VscVscode />, name: "VS Code" },
+            { icon: <SiNpm />, name: "npm" },
+            { icon: <SiEslint />, name: "ESLint" },
+            { icon: <SiPrettier />, name: "Prettier" },
+        ],
+    },
+    {
+        title: "Deployment",
+        items: [
+            { icon: <SiVercel />, name: "Vercel" },
+            { icon: <SiNetlify />, name: "Netlify" },
+            { icon: <SiRender />, name: "Render" },
+        ],
+    },
+];
+
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: { staggerChildren: 0.1 },
+    },
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 export default function TechStack() {
-    const techs = [
-        { icon: <FaReact />, name: "React" },
-        { icon: <SiNextdotjs />, name: "Next.js" },
-        { icon: <SiTypescript />, name: "TypeScript" },
-        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
-        { icon: <FaNodeJs />, name: "Node.js" },
-        { icon: <SiMongodb />, name: "MongoDB" },
-        { icon: <SiExpress />, name: "Express" },
-        { icon: <FaGithub />, name: "GitHub" },
-    ];
-
     return (
         <section
             id="skills"
-            className="w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40">
+            className="w-full px-6 sm:px-10 lg:px-20 pb-32 lg:pb-52 max-w-[1500px] mx-auto scroll-mt-40"
+        >
             <motion.h2
                 className="text-4xl font-bold text-[#111827] dark:text-white mb-2"
                 initial={{ opacity: 0, y: -20 }}
@@ -39,22 +128,51 @@ export default function TechStack() {
                 I use modern full-stack web technologies like React.js, Next.js, Node.js, Express, and MongoDB to build fast and scalable applications.
             </motion.p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[1500px] mx-auto">
-                {techs.map((tech, index) => (
+            <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+            >
+                {categories.map((category) => (
                     <motion.div
-                        key={index}
-                        className="flex flex-col items-center justify-center bg-white hover:bg-[#FCFCFD] dark:hover:bg-[#111a2e] hover:border-emerald-500 dark:bg-[#0b1221] dark:hover:border-transparent border border-[#E5E7EB] hover:border-[#A7F3D0] dark:border-transparent transition-colors rounded-xl py-6 shadow-sm dark:shadow-md"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        // transition={{ delay: index * 0.1, duration: 0.5 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        whileHover={{ scale: 1.05 }}
+                        key={category.title}
+                        variants={cardVariants}
+                        className="rounded-2xl border border-[#E5E7EB] dark:border-slate-700/60 bg-white dark:bg-[#0b1221] p-6 shadow-sm dark:shadow-md hover:border-emerald-400/60 dark:hover:border-[#4895ef]/60 transition-colors"
                     >
-                        <div className="text-4xl text-emerald-600 dark:text-[#4895ef] mb-2">{tech.icon}</div>
-                        <p className="text-[#374151] dark:text-gray-300 font-medium">{tech.name}</p>
+                        <div className="flex items-center justify-between mb-4">
+                            <h3 className="text-lg font-semibold text-[#111827] dark:text-white">
+                                {category.title}
+                            </h3>
+                            <span className="text-xs font-medium text-[#6B7280] dark:text-gray-400">
+                                {category.items.length}
+                            </span>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-3">
+                            {category.items.map((tech) => (
+                                <motion.div
+                                    key={tech.name}
+                                    className="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl border border-[#E5E7EB] dark:border-slate-700/50 bg-[#F9FAFB] dark:bg-slate-900/40 hover:bg-emerald-50 dark:hover:bg-[#111a2e] hover:border-emerald-400/70 dark:hover:border-[#4895ef]/60 transition-colors cursor-default"
+                                    whileHover={{ y: -2, scale: 1.02 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    <span
+                                        className="text-xl text-emerald-600 dark:text-[#4895ef] shrink-0"
+                                        aria-hidden="true"
+                                    >
+                                        {tech.icon}
+                                    </span>
+                                    <span className="text-sm font-medium text-[#374151] dark:text-gray-300 truncate">
+                                        {tech.name}
+                                    </span>
+                                </motion.div>
+                            ))}
+                        </div>
                     </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 }
